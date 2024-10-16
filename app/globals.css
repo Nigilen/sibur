@@ -3,17 +3,11 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #fff;
-  }
-}
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -33,10 +27,21 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.container {
+  padding-inline: 120px;
+}
+
+@media (width < 1440px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
+@media (width < 768px) {
+  .container {
+    padding-inline: 16px;
   }
 }
