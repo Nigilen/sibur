@@ -5,6 +5,7 @@ include:
 
 stages:
   - deploy-dev
+  - deploy-prod
 
 deploy-to-test-server:
   stage: deploy-dev
@@ -25,3 +26,24 @@ deploy-to-test-server:
   environment:
     name: test
     url: https://mendeleevsibur.friendlee.ru
+
+deploy-to-prod-server:
+  stage: deploy-prod
+  extends: .install-ssh
+  variables:
+    SSH_PRIVATE_KEY: $PROD_SSH_PRIVATE_KEY
+    SERVER_KNOWN_HOSTS: $PROD_SSH_KNOWN_HOSTS
+  script:
+    - BUILD="npm install && npm run build"
+    - RESTART="pm2 restart mendeleev-smena.ru"
+    - cp ${PROD_ENV} .env
+    - rsync --delete -avz --progress --no-perms --no-owner --no-group --no-times --exclude=".git*" --exclude="node_modules/" -e "ssh -p $PROD_PORT" . $PROD_USER@$PROD_HOST:$PROD_PATH
+    - ssh -p $PROD_PORT $PROD_USER@$PROD_HOST "cd $PROD_PATH && $BUILD && $RESTART"
+  when: manual
+  only:
+    - main
+  tags:
+    - shell
+  environment:
+    name: prod
+    url: https://mendeleev-smena.ru
