@@ -37,8 +37,8 @@ deploy-to-prod-server:
     - BUILD="npm install && npm run build"
     - RESTART="pm2 restart mendeleev-smena.ru"
     - cp ${PROD_ENV} .env
-    - rsync --delete -avz --progress --no-perms --no-owner --no-group --no-times --exclude=".git*" --exclude="node_modules/" -e "ssh -p $PROD_PORT" . $PROD_USER@$PROD_HOST:$PROD_PATH
-    - ssh -p $PROD_PORT $PROD_USER@$PROD_HOST "cd $PROD_PATH && $BUILD && $RESTART"
+    - rsync --delete -avz --progress --no-perms --no-owner --no-group --no-times --exclude=".git*" --exclude="node_modules/" -e "ssh -p $PROD_PORT" . $PROD_USER@$PROD_HOST:$PROD_PATH/front
+    - ssh -p $PROD_PORT $PROD_USER@$PROD_HOST "cd $PROD_PATH/front && $BUILD && $RESTART"
   when: manual
   only:
     - main
