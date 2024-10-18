@@ -4,7 +4,7 @@ import cn from 'classnames';
 export const Advantages = () => {
   return (
     <div className={cn(styles.about_main, 'container')}>
-      <h3 className={styles.about_main_title}>О компании <img src='./about-logo.svg' alt=''></img></h3>
+      <h3 className={styles.about_main_title}>О компании <img width={212} height={95} src='./about-logo.svg' alt=''></img></h3>
       <div className={styles.carousel}>
         <ul className={styles.advantages_list}>
           <li className={styles.advantages_item}>

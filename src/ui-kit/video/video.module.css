@@ -26,3 +26,20 @@
   position: absolute;
   inset: 0;
 }
+
+@media (width < 1440px) {
+  .video {
+    padding-inline: 40px;
+    height: 690px;
+  }
+}
+@media (width < 768px) {
+  .video {
+    padding-inline: 16px;
+    height: 354px;
+  }
+  .play img {
+    width: 61px;
+    height: 61px;
+  }
+}

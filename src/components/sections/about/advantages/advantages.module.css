@@ -27,6 +27,7 @@
 .item_img {
   border-radius: 24px;
   display: block;
+  width: 100%;
 }
 
 .item_title {
@@ -40,8 +41,37 @@
 
 
 
-@media (width < 768px) {
-  .advantages_item {
-    max-width: 100%;
+
+@media (width < 1440px) {
+  .about_main {
+    padding-block: 96px;
   }
+  .advantages_list {
+    column-gap: 20px;
+  }
+}
+@media (width < 768px) {
+  .item_content {
+    padding: 40px 0 0;
+  }
+  .advantages_list {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .advantages_item {
+    max-width: none;
+  }
+  .about_main {
+    padding-block: 56px;
+  }
+  .about_main_title {
+    display: flex;
+    align-items: baseline;
+    margin-block-end: 40px;
+  }
+  .about_main_title img {
+    width: 106px;
+    height: 49px;
+  }
+
 }

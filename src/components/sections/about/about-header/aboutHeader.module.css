@@ -10,7 +10,26 @@
 .about_header_text {
   font: var(--h3-primary);
   color: var(--dark-blue);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.05em;
 }
 
 
+@media (width < 1440px) {
+  .about_header {
+    padding-block: 96px 72px;
+  }
+  .about_header_text {
+    width: 691px;
+  }
+}
+@media (width < 768px) {
+  .about_header {
+    padding-block: 40px 32px;
+  }
+  .about_header_text {
+    width: auto;
+  }
+  .br_none {
+    display: none;
+  }
+}
