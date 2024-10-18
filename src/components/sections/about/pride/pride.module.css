@@ -1,0 +1,29 @@
+.pride {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: var(--dark-blue);
+  align-items: center;
+  padding-inline-start: 96px;
+  margin-inline: 24px;
+  border-radius: 48px;
+  background-color: var(--bg-light-blue-secondary);
+  overflow: hidden;
+}
+
+.pride_title {
+  font: var(--h2-primary);
+  margin-block-end: 2rem;
+  letter-spacing: var(--letter-spacing-extra-small);
+}
+
+.pride_title span {
+  font-style: italic;
+}
+
+.pride_description {
+  font: var(--p-primary);
+}
+
+/* .pride_img {
+  border-radius: 48px;
+} */

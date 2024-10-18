@@ -1,0 +1,16 @@
+.about_header {
+  text-align: center;
+  padding-block: 96px 120px;
+}
+
+.section_caption {
+  margin-block-end: 24px;
+}
+
+.about_header_text {
+  font: var(--h3-primary);
+  color: var(--dark-blue);
+  letter-spacing: -0.01em;
+}
+
+

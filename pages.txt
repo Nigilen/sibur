@@ -1,0 +1,32 @@
+pages=(contacts about cases)
+
+folder='app'
+
+someFun() {
+
+for t in ${pages[@]}; do
+  mkdir $1/$t && touch $1/$t/page.tsx $1/$t/$t.module.css
+  echo "import styles from './$t.module.css';
+import { FC } from 'react';
+
+type PageProps = {
+  title: string;
+};
+
+export const Page: FC<PageProps> = ({title}) => {
+  return (
+    <div className={styles.$t}>
+      <h1>$t</h1>
+      <p>{title}</p>
+    </div>
+  );
+}" > $1/$t/page.tsx 
+    
+  echo ".$t {
+  padding: 1rem;
+}" > $1/$t/$t.module.css 
+done
+
+}
+
+someFun $folder

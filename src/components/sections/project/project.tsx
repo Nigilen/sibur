@@ -1,0 +1,52 @@
+import Image from 'next/image';
+import styles from './project.module.css';
+import cn from "classnames";
+import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
+
+export const Project = () => {
+  return (
+    <article className={cn(styles.project, 'container')}>
+      <header className={styles.project_header}>
+        <h2 className={cn(styles.project_caption, 'section_caption')}>Проект</h2>
+        <p className={styles.project_title}>
+          Менделеевская<br/>
+          <span>Смена</span>
+          <Image width={105} height={62.91} src={'/project-title-decor.svg'} alt='' />
+        </p>
+      </header>
+      <section className={styles.project_section}>
+        <p className={styles.section_text}>
+          Всё, что нас окружает — это химия! Доска, парты, линейки, пеналы и телефоны! 8 из 10 предметов вокруг нас сделаны благодаря нефтегазохимии. Как полимерная продукция влияет на экономику страны? Почему без нефтегазохимии невозможно представить не только будущее, <br className={styles.br}/>но и наше настоящее?
+        </p>
+        <p className={styles.section_text}>
+          Во время урока «Менделеевская смена» школьники по&nbsp;всей России смогут поближе познакомиться с миром нефтегазохимии, из&nbsp;первых уст узнать про карьерные<br/>возможности СИБУРа и вместе <br className={styles.br}/>с Константином Вернигоровым, <br className={styles.br}/>Генеральным директором «СИБУР<br/>ПолиЛаб», и НейроМенделеевым открыть <br className={styles.br}/>для себя мир бесконечных возможностей. 
+        </p>
+      </section>
+
+      <section className={cn(styles.project_section, styles.project_section__grid)}>
+        <h3 className={styles.section_heading}>Увлекательный<br/><span>Урок Химии</span></h3>
+        <Image className={styles.section_img} width={540} height={634} src="/project/mendeleev.png" alt="" />
+        <p className={styles.section_text}>
+          Сотрудники СИБУРа и НейроМенделеев проведут интерактивный урок химии в 600+ классах <br className={styles.br}/>по всей стране. Школьники станут участниками увлекательной квест-легенды, которая наглядно покажет возможности современной науки. Завершим урок зрелищным химическим экспериментом!
+        </p>
+        <dl className={styles.badge}>
+          <dt><span>26+</span><br/>Регионов РФ</dt>
+          <dd>Охватывает образовательный проект «Менделеевская смена»</dd>
+        </dl>
+      </section>
+      
+      <section className={styles.project_section}>
+        <div className={styles.section_content}>
+          <h3 className={styles.section_heading}>Миссия&nbsp;<span>урока</span></h3>
+          <p className={styles.section_text}>
+            Мы вызываем <span className={styles.through}>химическую</span> реакцию<br/>в сердцах юных химиков. Наш проект<br/>познакомит с нефтегазохимической<br/>отраслью и вдохновит на изучение естественных наук для профессионального<br/>развития в индустрии в дальнейшем.<br/>Составим формулу будущего вместе!
+          </p>
+          <ActionButton withArrow/>
+        </div>
+        <div className={styles.section_img_wrapper}>
+          <Image className={styles.section_img} width={710} height={579} src="/project/student.png" alt="" />
+        </div>
+      </section>
+    </article>
+  );
+};

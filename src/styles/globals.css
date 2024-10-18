@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+html,
+body {
+  max-width: 1440px;
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--dark-blue, #00313C);
+  background: var(--white, #FFFFFF);
+  font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  padding-inline: 120px;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  inline-size: 1px;
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.section_caption {
+  font: var(--p-secondary);
+  color: var(--blue);
+  margin-block-end: 24px;
+  opacity: 50%;
+}
+
+@media (width < 1440px) {
+  .container {
+    padding-inline: 40px;
+  }
+  .section_caption {
+    margin-block-end: 32px;
+  }
+}
+
+@media (width < 768px) {
+  .container {
+    padding-inline: 16px;
+  }
+}

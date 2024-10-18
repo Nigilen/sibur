@@ -1,0 +1,28 @@
+.video {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 720px;
+  padding-inline: 24px;
+}
+
+
+.video iframe {
+  margin-inline: auto;
+  border-radius: 48px;
+}
+
+.preloader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/about-video-preloader.png');
+}
+
+.play {
+  position: absolute;
+  inset: 0;
+}

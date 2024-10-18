@@ -1,0 +1,32 @@
+import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
+import styles from './hero.module.css';
+import cn from "classnames";
+import Image from 'next/image';
+
+export const Hero = () => {
+  return (
+    <section className={cn(styles.wrapper, 'container')}>
+      <div className={styles.hero_text_container}>
+        <h2 className={styles.hero_heading}>Менделеевская<br/><span>смена</span></h2>
+        <p className={styles.hero_description}>Откройте удивительный мир химии вместе с СИБУРом</p>
+        <ActionButton withArrow/>  
+      </div>
+
+      <ul className={styles.badges_list}>
+        <li className={styles.badge}>
+          <Image className={styles.badge_icon} src="./badge-icon-people.svg" alt="" width={50} height={50}/>
+          <p className={styles.badge_caption}>Узнают больше о химии <span>&#62;15 000</span>учеников</p>
+        </li>
+        <li className={cn(styles.badge, styles.badge__pink)}>
+          <Image className={styles.badge_icon} src="./badge-icon-school.svg" alt="" width={50} height={50}/>
+          <p className={styles.badge_caption}>Примут участие <span>&#62;200</span>школ</p>
+        </li>
+      </ul>
+
+      <div className={styles.hero_img_container}>
+        <img className={styles.hero_img} src="./hero-img.png" alt="" />
+      </div>
+
+    </section>
+  );
+};
