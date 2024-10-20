@@ -1,4 +1,7 @@
 .wrapper {
+  position: fixed;
+  max-width: 1440px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding-block: 24px;
@@ -6,6 +9,14 @@
   color: var(--white, #FFFFFF);
   border-radius: 0 0 24px 24px;
   align-items: center;
+  z-index: 10;
+  transition-duration: .8s;
+  transition-timing-function: cubic-bezier(1,-0.01,.11,.83);
+}
+
+.action_btn__header {
+  position: relative;
+  z-index: 10;
 }
 
 .nav {
@@ -29,24 +40,28 @@
 
 .logo {
   display: flex;
+  position: relative;
   width: 93px; 
   height: 18px;
+  z-index: 10;
+  transition-duration: .3s;
 }
 
-
-
-
 .burger_btn {
+  position: relative;
+  z-index: 10;
   display: none;
   inline-size: 48px;
   block-size: 48px;
   flex-direction: column;
-  row-gap: 7px;
-  align-items: flex-end;
-  justify-content: center;
 }
 
 .burger_line {
+  transition-duration: .3s;
+  position: absolute;
+  top: 36%;
+  right: 0;
+
   inline-size: 41px;
   block-size: 3px;
   background-color: var(--white, #FFFFFF);
@@ -54,17 +69,68 @@
 }
 
 .bottom_line {
+  top: 57%;
   inline-size: 29px;
 }
 
+.burger_btn__open .burger_line {
+  inline-size: 41px;
+  top: 47%;
+}
+.burger_btn__open .bottom_line {
+  transform: rotate(45deg);
+}
+.burger_btn__open .top_line {
+  transform: rotate(-45deg);
+}
+
+
 
 @media (width < 1440px) {
+  .nav_link {
+    opacity: 100%;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+
   .wrapper {
     gap: 40px;
   }
   
+  .wrapper:has(.mob_menu_open) {
+    border-radius: 0;
+    transition-duration: 0.1s;
+  }
+
+  .wrapper:has(.mob_menu_open) .logo {
+    width: 173px;
+    height: 32px;
+  }
+  
   .nav_list {
-    display: none;
+    overflow-x: hidden;
+    position: absolute;
+    top: 99%;
+    left: 0;
+    justify-content: center;
+    row-gap: 56px;
+    flex-direction: column;
+    background-color: var(--cyan, #008C95);
+    width: 100%;
+    height: 0;
+    z-index: 9;
+    padding-inline: 40px;
+    transition: height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    z-index: 20;
+    padding-block-end: 0;
+  }
+
+  .mob_menu_open {
+    height: 100dvh;
+    padding-block-end: 15dvh;
   }
   
   .burger_btn {
@@ -74,10 +140,19 @@
 
 }
 @media (width < 768px) {
+  .wrapper:has(.mob_menu_open) .logo {
+    width: 130px;
+    height: 24px;
+  }
+
   .wrapper {
     padding-block: 16px;
   }
   .action_btn__header {
     display: none;
+  }
+  .nav_list {
+    padding-inline: 16px;
+    row-gap: 30px;
   }
 }

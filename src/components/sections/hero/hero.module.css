@@ -9,6 +9,8 @@
 .hero_text_container {
   grid-column: 1 / 1;
   grid-row: 1 / 2;
+  position: relative;
+  z-index: 1;
 }
 
 .hero_heading {
@@ -49,20 +51,17 @@
   box-shadow: 8px 8px 0 0 var(--pink);
 }
 
-
-/* TODO: сделать опасити для текста норм */
-
 .badge_caption {
   gap: 5px;
   white-space: nowrap;
   font: var(--p-small);
-  color: var(--dark-blue);
-  opacity: 60%;
+  color: #00313C99;
 }
 
 .badge_caption span {
   display: block;
   font: var(--button-secondary);
+  color: var(--dark-blue);
   opacity: 100%;
   margin-block: 2px;
 }
@@ -77,6 +76,7 @@
 
 .hero_img {
   position: absolute;
+  z-index: -1;
   top: -145px;
   left: -85px;
   width: 135%;

@@ -1,0 +1,31 @@
+.success {
+  max-width: 448px;
+  margin-inline-end: 48px;
+}
+
+.success_title {
+  font: var(--h4-primary);
+  margin-block-end: 12px;
+}
+.success_title span {
+  font: var(--h4-primary-italic);
+  color: var(--green);
+}
+
+.success_description {
+  font: var(--p-medium);
+  opacity: 60%;
+}
+
+
+@media (width < 1440px) {
+  .success {
+    margin-inline-end: 250px;
+  }
+}
+
+@media (width < 768px) {
+  .success {
+    margin-inline-end: 0;
+  }
+}

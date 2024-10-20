@@ -7,16 +7,16 @@ import { Pride } from './pride/pride';
 
 export const About = () => {
   return (
-    <section className={styles.about}>
+    <section id='about' className={styles.about}>
           
-      <AboutHeader/> {/* TODO: доделать */}
+      <AboutHeader/> 
 
-      <Video video='https://rutube.ru/play/embed/866a47fde368dc0f283c376215b08937' /> {/* TODO: адаптив остался */}
+      <Video video='https://rutube.ru/play/embed/866a47fde368dc0f283c376215b08937' />
           
-      <Advantages /> {/* TODO: вынести в компонент */}    
+      <Advantages /> 
       
 
-      <Pride /> {/* TODO: вынести в компонент */}
+      <Pride />
       
 
     </section>

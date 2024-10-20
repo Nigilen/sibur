@@ -2,6 +2,7 @@ import { Roboto_Flex } from 'next/font/google'
 import type { Metadata } from "next";
 import "@/styles/variables.css";
 import "@/styles/globals.css";
+import { LevelProvider } from '@/src/context/context';
 
 
 const roboto = Roboto_Flex({
@@ -24,9 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={roboto.variable}>
-      <body>
-        {children}
-      </body>
+      <LevelProvider>
+        <body>
+          {children}
+        </body>
+      </LevelProvider>
     </html>
   );
 }

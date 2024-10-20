@@ -24,7 +24,7 @@ export const Hero = () => {
       </ul>
 
       <div className={styles.hero_img_container}>
-        <img className={styles.hero_img} src="./hero-img.png" alt="" />
+        <Image className={styles.hero_img} width={809} height={867} src="/hero-img.png" alt="" quality={100}/>
       </div>
 
     </section>

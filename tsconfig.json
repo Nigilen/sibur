@@ -21,6 +21,7 @@
       "@/*": ["./*"],
       "@/pages/*": ["./pages/*"],
       "@/components/*": ["./src/components/*"],
+      "@/ui-kit/*": ["./src/ui-kit/*"],
       "@/lib/*": ["./lib/*"],
       "@/utils/*": ["./utils/*"],
       "@/styles/*": ["./src/styles/*"],

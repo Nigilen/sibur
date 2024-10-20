@@ -2,6 +2,7 @@
 
 import { FC, useState } from 'react';
 import styles from './video.module.css';
+import Image from 'next/image';
 
 type Props = {
   video: string;
@@ -18,7 +19,7 @@ export const Video: FC<Props> = ({ video }) => {
             className={styles.play}
             onClick={() => setIsPlay(!isPlay)}
           >
-            <img src="./play-btn.svg" alt="" />
+            <Image src="./play-btn.svg" width={94.37} height={96} alt="" />
           </button>
         </div>
       : 

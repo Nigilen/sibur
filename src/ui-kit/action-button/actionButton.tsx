@@ -1,7 +1,10 @@
-import { FC } from 'react';
+'use client'
+
+import { FC, useContext } from 'react';
 import styles from './actionButton.module.css';
 import Image from 'next/image';
 import cn from 'classnames';
+import { LevelContext } from '@/src/context/context';
 
 type Props = {
   withArrow?: boolean;
@@ -9,10 +12,23 @@ type Props = {
 };
 
 export const ActionButton: FC<Props> = ({ withArrow, className }) => {
+
+  const { setIsOpen, isOpen } = useContext(LevelContext);
+
+  const hadnlerOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <button className={cn(styles.action_btn, withArrow && styles.with_arrow, className)} type="button">
+    <button 
+      className={cn(styles.action_btn, withArrow && styles.with_arrow, className)} 
+      type="button" 
+      onClick={hadnlerOpen}
+    >
       Пригласить СИБУР к себе
-      {withArrow && <Image src={'./arrow-icon.svg'} width={28} height={28} alt={''} />}
+      {
+        withArrow && <Image src={'./arrow-icon.svg'} width={28} height={28} alt={''} />
+      }
     </button>
   );
 }

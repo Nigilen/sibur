@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+html {
+  scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -13,6 +16,12 @@ body {
   font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
 }
 
+body:has(.modal[open]) {
+  position: fixed;
+  overflow: hidden;
+}
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,11 +34,47 @@ a {
   font: inherit;
 }
 
+input {
+  font: inherit;
+  border: none;
+  color: inherit;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--cyan);
+  width: 24px;
+  height: 24px;
+}
+
+dialog {
+  font: inherit;
+  border: none;
+  color: inherit;
+}
+
+select {
+  font: inherit;
+  border: none;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 button {
   background: transparent;
   border: none;
   cursor: pointer;
 }
+
+dialog::backdrop {
+  position: fixed;
+  inset: 0px;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
 
 .container {
   padding-inline: 120px;

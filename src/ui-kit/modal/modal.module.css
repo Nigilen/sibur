@@ -1,0 +1,50 @@
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  
+  border-radius: 24px;
+  background-color: var(--white, #FFFFFF);
+  border: none;
+  outline: none;
+  margin: auto;
+  max-width: 1200px;
+  width: max-content;
+}
+
+.dialog__wrapper {
+  padding: 32px;
+}
+
+.close_btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+}
+
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+@media (width < 1440px) {
+  .modal {
+    max-width: 90vw;
+  }
+}
+
+@media (width < 768px) {
+
+  .dialog__wrapper {
+    padding: 24px;
+  }
+  .close_btn {
+    top: 24px;
+    right: 24px;
+  }
+}
