@@ -1,0 +1,53 @@
+.header {
+  position: relative;
+  display: grid;
+}
+
+.header__input {
+  height: 44px;
+  padding: 11px 24px 11px 11px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font: var(--fields-text);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header_hasError .header__input,
+.header_hasError .header__input::placeholder {
+  color: var(--red);
+}
+
+.header__input::placeholder {
+  font: var(--fields-text);
+  color: var(--grey);
+}
+
+.header__input:not(:placeholder-shown) {
+  color: var(--primary-color);
+}
+
+.header__icon {
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 14px;
+  right: 10px;
+  transform: translateY(-50%) rotate3d(0, 0, 1, -90deg);
+  /* pointer-events: none; */
+  /* user-select: none; */
+  transition: transform 0.2s ease;
+}
+
+.header__icon_up {
+  transform: translateY(-50%) rotate3d(0, 0, 1, -270deg);
+}
+
+.header__icon path {
+  stroke: var(--primary-color);
+}
+
+.header_hasError .header__icon path {
+  stroke: var(--red);
+}

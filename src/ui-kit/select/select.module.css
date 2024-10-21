@@ -1,0 +1,93 @@
+.wrapper {
+  display: grid;
+  row-gap: 4px;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+}
+
+.wrapper__message {
+  grid-column: 2 / 3;
+  font: var(--x-small-regular);
+  color: var(--primary-color);
+  line-height: 1;
+  word-wrap: break-word;
+}
+
+.wrapper__fieldLabel {
+  grid-column: 1 / 2;
+  margin-right: 14px;
+  font: var(--body-regular);
+  color: var(--primary-color);
+  line-height: 1;
+  word-wrap: break-word;
+}
+
+.wrapper_hasError .wrapper__message,
+.wrapper_hasError .wrapper__fieldLabel {
+  color: var(--red);
+}
+
+.select {
+  grid-column: 2 / 3;
+  position: relative;
+  display: grid;
+  grid-auto-flow: row;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  outline: 1px solid transparent;
+  background-color: var(--main-color);
+  transition: border-color var(--btn-hover-easing), outline-color var(--btn-hover-easing);
+}
+
+.select_isOpen,
+.select:focus,
+.select_isSelected:focus {
+  border-color: var(--primary-color);
+  outline-color: var(--primary-color);
+}
+
+.select_isSelected:focus label svg path {
+  fill: var(--color-dark-60);
+}
+
+.select_isOpen label input {
+  color: var(--color-dark) !important;
+}
+
+.select_isOpen label svg path,
+.select:focus label svg path {
+  fill: var(--color-dark-60);
+}
+
+.wrapper_hasError .select {
+  border-color: var(--red);
+}
+
+@media screen and (hover: hover) {
+  .wrapper:not(.wrapper_hasError) .select:hover {
+    border-color: var(--primary-color);
+  outline-color: var(--primary-color);
+  }
+  .wrapper:not(.wrapper_hasError) .select:hover label input {
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .wrapper {
+    grid-template-columns: auto;
+  }
+
+  .wrapper__message {
+    grid-column: 1 / 2;
+  }
+
+  .wrapper__fieldLabel {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .select {
+    grid-column: 1 / 2;
+  }
+}

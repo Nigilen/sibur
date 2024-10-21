@@ -14,7 +14,7 @@ export const Footer = () => {
       </div>
       <div className={styles.column_copy}>
         <p className={styles.copyrite}><span>© 2024&nbsp;</span> ПАО «‎СИБУР-Холдинг»‎</p>
-        <a className={styles.policy} href="#">Политика в области обработки персональных данных</a>
+        <a className={styles.policy} href="./policy.pdf" target="blank">Политика в области обработки персональных данных</a>
       </div>
     </footer>
   );

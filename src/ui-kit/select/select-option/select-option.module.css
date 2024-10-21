@@ -1,0 +1,27 @@
+.option {
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.option__label {
+  font: var(--fields-text);
+  color: var(--primary-color);
+  transition: color 0.2s ease;
+}
+
+.option:focus .option__label {
+  color: var(--red);
+}
+
+@media screen and (hover: hover) {
+  /* .option:hover {
+    background-color: var(--color-dark-5);
+  } */
+
+  .option:hover .option__label {
+    color: var(--red);
+  }
+}
