@@ -56,6 +56,10 @@
   text-decoration: underline;
 }
 
+.fieldset__agreements a:hover {
+  color: var(--green);
+}
+
 
 .fieldset_caption {
   justify-self: flex-start;
@@ -103,7 +107,24 @@
   background-color: var(--light-gray);
   color: var(--dark-blue);
   width: 100%;
+  border: 1px solid transparent;
 }
+
+.input:hover {
+  background-color: var(--white, #FFFFFF);
+  border: 1px solid #F7F8FA;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid var(--cyan);
+  background-color: #EDEFF1;
+}
+.input:focus-visible {
+  outline: none;
+  border: 1px solid var(--cyan);
+  background-color: #EDEFF1;
+}
+
 
 .input option {
   font: var(--p-medium);
@@ -113,6 +134,18 @@
   color: var(--dark-blue);
 }
 
+.errors .input {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.errors input {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.errors .message {
+  color: var(--pink);
+}
 
 .submit_btn {
   grid-column: 2 / -1;

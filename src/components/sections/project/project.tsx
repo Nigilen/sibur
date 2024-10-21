@@ -38,7 +38,6 @@ export const Project = () => {
         <div className={styles.section_content}>
           <h3 className={styles.section_heading}>Миссия&nbsp;<span>урока</span></h3>
           <p className={styles.section_text}>
-            {/* TODO: нужно разобраться с переносами, которые должны появлятся на моб */}
             Мы вызываем <span className={styles.through}>химическую</span> реакцию <br className={styles.br}/>в сердцах юных химиков. Наш проект <br className={styles.br}/>познакомит с нефтегазохимической <br className={styles.br}/>отраслью и вдохновит на изучение естественных наук для&nbsp;профессионального <br className={styles.br}/>развития в индустрии в&nbsp;дальнейшем. <br className={styles.br}/>Составим формулу будущего вместе!
           </p>
           <ActionButton withArrow/>

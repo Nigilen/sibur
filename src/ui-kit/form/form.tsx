@@ -33,8 +33,6 @@ export const Form = () => {
   }
 
   console.log(watch("firstname"));
-
-  // TODO: Закрытие по отправке
   
   return (
     <>
@@ -111,11 +109,11 @@ export const Form = () => {
               <legend className={styles.fieldset_caption}>Контактные данные</legend>
               <label className={styles.label_wrapper} htmlFor="phone">
                 <span className='visually-hidden'>Телефон</span>
-                <input className={styles.input} id='phone' type="phone" placeholder='Телефон'/> {/* TODO: Маска для телефона */}
+                <input className={styles.input} id='phone' type="phone" placeholder='Телефон'/> 
               </label>
               <label className={styles.label_wrapper} htmlFor="email">
                 <span className='visually-hidden'>Email</span>
-                <input className={styles.input} id='email' type="email" placeholder='Email' /> {/* TODO: Маска для почты */}
+                <input className={styles.input} id='email' type="email" placeholder='Email' />
               </label>
             </fieldset>
 
@@ -132,7 +130,7 @@ export const Form = () => {
                 Согласен с обработкой&nbsp;
                 <a href='./personal.pdf' target='blank'>персональных данных</a>
               </label>
-              <label htmlFor="policy">
+              <label htmlFor="policy" className={cn(errors.policy && styles.errors)}>
                 <input id='policy' type="checkbox" 
                   {...register(
                     "policy", 
@@ -143,7 +141,7 @@ export const Form = () => {
                 Согласен с&nbsp;
                 <a href='./policy.pdf' target='blank'>политикой конфиденциальности</a>
               </label>
-                {(errors.policy || errors.personal) && <span>обязательные поля</span>}
+                {(errors.policy || errors.personal) && <span className={styles.message}>Error</span>}
             </fieldset>
 
             <button className={styles.submit_btn} type='submit'>Отправить</button>

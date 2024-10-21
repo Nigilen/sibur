@@ -38,6 +38,10 @@
   opacity: 60%;
 }
 
+.nav_link:hover {
+  opacity: 100%;
+}
+
 .logo {
   display: flex;
   position: relative;

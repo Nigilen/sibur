@@ -29,6 +29,9 @@
 .link {
   color: var(--cyan);
 }
+.link:hover {
+  color: var(--green);
+}
 
 .button_accept {
   padding: 10px 24px;
@@ -36,6 +39,11 @@
   background-color: var(--cyan);
   border-radius: 12px;
   font: var(--button-small);
+  transition-duration: .3s;
+}
+
+.button_accept:hover {
+  background-color: var(--green);
 }
 
 .br {

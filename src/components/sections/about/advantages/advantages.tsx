@@ -9,7 +9,7 @@ export const Advantages = () => {
       <ul className={styles.advantages_list}>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/about-item-img.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-future.png" width={387} height={360} alt="" />
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
               Вместе создаем лучшее будущее для людей и&nbsp;планеты
@@ -21,25 +21,25 @@ export const Advantages = () => {
         </li>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/about-item-img.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-tech.png" width={387} height={360} alt="" />
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
-              Вместе создаем лучшее будущее для людей и планеты
+              Используем инновационные технологии
             </h4>
             <p className={styles.item_description}>
-              Работа в СИБУРе выстроена на ESG-принципах. Для нас важны ответственное ведение бизнеса, вторичная переработка материалов и равные возможности для всей команды
+              Мы создаем уникальные решения, не имеющие аналогов в России и мире. Буквально определяем вектор развития индустрии и движем её за собой
             </p>
           </div>
         </li>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/about-item-img.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-exp.png" width={387} height={360} alt="" />
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
-              Вместе создаем лучшее будущее для людей и планеты
+              Растим экспертов для создания умных решений
             </h4>
             <p className={styles.item_description}>
-              Работа в СИБУРе выстроена на ESG-принципах. Для нас важны ответственное ведение бизнеса, вторичная переработка материалов и равные возможности для всей команды
+              Всего за два года молодой специалист в СИБУРе может дорасти до начальной управленческой позиции — начальника смены
             </p>
           </div>
         </li>

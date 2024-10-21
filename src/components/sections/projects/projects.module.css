@@ -78,12 +78,12 @@
   list-style: none;
 }
 
-
-.slider_item {
+.slider_list .slider_item {
+  padding-block-start: 11px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  
+  height: auto;
 }
 
 .slider_control {

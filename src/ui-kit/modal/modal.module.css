@@ -23,7 +23,6 @@
   cursor: pointer;
 }
 
-
 .modal::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
