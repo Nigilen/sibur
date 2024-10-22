@@ -1,5 +1,5 @@
 .form_header {
-  margin-inline-end: 48px;
+  margin-inline-end: 198px;
 }
 
 .form_title {
@@ -140,6 +140,10 @@
 
 
 @media (width < 1440px) {
+  .form_header {
+    margin-inline-end: 48px;
+  }
+  
   .form_description {
     max-width: 370px;
   }
