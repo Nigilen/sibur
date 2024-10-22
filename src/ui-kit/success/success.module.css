@@ -1,11 +1,12 @@
 .success {
   max-width: 448px;
-  margin-inline-end: 48px;
+  margin-inline-end: 78px;
 }
 
 .success_title {
   font: var(--h4-primary);
   margin-block-end: 12px;
+  letter-spacing: -1.96px;
 }
 .success_title span {
   position: relative;
