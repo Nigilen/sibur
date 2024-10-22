@@ -99,8 +99,8 @@ export const Projects = () => {
         <button className={cn(styles.slider_control, styles.slider_control__left, 'swiper-button-prev')} type='button'>
           <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="40.5" cy="40.001" r="40" fill="#008C95"/>
-            <g clip-path="url(#clip0_4911_2218)">
-            <path d="M44.6213 18.6877L18.2337 43.4836M21.2337 40.4836L42.4781 63.2316M21.2337 40.4836L157.066 39.8301L102.347 65.6987L186.571 88.338" stroke="white" stroke-width="7.95287"/>
+            <g clipPath="url(#clip0_4911_2218)">
+            <path d="M44.6213 18.6877L18.2337 43.4836M21.2337 40.4836L42.4781 63.2316M21.2337 40.4836L157.066 39.8301L102.347 65.6987L186.571 88.338" stroke="white" strokeWidth="7.95287"/>
             </g>
             <defs>
             <clipPath id="clip0_4911_2218">
@@ -116,8 +116,8 @@ export const Projects = () => {
 
           <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="40.8193" cy="40.6973" r="40" fill="#008C95"/>
-            <g clip-path="url(#clip0_5127_1842)">
-            <path d="M37.2537 19.384L63.6413 43.1799M60.6413 41.1799L39.3969 63.9279M60.6413 41.1799L-45.1909 40.5264L-20.4721 66.395L-104.696 89.0343" stroke="white" stroke-width="7.95287"/>
+            <g clipPath="url(#clip0_5127_1842)">
+            <path d="M37.2537 19.384L63.6413 43.1799M60.6413 41.1799L39.3969 63.9279M60.6413 41.1799L-45.1909 40.5264L-20.4721 66.395L-104.696 89.0343" stroke="white" strokeWidth="7.95287"/>
             </g>
             <defs>
             <clipPath id="clip0_5127_1842">

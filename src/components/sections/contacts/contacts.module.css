@@ -100,6 +100,7 @@
   border: 1px solid var(--gray);
   overflow: hidden;
   transition-duration: .3s;
+  letter-spacing: -0.9px;
 }
 
 .contacts_item:hover {
