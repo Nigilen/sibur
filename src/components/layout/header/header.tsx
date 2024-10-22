@@ -33,9 +33,11 @@ export const Header = () => {
           <li className={styles.nav_item}>
             <a className={styles.nav_link} href="#contacts">Как это было</a>
           </li>
+          <ActionButton className={cn(styles.action_btn__header, !isOpen && 'visually-hidden')} withArrow />
+          
         </ul>
       </nav>
-      <ActionButton className={styles.action_btn__header} />
+      <ActionButton className={cn(styles.action_btn__header, isOpen && 'visually-hidden')} />
       <button className={cn(styles.burger_btn, isOpen && styles.burger_btn__open)} type="button" onClick={hadnlerOpen}>
         <div className={cn(styles.burger_line, styles.top_line)}></div>
         <div className={cn(styles.burger_line, styles.bottom_line)}></div>
