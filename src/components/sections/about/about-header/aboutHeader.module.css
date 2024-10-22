@@ -5,6 +5,7 @@
 
 .section_caption {
   margin-block-end: 24px;
+  color: var(--dark-blue);
 }
 
 .about_header_text {
