@@ -9,7 +9,7 @@ export const Advantages = () => {
       <ul className={styles.advantages_list}>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/advantage-item-future.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-future.png" width={387} height={360} alt="" quality={100}/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
               Вместе создаем лучшее будущее для людей и&nbsp;планеты
@@ -21,7 +21,7 @@ export const Advantages = () => {
         </li>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/advantage-item-tech.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-tech.png" width={387} height={360} alt="" quality={100}/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
               Используем инновационные технологии
@@ -33,7 +33,7 @@ export const Advantages = () => {
         </li>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
-          <Image className={styles.item_img} src="/advantage-item-exp.png" width={387} height={360} alt="" />
+          <Image className={styles.item_img} src="/advantage-item-exp.png" width={387} height={360} alt="" quality={100}/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
               Растим экспертов для создания умных решений
