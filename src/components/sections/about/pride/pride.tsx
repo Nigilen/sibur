@@ -10,7 +10,7 @@ export const Pride = () => {
           Результатами выпускников наших<br/>образовательных проектов, целью которых<br/>является создание инноваций и развитие<br/>российской экономики
         </p>
       </div>
-      <Image className={styles.pride_img} src="/proud.png" alt="" width={808} height={569} loading="lazy"/>
+      <Image className={styles.pride_img} src="/praid.png" alt="" width={808} height={569} quality={100}/>
     </div>
   );
 };
