@@ -15,7 +15,15 @@
 }
 
 
+.br_768 {
+  display: none;
+}
+
+
 @media (width < 1440px) {
+  .br_768 {
+    display: block;
+  }
   .about_header {
     padding-block: 96px 72px;
   }
