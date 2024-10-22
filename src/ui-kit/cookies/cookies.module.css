@@ -4,7 +4,7 @@
   z-index: 999;
   bottom: 20px;
   width: 100%;
-  max-width: 90vw;
+  max-width: clamp(43rem, 6.4286rem + 76.1905vw, 75rem);;
   margin-inline: auto;
   padding: 24px;
   background-color: var(--bg-light-blue-secondary);
