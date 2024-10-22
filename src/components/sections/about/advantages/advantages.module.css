@@ -109,6 +109,10 @@
   .advantages_list {
     padding-inline: 40px;
   }
+  .advantages_list::-webkit-scrollbar {
+    width: 0;
+  }
+  
 }
 @media (width < 768px) {
   .item_img { 
