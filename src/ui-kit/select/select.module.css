@@ -25,6 +25,18 @@
   cursor: pointer;
 }
 
+.placeholder:focus {
+  outline: none;
+  background-color: #EDEFF1;
+  border: 1px solid var(--transparent-blue-primary);
+}
+
+.placeholder:focus-visible {
+  outline: none;
+  background-color: #EDEFF1;
+  border: 1px solid var(--transparent-blue-primary);
+}
+
 .select {
   position: absolute;
   top: 101%;
