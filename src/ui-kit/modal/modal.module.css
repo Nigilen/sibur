@@ -23,6 +23,13 @@
   cursor: pointer;
 }
 
+.close_btn:hover svg {
+  fill: var(--green);
+}
+.close_btn:hover path {
+  opacity: 1;
+}
+
 .modal::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
