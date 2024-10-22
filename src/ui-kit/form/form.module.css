@@ -74,28 +74,6 @@
   gap: 12px;
 }
 
-.select_wrapper {
-  position: relative;
-}
-
-.select_wrapper::after {
-  display: flex;
-  content: '';
-  background-image: url('/select-arrow.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 12px;
-  pointer-events: none;
-  background-color: var(--dark-blue);
-  opacity: 30%;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-}
 
 .label {
   opacity: 60%;

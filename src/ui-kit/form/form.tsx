@@ -3,17 +3,48 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './form.module.css';
 import cn from 'classnames';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Success } from '../success/success';
 import { LevelContext } from '@/src/context/context';
+import { Select } from '../select/select';
 
 
-type Inputs = {
-  firstname: string
-  lastname: string
-  patronymic: string
-  exampleRequired: string
-  personal: string
+const posts = [
+  { "title": "Директор", "value": "director" },
+  { "title": "Учитель", "value": "teacher" },
+  { "title": "Родитель", "value": "parent" }
+]
+const cities = [
+  {"title": "Благовещенск","value": "blagoveshchensk" },
+  {"title": "Воронеж","value": "voronezh" },
+  {"title": "Дзержинск","value": "dzerzhinsk" },
+  {"title": "Казань","value": "kazan" },
+  {"title": "Красноярск","value": "krasnoyarsk" },
+  {"title": "Кстово","value": "kstovo" },
+  {"title": "Тверь","value": "tver" },
+  {"title": "Томск","value": "tomsk" },
+  {"title": "Тобольск","value": "tobolsk" },
+  {"title": "с. Черниговка", "value": "chernigovka"},
+  {"title": "Усть-Лужское с/п", "value": "ust-luzhskoe"},
+  {"title": "Курск","value": "kursk" },
+  {"title": "Москва и МО", "value": "moskva-i-mo"},
+  {"title": "Нижневартовск","value": "nizhnevartovsk" },
+  {"title": "Нижнекамск","value": "nizhnekamsk" },
+  {"title": "Новокуйбышевск","value": "novokujbyshevsk" },
+  {"title": "Пермь","value": "perm" }
+]
+
+export type Inputs = {
+  firstname: string,
+  lastname: string,
+  patronymic: string,
+  number: string,
+  address: string,
+  email: string,
+  phone: string,
+  city: string,
+  post: string,
+  personal: string,
   policy: string
 }
 
@@ -22,18 +53,39 @@ export const Form = () => {
     register,
     handleSubmit,
     watch,
+    setValue,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
 
+
   const { isSuccess, setSuccess } = useContext(LevelContext);
+  const postName = register("post");
+  const cityName = register("city");
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = () => {
     setSuccess(true);
-    console.log(data);
+    reset();
   }
-
-  console.log(watch("firstname"));
   
+  const [selectPost, setSelectPost] = useState('');
+  const [selectCity, setSelectCity] = useState('');
+
+  const handleSelectPost = (value: string) => {
+    setSelectPost(value);
+    setValue("post", value);
+  };
+  const handleSelectCity = (value: string) => {
+    setSelectCity(value);
+    setValue("city", value);
+  };
+  
+  const selectedPost = posts.find((item) => item.value === selectPost);
+  const selectedCity = cities.find((item) => item.value === selectCity);
+  
+  console.log(watch("city")); 
+  console.log(watch("post")); 
+
   return (
     <>
       {!isSuccess ? 
@@ -50,58 +102,47 @@ export const Form = () => {
                 <input className={styles.input} id='firstname' type="text" placeholder='Имя' {...register("firstname")}/>
               </label>
               <label htmlFor="lastname" className={styles.label_wrapper}>
-                <input className={styles.input} id='lastname' type="text" placeholder='Фамилия' {...register("exampleRequired")}/>
+                <input className={styles.input} id='lastname' type="text" placeholder='Фамилия' {...register("lastname")}/>
               </label>
               <label htmlFor="patronymic" className={styles.label_wrapper}>
-                <input className={styles.input} id='patronymic' placeholder='Отчество' type="text" />
+                <input className={styles.input} id='patronymic' placeholder='Отчество' type="text" {...register("patronymic")} />
               </label>
             </fieldset>
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__other)}>
               <label htmlFor='post' className={styles.label_wrapper}>
                 <span className={styles.label}>Ваша должность</span>
-                <div className={styles.select_wrapper}>
-                  {/* TODO: стилизировать выпадающий список */}
-                  <select className={styles.input} name="post" id="post"> 
-                    <option value="">Директор</option>
-                    <option value="">Учитель</option>
-                    <option value="">Родитель</option>
-                  </select>
-                </div>
+                <Select 
+                  selected={selectedPost || null}
+                  options={posts} 
+                  placeholder='Статус' 
+                  onChange={handleSelectPost}
+                  name={postName.name}
+                />
               </label>
+
               <label htmlFor="city" className={styles.label_wrapper}>
                 <span className={styles.label}>Город</span>
-                <div className={styles.select_wrapper}>
-                  <select className={styles.input} name="city" id="city">
-                    <option value="">Благовещенск</option>
-                    <option value="">Воронеж</option>
-                    <option value="">Дзержинск</option>
-                    <option value="">Казань</option>
-                    <option value="">Красноярск</option>
-                    <option value="">Кстово</option>
-                    <option value="">Тверь</option>
-                    <option value="">Тобольск</option>
-                    <option value="">с. Черниговка</option>
-                    <option value="">Усть-Лужское с/п</option>
-                    <option value="">Курск</option>
-                    <option value="">Москва и МО</option>
-                    <option value="">Нижневартовск</option>
-                    <option value="">Нижнекамск</option>
-                    <option value="">Новокуйбышевск</option>
-                    <option value="">Пермь</option>
-                  </select>
-                </div>
+                <Select 
+                  selected={selectedCity || null}
+                  options={cities} 
+                  placeholder='Город' 
+                  onChange={handleSelectCity}
+                  name={cityName.name}
+                  mode='cells'
+                />
+                
               </label>
             </fieldset>
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__school)}>
               <label htmlFor="number" className={styles.label_wrapper}>
                 <span className={styles.label}>Номер школы</span>
-                <input className={styles.input} id='number' type="text" />
+                <input className={styles.input} id='number' type="text" {...register("number")}/>
               </label>
               <label htmlFor="address" className={styles.label_wrapper}>
                 <span className={styles.label}>Адрес школы</span>
-                <input className={styles.input} id='address' type="text" />
+                <input className={styles.input} id='address' type="text" {...register("address")}/>
               </label>
             </fieldset>
 
@@ -109,11 +150,11 @@ export const Form = () => {
               <legend className={styles.fieldset_caption}>Контактные данные</legend>
               <label className={styles.label_wrapper} htmlFor="phone">
                 <span className='visually-hidden'>Телефон</span>
-                <input className={styles.input} id='phone' type="phone" placeholder='Телефон'/> 
+                <input className={styles.input} id='phone' type="phone" placeholder='Телефон' {...register("phone")}/> 
               </label>
               <label className={styles.label_wrapper} htmlFor="email">
                 <span className='visually-hidden'>Email</span>
-                <input className={styles.input} id='email' type="email" placeholder='Email' />
+                <input className={styles.input} id='email' type="email" placeholder='Email' {...register("email")}/>
               </label>
             </fieldset>
 
@@ -143,6 +184,8 @@ export const Form = () => {
               </label>
                 {(errors.policy || errors.personal) && <span className={styles.message}>Error</span>}
             </fieldset>
+
+            
 
             <button className={styles.submit_btn} type='submit'>Отправить</button>
           </form>
