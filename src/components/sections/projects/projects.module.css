@@ -211,4 +211,7 @@
     height: 196px;
     margin-block-end: 40px;
   }
+  .projects_description {
+    padding-inline: 16px;
+  }
 }
