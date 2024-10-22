@@ -41,6 +41,7 @@
 }
 
 .fieldset__agreements label {
+  position: relative;
   display: flex;
   align-items: center;
   color: var(--transparent-blue-secondary);
@@ -59,6 +60,35 @@
   color: var(--green);
 }
 
+.fieldset__agreements .message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.fieldset__agreements .custom_checkbox {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--cyan);
+  border-radius: 4px;
+  margin-inline-end: 12px;
+}
+
+.fieldset__agreements input[type='checkbox']:checked + .custom_checkbox {
+  background-image: url('/agree.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--cyan);
+}
+.fieldset__agreements input[type='checkbox']:focus-visible + .custom_checkbox {
+  outline: 2px solid var(--gray);
+}
+
+.custom_checkbox.error {
+  border-color: var(--pink);
+}
 
 .fieldset_caption {
   justify-self: flex-start;
@@ -71,6 +101,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
 }
 
 
@@ -110,18 +141,37 @@
   color: var(--dark-blue);
 }
 
-.errors .input {
+
+.error {
   border-color: var(--pink);
   color: var(--pink);
 }
-.errors input {
+.error:active {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.error:focus {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.error:focus-visible {
   border-color: var(--pink);
   color: var(--pink);
 }
 
-.errors .message {
+.error::placeholder {
   color: var(--pink);
 }
+
+
+.message {
+  /* position: absolute; */
+  top: 103%;
+  left: 0;
+  color: var(--pink);
+  font: var(--p-medium-500);
+}
+
 
 .submit_btn {
   grid-column: 2 / -1;

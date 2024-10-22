@@ -37,6 +37,15 @@
   border: 1px solid var(--transparent-blue-primary);
 }
 
+.placeholder_error {
+  border: 1px solid var(--pink);
+  color: var(--pink);
+}
+
+.placeholder_error::placeholder {
+  color: var(--pink);
+}
+
 .select {
   position: absolute;
   top: 101%;
@@ -78,6 +87,11 @@
   background-color: var(--green);
   opacity: 100%;
   top: 20%;
+}
+
+.selectWrapper:has(.placeholder_error) .arrow {
+  background-color: var(--pink);
+  opacity: 100%;
 }
 
 .cells {

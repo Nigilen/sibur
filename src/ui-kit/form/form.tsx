@@ -7,6 +7,7 @@ import { useContext, useState } from 'react';
 import { Success } from '../success/success';
 import { LevelContext } from '@/src/context/context';
 import { Select } from '../select/select';
+import { ErrorMessage } from "@hookform/error-message";
 
 
 const posts = [
@@ -56,12 +57,42 @@ export const Form = () => {
     setValue,
     reset,
     formState: { errors },
-  } = useForm<Inputs>();
-
+  } = useForm<Inputs>({criteriaMode: "all"});
 
   const { isSuccess, setSuccess } = useContext(LevelContext);
-  const postName = register("post");
-  const cityName = register("city");
+
+  const postName = register("post", { 
+    required: "Обязательное поле",
+    pattern: {
+      value: /[A-я]/,
+      message: "Только буквы",
+    },
+    maxLength: {
+      value: 20,
+      message: "Не больше 15 символов",
+    },
+    minLength: {
+      value: 2,
+      message: "Не меньше 2 символов",
+    },
+  });
+  
+  const cityName = register("city", { 
+    required: "Обязательное поле",
+    pattern: {
+      value: /[A-я]/,
+      message: "Только буквы",
+    },
+    maxLength: {
+      value: 20,
+      message: "Не больше 15 символов",
+    },
+    minLength: {
+      value: 2,
+      message: "Не меньше 2 символов",
+    },
+  });
+  
 
   const onSubmit: SubmitHandler<Inputs> = () => {
     setSuccess(true);
@@ -98,14 +129,86 @@ export const Form = () => {
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__fullname)}>
               <legend className={styles.fieldset_caption}>ФИО</legend>
-              <label htmlFor={cn(styles.label_wrapper, "firstname")}>
-                <input className={styles.input} id='firstname' type="text" placeholder='Имя' {...register("firstname")}/>
+              <label htmlFor='firstname' className={styles.label_wrapper}>
+                <input className={cn(styles.input, [errors.firstname && styles.error])} id='firstname' type="text" placeholder='Имя' {...register("firstname", { 
+                  required: "Обязательное поле",
+                  pattern: {
+                    value: /[а-яa-z]/gi,
+                    message: "Только буквы",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: "Не больше 15 символов",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "Не меньше 2 символов",
+                  },
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="firstname"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
               <label htmlFor="lastname" className={styles.label_wrapper}>
-                <input className={styles.input} id='lastname' type="text" placeholder='Фамилия' {...register("lastname")}/>
+                <input className={cn(styles.input, [errors.lastname && styles.error])} id='lastname' type="text" placeholder='Фамилия' {...register("lastname", { 
+                  required: "Обязательное поле",
+                  pattern: {
+                    value: /[а-яa-z]/gi,
+                    message: "Только буквы",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: "Не больше 15 символов",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "Не меньше 2 символов",
+                  },
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="lastname"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
               <label htmlFor="patronymic" className={styles.label_wrapper}>
-                <input className={styles.input} id='patronymic' placeholder='Отчество' type="text" {...register("patronymic")} />
+                <input className={cn(styles.input, [errors.patronymic && styles.error])} id='patronymic' placeholder='Отчество' type="text" {...register("patronymic", { 
+                  required: "Обязательное поле",
+                  pattern: {
+                    value: /[а-яa-z]/gi,
+                    message: "Только буквы",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: "Не больше 15 символов",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "Не меньше 2 символов",
+                  },
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="patronymic"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
             </fieldset>
 
@@ -118,6 +221,17 @@ export const Form = () => {
                   placeholder='Статус' 
                   onChange={handleSelectPost}
                   name={postName.name}
+                  isError={errors.post ? true : false}
+                />
+                <ErrorMessage
+                  errors={errors}
+                  name="post"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
                 />
               </label>
 
@@ -130,19 +244,69 @@ export const Form = () => {
                   onChange={handleSelectCity}
                   name={cityName.name}
                   mode='cells'
+                  isError={errors.city ? true : false}
                 />
-                
+                <ErrorMessage
+                  errors={errors}
+                  name="city"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
             </fieldset>
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__school)}>
               <label htmlFor="number" className={styles.label_wrapper}>
                 <span className={styles.label}>Номер школы</span>
-                <input className={styles.input} id='number' type="text" {...register("number")}/>
+                <input className={cn(styles.input, [errors.number && styles.error])} id='number' type="text" {...register("number", { 
+                  required: "Обязательное поле",
+                  pattern: {
+                    value: /\d/,
+                    message: "Только цифры",
+                  },
+                  maxLength: {
+                    value: 3,
+                    message: "Не больше 3 символов",
+                  }
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="number"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
               <label htmlFor="address" className={styles.label_wrapper}>
                 <span className={styles.label}>Адрес школы</span>
-                <input className={styles.input} id='address' type="text" {...register("address")}/>
+                <input className={cn(styles.input, [errors.address && styles.error])} id='address' type="text" {...register("address", { 
+                  required: "Обязательное поле",
+                  maxLength: {
+                    value: 50,
+                    message: "Не больше 50 символов",
+                  },
+                  minLength: {
+                    value: 5,
+                    message: "Не меньше 5 символов",
+                  },
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="address"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
             </fieldset>
 
@@ -150,42 +314,92 @@ export const Form = () => {
               <legend className={styles.fieldset_caption}>Контактные данные</legend>
               <label className={styles.label_wrapper} htmlFor="phone">
                 <span className='visually-hidden'>Телефон</span>
-                <input className={styles.input} id='phone' type="phone" placeholder='Телефон' {...register("phone")}/> 
+                <input className={cn(styles.input, [errors.phone && styles.error])} id='phone' type="phone" placeholder='Телефон' {...register("phone", { 
+                  required: "Обязательное поле",
+                  pattern: {
+                    value: /\d/,
+                    message: "Только цифры",
+                  },
+                  maxLength: {
+                    value: 12,
+                    message: "Не больше 12 символов",
+                  },
+                  minLength: {
+                    value: 11,
+                    message: "Не меньше 11 символов",
+                  },
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="phone"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
               <label className={styles.label_wrapper} htmlFor="email">
                 <span className='visually-hidden'>Email</span>
-                <input className={styles.input} id='email' type="email" placeholder='Email' {...register("email")}/>
+                <input className={cn(styles.input, [errors.email && styles.error])} id='email' type="email" placeholder='Email' {...register("email", { 
+                  required: "Обязательное поле"
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="email"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
               </label>
             </fieldset>
 
             
             <fieldset className={cn(styles.fieldset, styles.fieldset__agreements)}>
               <label htmlFor="personal">
-                <input id='personal' type="checkbox" 
-                  {...register(
-                    "personal", 
-                    { 
-                      required: true, 
-                    }
-                  )}/>
+                <input id='personal' className={'visually-hidden'} type="checkbox" {...register("personal", { 
+                  required: "Обязательное поле",
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="personal"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
+                <span className={cn(styles.custom_checkbox, errors.personal && styles.error)}></span>
                 Согласен с обработкой&nbsp;
                 <a href='./personal.pdf' target='blank'>персональных данных</a>
+                
               </label>
-              <label htmlFor="policy" className={cn(errors.policy && styles.errors)}>
-                <input id='policy' type="checkbox" 
-                  {...register(
-                    "policy", 
-                    { 
-                      required: true, 
-                    }
-                  )}/>
+              <label htmlFor="policy">
+                <input id='policy' className={'visually-hidden'} type="checkbox" {...register("policy", { 
+                  required: "Обязательное поле",
+                })}/>
+                <ErrorMessage
+                  errors={errors}
+                  name="policy"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>{message}</span>
+                    ))
+                  }
+                />
+                <span className={cn(styles.custom_checkbox, errors.policy && styles.error)}></span>
                 Согласен с&nbsp;
                 <a href='./policy.pdf' target='blank'>политикой конфиденциальности</a>
+                
               </label>
-                {(errors.policy || errors.personal) && <span className={styles.message}>Error</span>}
+                
             </fieldset>
-
-            
 
             <button className={styles.submit_btn} type='submit'>Отправить</button>
           </form>

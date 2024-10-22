@@ -52,15 +52,6 @@ dialog {
   color: inherit;
 }
 
-select {
-  font: inherit;
-  border: none;
-  color: inherit;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 button {
   background: transparent;
   border: none;

@@ -18,6 +18,7 @@ type SelectProps = {
   onChange?: (selected: Option['value']) => void;
   onClose?: () => void;
   name: string;
+  isError: boolean;
 };
 
 export const Select = (props: SelectProps) => {
@@ -29,17 +30,13 @@ export const Select = (props: SelectProps) => {
     selected,
     onChange,
     onClose,
-    name
+    name,
+    isError
   } = props;
   
   
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-  
-  useEffect(() => {
-    // inputRef?.current?.disabled = true;
-  }, []);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -59,12 +56,10 @@ export const Select = (props: SelectProps) => {
 
   const handleOptionClick = (value: Option['value']) => {
     setIsOpen(false);
-    console.log('A')
     onChange?.(value);
   };
   const handlePlaceHolderClick: MouseEventHandler<HTMLInputElement> = () => {
     setIsOpen((prev) => !prev);
-    console.log('B')
   };
 
   return (
@@ -76,16 +71,14 @@ export const Select = (props: SelectProps) => {
     >
       <div className={cn(styles.arrow, isOpen && styles.arrow_open)} onClick={handlePlaceHolderClick}></div>
       <input
-        ref={inputRef}
-        readOnly
-        className={styles.placeholder}
+        // readOnly
+        className={cn(styles.placeholder, isError && styles.placeholder_error)}
         data-status={status}
         data-selected={!!selected?.value}
-        defaultValue={selected?.title || ''}
+        defaultValue={selected?.title || undefined}
         onClick={handlePlaceHolderClick}
         placeholder={selected?.title || placeholder}
         name={name}
-        role='button'
         tabIndex={0}
         type='text'
       />
