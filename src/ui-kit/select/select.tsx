@@ -4,6 +4,7 @@ import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import styles from './select.module.css';
 import { Option } from './option/option';
 import cn from 'classnames';
+import { useFormContext } from 'react-hook-form';
 
 
 type Option = { title: string; value: string };
@@ -33,6 +34,7 @@ export const Select = (props: SelectProps) => {
     name,
     isError
   } = props;
+  const { register, setValue } = useFormContext()
   
   
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -54,9 +56,10 @@ export const Select = (props: SelectProps) => {
     };
   }, [isOpen, onClose]);
 
-  const handleOptionClick = (value: Option['value']) => {
+  const handleOptionClick = (value: Option['value'], title: Option['title'] ) => {
+    setValue(name, title, { shouldValidate: true });
+    onChange?.(title);
     setIsOpen(false);
-    onChange?.(value);
   };
   const handlePlaceHolderClick: MouseEventHandler<HTMLInputElement> = () => {
     setIsOpen((prev) => !prev);
@@ -78,9 +81,9 @@ export const Select = (props: SelectProps) => {
         defaultValue={selected?.title || undefined}
         onClick={handlePlaceHolderClick}
         placeholder={selected?.title || placeholder}
-        name={name}
         tabIndex={0}
         type='text'
+        {...register(name, { required: 'Обязательное поле' })}
       />
 
       {isOpen && 

@@ -5,7 +5,7 @@ type Option = { title: string; value: string };
 
 type OptionProps = {
   option: Option;
-  onClick: (value: Option['value']) => void;
+  onClick: (value: Option['value'], title: Option['title']) => void;
 };
 
 export const Option = (props: OptionProps) => {
@@ -14,17 +14,13 @@ export const Option = (props: OptionProps) => {
     onClick,
   } = props;
 
-  const handleClick =
-    (clickedValue: Option['value']): MouseEventHandler<HTMLLIElement> =>
-    () => {
-      onClick(clickedValue);
-    };
+  const handleClick = (clickedValue: Option['value'], clickedTitle: Option['title']): MouseEventHandler<HTMLLIElement> => () => {onClick(clickedValue, clickedTitle);};
 
   return (
     <li
       className={styles.option}
       value={value}
-      onClick={handleClick(value)}
+      onClick={handleClick(value, title)}
       tabIndex={0}
     >
       {title}

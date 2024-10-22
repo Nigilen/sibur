@@ -102,5 +102,15 @@
   column-fill: balance;
   column-width: max-content;
   /* padding-inline-end: 80px; */
+}
+
+.cells .option {
   font: var(--menu-primary);
+  
+}
+
+@media (width < 1440px) {
+  .cells {
+    column-count: 1;
+  }
 }
