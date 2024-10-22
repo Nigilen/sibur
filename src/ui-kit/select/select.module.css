@@ -7,7 +7,7 @@
 }
 
 .selectWrapper:hover .placeholder {
-  background-color: #FFFFFF;
+  border: 1px solid var(--transparent-blue-primary);
 }
 .selectWrapper:hover .arrow {
   background-color: var(--green);

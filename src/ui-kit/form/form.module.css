@@ -88,8 +88,7 @@
 }
 
 .input:hover {
-  background-color: var(--white, #FFFFFF);
-  border: 1px solid #F7F8FA;
+  border: 1px solid var(--transparent-blue-primary);
 }
 .input:focus {
   outline: none;
