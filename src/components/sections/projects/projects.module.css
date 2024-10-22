@@ -104,7 +104,9 @@
   transform: translateY(-50%);
 }
 
-
+.slider_control:hover circle {
+  fill: var(--green);
+}
 
 .project_img {
   border-radius: 32px;
@@ -140,6 +142,10 @@
   align-self: center;
 }
 
+.project_link:hover {
+  background-color: var(--green);
+}
+
 
 
 
@@ -151,7 +157,7 @@
     margin-inline: 52px;
   }
 
-  .slider_control img {
+  .slider_control svg {
     width: 55px;
     height: 55px;
   }
@@ -194,7 +200,7 @@
     margin-inline: 16px;
   }
 
-  .slider_control img {
+  .slider_control svg {
     width: 41px;
     height: 41px;
   }
