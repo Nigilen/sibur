@@ -47,6 +47,12 @@
 }
 
 @media (width < 768px) {
+  .modal {
+    max-height: max-content;
+    position: absolute;
+    margin-top: 120px;
+    margin-inline: auto;
+  }
 
   .dialog__wrapper {
     padding: 24px;
