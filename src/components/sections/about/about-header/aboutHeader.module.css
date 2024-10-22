@@ -21,6 +21,7 @@
   }
   .about_header_text {
     width: 691px;
+    margin-inline: auto;
   }
 }
 @media (width < 768px) {

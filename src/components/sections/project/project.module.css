@@ -89,6 +89,7 @@
 
 .project_section:nth-of-type(2) .section_img {
   border-radius: 32px;
+  margin-inline: auto;
 }
 
 .project_section:last-of-type .section_content {
