@@ -8,8 +8,21 @@
   margin-block-end: 12px;
 }
 .success_title span {
+  position: relative;
   font: var(--h4-primary-italic);
   color: var(--green);
+}
+
+.success_title span::after {
+  background-image: url('/decor-success.svg');
+  content: '';
+  position: absolute;
+  bottom: 32%;
+  left: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 63.47px;
+  height: 55.51px;
 }
 
 .success_description {
@@ -20,12 +33,16 @@
 
 @media (width < 1440px) {
   .success {
-    margin-inline-end: 250px;
+    margin-inline-end: 230px;
   }
 }
 
 @media (width < 768px) {
   .success {
     margin-inline-end: 0;
+  }
+  .success_title span::after {
+    width: 34.88px;
+    height: 30.51px;
   }
 }
