@@ -14,17 +14,17 @@ export const Hero = () => {
 
       <ul className={styles.badges_list}>
         <li className={styles.badge}>
-          <Image className={styles.badge_icon} src="./badge-icon-people.svg" alt="" width={50} height={50}/>
+          <Image className={styles.badge_icon} src="./badge-icon-people.svg" alt="" width={50} height={50} quality={100} />
           <p className={styles.badge_caption}>Узнают больше о химии <span>&#62;15 000</span>учеников</p>
         </li>
         <li className={cn(styles.badge, styles.badge__pink)}>
-          <Image className={styles.badge_icon} src="./badge-icon-school.svg" alt="" width={50} height={50}/>
+          <Image className={styles.badge_icon} src="./badge-icon-school.svg" alt="" width={50} height={50} quality={100}/>
           <p className={styles.badge_caption}>Примут участие <span>&#62;200</span>школ</p>
         </li>
       </ul>
 
       <div className={styles.hero_img_container}>
-        <Image className={styles.hero_img} width={809} height={867} src="/hero-img.png" alt="" priority/>
+        <Image className={styles.hero_img} width={809} height={867} src="/hero-img.png" alt="" priority quality={100}/>
       </div>
 
     </section>
