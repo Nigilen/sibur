@@ -96,7 +96,7 @@
 
 .cells {
   display: block;
-  column-count: 3;
+  column-count: 2;
   column-rule: 1px solid #00313C33;
   column-gap: 24px;
   column-fill: balance;
