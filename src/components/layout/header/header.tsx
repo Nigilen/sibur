@@ -23,16 +23,16 @@ export const Header = () => {
         </a>
         <ul className={cn(styles.nav_list, isMenuOpen && styles.mob_menu_open)}>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#project">О проекте</a>
+            <a className={styles.nav_link} href="#project" onClick={() => setIsMenuOpen(!isMenuOpen)}>О проекте</a>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#about">О компании</a>
+            <a className={styles.nav_link} href="#about" onClick={() => setIsMenuOpen(!isMenuOpen)}>О компании</a>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#projects">Наши проекты</a>
+            <a className={styles.nav_link} href="#projects" onClick={() => setIsMenuOpen(!isMenuOpen)}>Наши проекты</a>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#contacts">Как это было</a>
+            <a className={styles.nav_link} href="#contacts" onClick={() => setIsMenuOpen(!isMenuOpen)}>Как это было</a>
           </li>
           <ActionButton className={cn(styles.action_btn__header, !isMenuOpen && 'visually-hidden')} withArrow />
           
