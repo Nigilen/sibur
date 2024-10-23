@@ -9,6 +9,7 @@ import { LevelContext } from '@/src/context/context';
 import { Select } from '../select/select';
 import { ErrorMessage } from '@hookform/error-message';
 import { sendRequest } from '@/src/api/internal';
+import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 
 const posts = [
   { title: 'Директор', value: 'director' },
@@ -108,8 +109,8 @@ export const Form = () => {
                     {...methods.register('name', {
                       required: 'Обязательное поле',
                       pattern: {
-                        value: /[а-яa-z]/gi,
-                        message: 'Только буквы',
+                        value: onlyCyrillicAndSpacesRegex,
+                        message: 'Допускается только кириллица, пробелл и тире',
                       },
                       maxLength: {
                         value: 15,
@@ -143,8 +144,8 @@ export const Form = () => {
                     {...methods.register('surname', {
                       required: 'Обязательное поле',
                       pattern: {
-                        value: /[а-яa-z]/gi,
-                        message: 'Только буквы',
+                        value: onlyCyrillicAndSpacesRegex,
+                        message: 'Допускается только кириллица, пробелл и тире',
                       },
                       maxLength: {
                         value: 15,
@@ -175,7 +176,13 @@ export const Form = () => {
                     id="middle_name"
                     placeholder="Отчество"
                     type="text"
-                    {...methods.register('middle_name')}
+                    {...methods.register('middle_name', {
+                      required: false,
+                      pattern: {
+                        value: onlyCyrillicAndSpacesRegex,
+                        message: 'Допускается только кириллица, пробелл и тире',
+                      },
+                    })}
                   />
                   <ErrorMessage
                     errors={methods.formState.errors}
@@ -258,7 +265,7 @@ export const Form = () => {
                       required: 'Обязательное поле',
                       pattern: {
                         value: /\d/,
-                        message: 'Только цифры',
+                        message: 'Допускаются только цифры',
                       },
                       maxLength: {
                         value: 8,
@@ -289,6 +296,10 @@ export const Form = () => {
                     type="text"
                     {...methods.register('adress', {
                       required: 'Обязательное поле',
+                      pattern: {
+                        value: addressRegexp,
+                        message: 'Недопустимые символы',
+                      },
                       maxLength: {
                         value: 50,
                         message: 'Не больше 50 символов',
@@ -367,6 +378,10 @@ export const Form = () => {
                     placeholder="Email"
                     {...methods.register('email', {
                       required: 'Обязательное поле',
+                      pattern: {
+                        value: emailRegex,
+                        message: 'Введите валидный email',
+                      },
                     })}
                   />
                   <ErrorMessage
