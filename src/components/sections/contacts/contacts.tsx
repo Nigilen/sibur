@@ -50,7 +50,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://домполимеров.рф/">
+          <a className={styles.contacts_link} href="https://домполимеров.рф/" target='blank'>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -70,7 +70,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://vk.com/career.sibur">
+          <a className={styles.contacts_link} href="https://vk.com/career.sibur" target='blank'>
             <div className={styles.contacts_icon}>
               <svg fill="#ffffff" viewBox="-2.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
