@@ -110,7 +110,7 @@ export const Form = () => {
                       required: 'Обязательное поле',
                       pattern: {
                         value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробелл и тире',
+                        message: 'Допускается только кириллица, пробел и тире',
                       },
                       maxLength: {
                         value: 15,
@@ -145,7 +145,7 @@ export const Form = () => {
                       required: 'Обязательное поле',
                       pattern: {
                         value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробелл и тире',
+                        message: 'Допускается только кириллица, пробел и тире',
                       },
                       maxLength: {
                         value: 15,
@@ -180,7 +180,7 @@ export const Form = () => {
                       required: false,
                       pattern: {
                         value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробелл и тире',
+                        message: 'Допускается только кириллица, пробел и тире',
                       },
                     })}
                   />
