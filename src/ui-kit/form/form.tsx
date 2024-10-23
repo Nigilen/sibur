@@ -53,7 +53,7 @@ export type Inputs = {
 
 export const Form = () => {
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
-  
+
   const { isSuccess, setSuccess } = useContext(LevelContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -400,7 +400,7 @@ export const Form = () => {
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__agreements)}>
-                <label htmlFor="personal">
+                <label htmlFor="personal" className={styles.checkbox}>
                   <input
                     id="personal"
                     className={'visually-hidden'}
@@ -424,12 +424,14 @@ export const Form = () => {
                   <span
                     className={cn(styles.custom_checkbox, methods.formState.errors.personal && styles.error)}
                   ></span>
-                  Согласен с обработкой&nbsp;
-                  <a href="./personal.pdf" target="blank">
-                    персональных данных
-                  </a>
+                  <span className={styles.checkbox__text}>
+                    Согласен с обработкой {' '}
+                    <a href="./personal.pdf" target="_blank">
+                      персональных данных
+                    </a>
+                  </span>
                 </label>
-                <label htmlFor="policy">
+                <label htmlFor="policy" className={styles.checkbox}>
                   <input
                     id="policy"
                     className={'visually-hidden'}
@@ -451,10 +453,12 @@ export const Form = () => {
                     }
                   />
                   <span className={cn(styles.custom_checkbox, methods.formState.errors.policy && styles.error)}></span>
-                  Согласен с&nbsp;
-                  <a href="./policy.pdf" target="blank">
-                    политикой конфиденциальности
-                  </a>
+                  <span className={styles.checkbox__text}>
+                    Согласен с {' '}
+                    <a href="./policy.pdf" target="_blank">
+                      политикой конфиденциальности
+                    </a>
+                  </span>
                 </label>
               </fieldset>
 
