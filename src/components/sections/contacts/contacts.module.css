@@ -168,7 +168,7 @@
     letter-spacing: -0.026em;
   }
   .contacts {
-    margin-inline: 0;
+    margin-inline: auto;
     margin-block-end: 96px;
 
     background-position: -223px -486px;

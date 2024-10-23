@@ -14,6 +14,7 @@ body {
   color: var(--dark-blue, #00313C);
   background: var(--white, #FFFFFF);
   font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
+  width: 100%;
   /* display: flex;
   flex-direction: column; */
 }
