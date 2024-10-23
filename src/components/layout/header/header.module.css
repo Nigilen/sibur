@@ -12,6 +12,8 @@
   z-index: 10;
   transition-duration: .8s;
   transition-timing-function: cubic-bezier(1,-0.01,.11,.83);
+
+  inset-inline: 0;
 }
 
 .action_btn__header {

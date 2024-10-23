@@ -1,5 +1,7 @@
 .about_main {
   padding-block: 120px;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .about_main_title {

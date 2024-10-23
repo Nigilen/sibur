@@ -5,8 +5,8 @@ html {
 
 html,
 body {
-  max-width: 1440px;
-  margin-inline: auto;
+  /* max-width: 1440px; */
+  /* margin-inline: auto; */
   overflow-x: hidden;
 }
 
@@ -14,6 +14,8 @@ body {
   color: var(--dark-blue, #00313C);
   background: var(--white, #FFFFFF);
   font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
+  /* display: flex;
+  flex-direction: column; */
 }
 
 body:has(.modal[open]) {
@@ -68,6 +70,8 @@ dialog::backdrop {
 
 .container {
   padding-inline: 120px;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .visually-hidden {

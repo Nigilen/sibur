@@ -1,6 +1,8 @@
 .projects {
   padding-block: 72px;
   position: relative;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .decor {

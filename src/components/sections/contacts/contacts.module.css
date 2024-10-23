@@ -10,6 +10,9 @@
   background-size: 140%;
   background-color: var(--bg-light-blue-secondary);
   border-radius: 48px;
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .decor {

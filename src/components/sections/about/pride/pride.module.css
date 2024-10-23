@@ -8,6 +8,8 @@
   border-radius: 48px;
   background-color: var(--bg-light-blue-secondary);
   overflow: hidden;
+  max-width: 1392px;
+  margin-inline: auto;
 }
 
 .pride_title {
