@@ -4,7 +4,7 @@ import cn from 'classnames';
 export const AboutHeader = () => {
   return (
     <div className={cn(styles.about_header, 'container')}>
-      <h2 className='section_caption'>О компании</h2>
+      <h2 className={cn('section_caption', styles.section_caption)}>О компании</h2>
       <p className={styles.about_header_text}>
         СИБУР — одна 
         <br className={styles.br_768} /> из лидирующих компаний 
