@@ -51,6 +51,45 @@
   z-index: 2;
 }
 
+@media (width > 1440px) {
+  .video::after {
+    background-image: 
+      url('/video-decor-star.svg')
+      ;
+    top: -160px;
+    left: -10%;
+    width: 150%;
+    background-size: 
+      112px
+      ;
+    background-position: 
+      70% 8%
+      ;
+    background-repeat: no-repeat;
+  }
+  /* .video::after {
+    background-image: 
+      url('/video-decor-blue-line-wild.svg'),
+      url('/video-decor-star.svg'),
+      url('/video-decor-red-line-wild.svg'),
+      ;
+    top: -160px;
+    left: -10%;
+    width: 150%;
+    background-size: 
+      250px, 
+      112px, 
+      794px,
+      ;
+    background-position: 
+      4% 6%, 
+      70% 8%, 
+      94% 98%,
+      ;
+    background-repeat: no-repeat;
+  } */
+}
+
 @media (width < 1440px) {
   .video {
     padding-inline: 40px;
