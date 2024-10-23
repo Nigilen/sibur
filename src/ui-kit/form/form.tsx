@@ -59,23 +59,27 @@ export const Form = () => {
 
   
   const testData = {
-    name: 'string',
-    surname: 'string',
-    middle_name: 'string',
-    school: 'string',
-    adress: 'string',
-    email: 'string',
-    phone_number: 'string',
-    city: 'string',
-    status: 'string'
+    "name": "string",
+    "surname": "string",
+    "middle_name": "string",
+    "school": "9",
+    "adress": "string",
+    "email": "mail@mail.ru",
+    "phone_number": "+79521179309",
+    "city": "string",
+    "status": "Директор"
   }
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setSuccess(true);
     methods.reset();
-    await sendRequest(testData);
+
+    await sendRequest(testData)
+    
     console.log(data)
   }
+
+  
   
   const [selectPost, setSelectPost] = useState('');
   const [selectCity, setSelectCity] = useState('');

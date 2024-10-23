@@ -23,5 +23,8 @@ export const sendRequest = async (body: TData): Promise<ApiBaseResponse> => {
   return await fetch('https://mendeleevsibur.friendlee.ru/back/api/v1/user', {
     method: 'POST',
     body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   }).then((res) => parseResponse(res));
 };

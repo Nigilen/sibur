@@ -10,7 +10,7 @@ export const Contacts = () => {
       </h2>
       <ul className={styles.contacts_list}>
         <li className={styles.contacts_item}>
-          <a href="https://t.me/siburofficial" target='blank' className={styles.contacts_link}>
+          <a href="https://t.me/siburofficial" target='_blank' className={styles.contacts_link}>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -30,7 +30,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a href="https://t.me/sibur_mendeleev" target='blank' className={styles.contacts_link}>
+          <a href="https://t.me/sibur_mendeleev" target='_blank' className={styles.contacts_link}>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -49,8 +49,8 @@ export const Contacts = () => {
             Менделеевская смена в TG
           </a>
         </li>
-        <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://домполимеров.рф/" target='blank'>
+        {/* <li className={styles.contacts_item}>
+          <a className={styles.contacts_link} href="https://домполимеров.рф/" target='_blank'>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -68,7 +68,7 @@ export const Contacts = () => {
             </div>
             Дом полимеров
           </a>
-        </li>
+        </li> */}
         <li className={styles.contacts_item}>
           <a className={styles.contacts_link} href="https://vk.com/career.sibur" target='blank'>
             <div className={styles.contacts_icon}>

@@ -53,7 +53,7 @@ export const Projects = () => {
             <p className={styles.project_description}>
               СИБУР «оживил» Дмитрия Ивановича Менделеева при помощи нейросетей. Он может ответить на ваши вопросы о СИБУРе, науке и даже о вакансиях в компании. Просто напишите ему сообщение в чате!
             </p>
-            <a className={styles.project_link} href="https://mendeleev.sibur.ru/">Узнать подробнее →</a>
+            <a className={styles.project_link} target='_blank' href="https://mendeleev.sibur.ru/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
             <Image className={styles.project_img} width={240} height={240} src="/projects-item-polymers.png" alt="" />
@@ -61,7 +61,7 @@ export const Projects = () => {
             <p className={styles.project_description}>
               Интерактивный павильон компании СИБУР, где мы показываем и рассказываем как рождаются полимеры и где они применяются. Здесь проходят мастер-классы, экскурсии и показывают фильмы. 
             </p>
-            <a className={styles.project_link} href="https://домполимеров.рф/">Узнать подробнее →</a>
+            <a className={styles.project_link} target='_blank' href="https://домполимеров.рф/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
             <Image className={styles.project_img} width={240} height={240} src="/projects-item-life.png" alt="" />
@@ -69,7 +69,7 @@ export const Projects = () => {
             <p className={styles.project_description}>
               Интерактивный общероссийский экологический урок для школьников 5-11 классов, который посвящен развитию отрасли переработки отходов в России
             </p>
-            <a className={styles.project_link} href="https://втораяжизньпластика.рф/">Узнать подробнее →</a>
+            <a className={styles.project_link} target='_blank' href="https://втораяжизньпластика.рф/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
             <Image className={styles.project_img} width={240} height={240} src="/projects-item-junior.png" alt="" />
@@ -77,7 +77,7 @@ export const Projects = () => {
             <p className={styles.project_description}>
               Программа для старшеклассников, готовящая их к поступлению в лучшие инженерные вузы и карьере в промышленности
             </p>
-            <a className={styles.project_link} href="https://sibured.ru/school">Узнать подробнее →</a>
+            <a className={styles.project_link} target='_blank' href="https://sibured.ru/school">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
             <Image className={styles.project_img} width={240} height={240} src="/projects-item-students.png" alt="" />
@@ -85,16 +85,16 @@ export const Projects = () => {
             <p className={styles.project_description}>
               Образовательная онлайн-платформа для студентов, будущих молодых специалистов, где можно изучить производственные процессы СИБУРа и погрузиться в специфику нефтегазохимической отрасли!
             </p>
-            <a className={styles.project_link} href="https://career.sibur.ru/internship/stazhirovka">Узнать подробнее →</a>
+            <a className={styles.project_link} target='_blank' href="https://sibur-pump.ru/">Узнать подробнее →</a>
           </SwiperSlide>
-          <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
+          {/* <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
             <Image className={styles.project_img} width={240} height={240} src="/projects-item-fest.png" alt="" />
             <h3 className={styles.project_heading}>СИБУР ФЕСТ</h3>
             <p className={styles.project_description}>
               Ежегодное мероприятие, где молодежь знакомится с новейшими достижениями в области химической промышленности, посещает лекции, мастер-классы и интерактивные стенды
             </p>
-            <a className={styles.project_link} href="https://changellenge.com/event/sibur">Узнать подробнее →</a>
-          </SwiperSlide>
+            <a className={styles.project_link} target='_blank' href="https://changellenge.com/event/sibur">Узнать подробнее →</a>
+          </SwiperSlide> */}
         </Swiper>
         <button className={cn(styles.slider_control, styles.slider_control__left, 'swiper-button-prev')} type='button'>
           <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
