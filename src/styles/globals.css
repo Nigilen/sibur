@@ -8,6 +8,7 @@ body {
   /* max-width: 1440px; */
   /* margin-inline: auto; */
   overflow-x: hidden;
+  min-width: 360px;
 }
 
 body {
