@@ -19,6 +19,7 @@
   font: var(--p-medium-500);
   color: var(--dark-blue);
   grid-template-columns: repeat(2, auto);
+  min-width: 324px;
 }
 
 .fieldset {
