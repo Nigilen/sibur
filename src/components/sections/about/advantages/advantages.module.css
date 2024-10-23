@@ -102,6 +102,9 @@
   background-position: 65% 2%, 113% 56%;
 }
 
+.advantages_list {
+  scrollbar-width: none;
+}
 .advantages_list::-webkit-scrollbar {
   width: 0;
 }
