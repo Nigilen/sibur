@@ -13,10 +13,13 @@ type Props = {
 
 export const ActionButton: FC<Props> = ({ withArrow, className }) => {
 
-  const { setIsOpen, isOpen } = useContext(LevelContext);
+  const { setIsOpen, isOpen, isMenuOpen, setIsMenuOpen } = useContext(LevelContext);
 
   const hadnlerOpen = () => {
     setIsOpen(!isOpen);
+    if(isMenuOpen) {
+      setIsMenuOpen(false)
+    }
   };
 
   return (
