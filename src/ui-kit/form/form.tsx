@@ -186,21 +186,7 @@ export const Form = () => {
                 />
               </label>
               <label htmlFor="patronymic" className={styles.label_wrapper}>
-                <input className={cn(styles.input, [methods.formState.errors.patronymic && styles.error])} id='patronymic' placeholder='Отчество' type="text" {...methods.register("patronymic", { 
-                  required: "Обязательное поле",
-                  pattern: {
-                    value: /[а-яa-z]/gi,
-                    message: "Только буквы",
-                  },
-                  maxLength: {
-                    value: 15,
-                    message: "Не больше 15 символов",
-                  },
-                  minLength: {
-                    value: 2,
-                    message: "Не меньше 2 символов",
-                  },
-                })}/>
+                <input className={cn(styles.input, [methods.formState.errors.patronymic && styles.error])} id='patronymic' placeholder='Отчество' type="text" {...methods.register("patronymic")}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
                   name="patronymic"
@@ -271,8 +257,8 @@ export const Form = () => {
                     message: "Только цифры",
                   },
                   maxLength: {
-                    value: 3,
-                    message: "Не больше 3 символов",
+                    value: 8,
+                    message: "Не больше 8 символов",
                   }
                 })}/>
                 <ErrorMessage
