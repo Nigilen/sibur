@@ -145,6 +145,7 @@
 .error {
   border-color: var(--pink);
   color: var(--pink);
+  opacity: 1;
 }
 .error:active {
   border-color: var(--pink);
