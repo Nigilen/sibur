@@ -17,6 +17,7 @@ deploy-to-test-server:
     - BUILD="npm install && npm run build && npm install --omit=dev"
     - TEST_PATH="~/www/mendeleevsibur.friendlee.ru/front"
     - RESTART="/usr/lib/ispnodejs/bin/pm2 reload mendeleevsibur.friendlee.ru"
+    - cp ${TEST_ENV} .env
     - rsync --delete -avz --progress --no-perms --no-owner --no-group --exclude=".git/" --exclude="node_modules/" -e "ssh -p $TEST_PORT" . $TEST_USER@$TEST_HOST:$TEST_PATH
     - ssh -p $TEST_PORT $TEST_USER@$TEST_HOST "cd $TEST_PATH && $BUILD && $RESTART"
   only:

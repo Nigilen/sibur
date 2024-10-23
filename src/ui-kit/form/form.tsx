@@ -52,7 +52,7 @@ export type Inputs = {
 
 export const Form = () => {
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
-
+  
   const { isSuccess, setSuccess } = useContext(LevelContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
