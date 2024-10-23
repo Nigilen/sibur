@@ -221,5 +221,6 @@
   }
   .projects_description {
     padding-inline: 16px;
+    margin-block-end: 40px;
   }
 }
