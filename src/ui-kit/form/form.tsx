@@ -8,6 +8,7 @@ import { Success } from '../success/success';
 import { LevelContext } from '@/src/context/context';
 import { Select } from '../select/select';
 import { ErrorMessage } from "@hookform/error-message";
+import { sendRequest } from '@/src/api/internal';
 
 
 const posts = [
@@ -35,69 +36,44 @@ const cities = [
   {"title": "Пермь","value": "perm" }
 ]
 
+
 export type Inputs = {
-  firstname: string,
-  lastname: string,
-  patronymic: string,
-  number: string,
-  address: string,
+  name: string,
+  surname: string,
+  middle_name: string,
+  school: string,
+  adress: string,
   email: string,
-  phone: string,
+  phone_number: string,
   city: string,
-  post: string,
+  status: string,
   personal: string,
   policy: string
 }
 
 export const Form = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   setValue,
-  //   reset,
-  //   formState: { errors },
-  // } = useForm<Inputs>({criteriaMode: "all"});
+
   const methods  = useForm<Inputs>({criteriaMode: "all"});
 
   const { isSuccess, setSuccess } = useContext(LevelContext);
 
-  // const postName = methods.register("post", { 
-  //   required: "Обязательное поле",
-  //   pattern: {
-  //     value: /[A-я]/,
-  //     message: "Только буквы",
-  //   },
-  //   maxLength: {
-  //     value: 20,
-  //     message: "Не больше 15 символов",
-  //   },
-  //   minLength: {
-  //     value: 2,
-  //     message: "Не меньше 2 символов",
-  //   },
-  // });
   
-  // const cityName = methods.register("city", { 
-  //   required: "Обязательное поле",
-  //   pattern: {
-  //     value: /[A-я]/,
-  //     message: "Только буквы",
-  //   },
-  //   maxLength: {
-  //     value: 20,
-  //     message: "Не больше 15 символов",
-  //   },
-  //   minLength: {
-  //     value: 2,
-  //     message: "Не меньше 2 символов",
-  //   },
-  // });
-  
+  const testData = {
+    name: 'string',
+    surname: 'string',
+    middle_name: 'string',
+    school: 'string',
+    adress: 'string',
+    email: 'string',
+    phone_number: 'string',
+    city: 'string',
+    status: 'string'
+  }
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setSuccess(true);
     methods.reset();
+    await sendRequest(testData);
     console.log(data)
   }
   
@@ -106,7 +82,7 @@ export const Form = () => {
 
   const handleSelectPost = (value: string) => {
     setSelectPost(value);
-    methods.setValue("post", value);
+    methods.setValue("status", value);
   };
   const handleSelectCity = (value: string) => {
     setSelectCity(value);
@@ -131,8 +107,8 @@ export const Form = () => {
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__fullname)}>
               <legend className={styles.fieldset_caption}>ФИО</legend>
-              <label htmlFor='firstname' className={styles.label_wrapper}>
-                <input className={cn(styles.input, [methods.formState.errors.firstname && styles.error])} id='firstname' type="text" placeholder='Имя' {...methods.register("firstname", { 
+              <label htmlFor='name' className={styles.label_wrapper}>
+                <input className={cn(styles.input, [methods.formState.errors.name && styles.error])} id='name' type="text" placeholder='Имя' {...methods.register("name", { 
                   required: "Обязательное поле",
                   pattern: {
                     value: /[а-яa-z]/gi,
@@ -149,7 +125,7 @@ export const Form = () => {
                 })}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="firstname"
+                  name="name"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -158,8 +134,8 @@ export const Form = () => {
                   }
                 />
               </label>
-              <label htmlFor="lastname" className={styles.label_wrapper}>
-                <input className={cn(styles.input, [methods.formState.errors.lastname && styles.error])} id='lastname' type="text" placeholder='Фамилия' {...methods.register("lastname", { 
+              <label htmlFor="surname" className={styles.label_wrapper}>
+                <input className={cn(styles.input, [methods.formState.errors.surname && styles.error])} id='surname' type="text" placeholder='Фамилия' {...methods.register("surname", { 
                   required: "Обязательное поле",
                   pattern: {
                     value: /[а-яa-z]/gi,
@@ -176,7 +152,7 @@ export const Form = () => {
                 })}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="lastname"
+                  name="surname"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -185,11 +161,11 @@ export const Form = () => {
                   }
                 />
               </label>
-              <label htmlFor="patronymic" className={styles.label_wrapper}>
-                <input className={cn(styles.input, [methods.formState.errors.patronymic && styles.error])} id='patronymic' placeholder='Отчество' type="text" {...methods.register("patronymic")}/>
+              <label htmlFor="middle_name" className={styles.label_wrapper}>
+                <input className={cn(styles.input, [methods.formState.errors.middle_name && styles.error])} id='middle_name' placeholder='Отчество' type="text" {...methods.register("middle_name")}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="patronymic"
+                  name="middle_name"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -201,19 +177,19 @@ export const Form = () => {
             </fieldset>
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__other)}>
-              <label htmlFor='post' className={styles.label_wrapper}>
+              <label htmlFor='status' className={styles.label_wrapper}>
                 <span className={styles.label}>Ваша должность</span>
                 <Select 
                   selected={selectedPost || null}
                   options={posts} 
                   placeholder='Статус' 
                   onChange={handleSelectPost}
-                  name={'post'}
-                  isError={methods.formState.errors.post ? true : false}
+                  name={'status'}
+                  isError={methods.formState.errors.status ? true : false}
                 />
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="post"
+                  name="status"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -248,9 +224,9 @@ export const Form = () => {
             </fieldset>
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__school)}>
-              <label htmlFor="number" className={styles.label_wrapper}>
+              <label htmlFor="school" className={styles.label_wrapper}>
                 <span className={styles.label}>Номер школы</span>
-                <input className={cn(styles.input, [methods.formState.errors.number && styles.error])} id='number' type="text" {...methods.register("number", { 
+                <input className={cn(styles.input, [methods.formState.errors.school && styles.error])} id='school' type="text" {...methods.register("school", { 
                   required: "Обязательное поле",
                   pattern: {
                     value: /\d/,
@@ -263,7 +239,7 @@ export const Form = () => {
                 })}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="number"
+                  name="school"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -272,9 +248,9 @@ export const Form = () => {
                   }
                 />
               </label>
-              <label htmlFor="address" className={styles.label_wrapper}>
+              <label htmlFor="adress" className={styles.label_wrapper}>
                 <span className={styles.label}>Адрес школы</span>
-                <input className={cn(styles.input, [methods.formState.errors.address && styles.error])} id='address' type="text" {...methods.register("address", { 
+                <input className={cn(styles.input, [methods.formState.errors.adress && styles.error])} id='adress' type="text" {...methods.register("adress", { 
                   required: "Обязательное поле",
                   maxLength: {
                     value: 50,
@@ -287,7 +263,7 @@ export const Form = () => {
                 })}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="address"
+                  name="adress"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
@@ -300,9 +276,9 @@ export const Form = () => {
 
             <fieldset className={cn(styles.fieldset, styles.fieldset__contacts)}>
               <legend className={styles.fieldset_caption}>Контактные данные</legend>
-              <label className={styles.label_wrapper} htmlFor="phone">
+              <label className={styles.label_wrapper} htmlFor="phone_number">
                 <span className='visually-hidden'>Телефон</span>
-                <input className={cn(styles.input, [methods.formState.errors.phone && styles.error])} id='phone' type="phone" placeholder='Телефон' {...methods.register("phone", { 
+                <input className={cn(styles.input, [methods.formState.errors.phone_number && styles.error])} id='phone_number' type="phone" placeholder='Телефон' {...methods.register("phone_number", { 
                   required: "Обязательное поле",
                   pattern: {
                     value: /\d/,
@@ -319,7 +295,7 @@ export const Form = () => {
                 })}/>
                 <ErrorMessage
                   errors={methods.formState.errors}
-                  name="phone"
+                  name="phone_number"
                   render={({ messages }) =>
                     messages &&
                     Object.entries(messages).map(([type, message]) => (
