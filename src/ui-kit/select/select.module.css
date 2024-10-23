@@ -111,6 +111,11 @@
 
 @media (width < 1440px) {
   .cells {
+    column-count: 2;
+  }
+}
+@media (width < 768px) {
+  .cells {
     column-count: 1;
   }
 }
