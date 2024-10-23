@@ -30,7 +30,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a href="https://t.me/siburofficial" target='blank' className={styles.contacts_link}>
+          <a href="https://t.me/sibur_mendeleev" target='blank' className={styles.contacts_link}>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -50,7 +50,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://t.me/siburofficial">
+          <a className={styles.contacts_link} href="https://домполимеров.рф/">
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
 
@@ -70,7 +70,7 @@ export const Contacts = () => {
           </a>
         </li>
         <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://t.me/siburofficial">
+          <a className={styles.contacts_link} href="https://vk.com/career.sibur">
             <div className={styles.contacts_icon}>
               <svg fill="#ffffff" viewBox="-2.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
