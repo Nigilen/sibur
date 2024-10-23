@@ -264,12 +264,12 @@ export const Form = () => {
                     {...methods.register('school', {
                       required: 'Обязательное поле',
                       pattern: {
-                        value: /\d/,
-                        message: 'Допускаются только цифры',
+                        value: addressRegexp,
+                        message: 'Недопустимые символы',
                       },
                       maxLength: {
-                        value: 8,
-                        message: 'Не больше 8 символов',
+                        value: 100,
+                        message: 'Не больше 100 символов',
                       },
                     })}
                   />
@@ -301,8 +301,8 @@ export const Form = () => {
                         message: 'Недопустимые символы',
                       },
                       maxLength: {
-                        value: 50,
-                        message: 'Не больше 50 символов',
+                        value: 100,
+                        message: 'Не больше 100 символов',
                       },
                       minLength: {
                         value: 5,
