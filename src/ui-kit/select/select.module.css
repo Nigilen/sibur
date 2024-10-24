@@ -94,7 +94,7 @@
   opacity: 100%;
 }
 
-.selectWrapper .cells {
+.cells {
   display: block;
   columns: 3 max-content;
   column-count: 3;

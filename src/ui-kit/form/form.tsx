@@ -113,8 +113,8 @@ export const Form = () => {
                         message: 'Допускается только кириллица, пробел и тире',
                       },
                       maxLength: {
-                        value: 15,
-                        message: 'Не больше 15 символов',
+                        value: 100,
+                        message: 'Не больше 100 символов',
                       },
                       minLength: {
                         value: 2,
@@ -148,8 +148,8 @@ export const Form = () => {
                         message: 'Допускается только кириллица, пробел и тире',
                       },
                       maxLength: {
-                        value: 15,
-                        message: 'Не больше 15 символов',
+                        value: 100,
+                        message: 'Не больше 100 символов',
                       },
                       minLength: {
                         value: 2,
@@ -178,6 +178,10 @@ export const Form = () => {
                     type="text"
                     {...methods.register('middle_name', {
                       required: false,
+                      maxLength: {
+                        value: 100,
+                        message: 'Не больше 100 символов',
+                      },
                       pattern: {
                         value: onlyCyrillicAndSpacesRegex,
                         message: 'Допускается только кириллица, пробел и тире',
