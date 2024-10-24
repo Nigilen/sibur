@@ -19,7 +19,7 @@ const posts = [
 const cities = [
   { title: 'Балахна', value: 'blagoveshchensk' },
   { title: 'Благовещенск (Дальний Восток)', value: 'blagoveshchensk-dv' },
-  { title: 'Благовещенск (Башкортостан)', value: 'blagoveshchensk-bashk' },
+  { title: 'Благовещенск (Республика Башкортостан)', value: 'blagoveshchensk-bashk' },
   { title: 'Воронеж', value: 'voronezh' },
   { title: 'Дзержинск', value: 'dzerzhinsk' },
   { title: 'Казань', value: 'kazan' },
