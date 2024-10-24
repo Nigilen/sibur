@@ -4,6 +4,7 @@ import "@/styles/variables.css";
 import "@/styles/globals.css";
 import { LevelProvider } from '@/src/context/context';
 import Script from 'next/script';
+import { FRONT_BASE_URL } from '@/src/utils/config';
 
 const roboto = Roboto_Flex({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -15,6 +16,14 @@ const roboto = Roboto_Flex({
 export const metadata: Metadata = {
   title: "Сибур",
   description: "Сайт Сибур",
+  openGraph: {
+    title: 'СИБУР',
+    description: 'Менделеевская смена',
+    url: FRONT_BASE_URL,
+    siteName: 'Сибур',
+    locale: 'ru_RU',
+    type: 'website'
+  },
 };
 
 export default function RootLayout({
