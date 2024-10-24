@@ -73,6 +73,7 @@
 .project_section__grid .section_img {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
+  border: none;
 }
 .project_section__grid .section_text {
   grid-column: 2 / 3;
