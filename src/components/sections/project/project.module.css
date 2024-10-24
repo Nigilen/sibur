@@ -73,7 +73,7 @@
 .project_section__grid .section_img {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  border: none;
+  
 }
 .project_section__grid .section_text {
   grid-column: 2 / 3;
@@ -82,6 +82,10 @@
 .badge {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
+}
+
+.section_img {
+  background-color: var(--bg-light-blue-secondary);
 }
 
 .project_section:nth-of-type(2) .section_heading {
