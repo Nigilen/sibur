@@ -29,6 +29,11 @@
   overflow-y: visible;
   padding-block-start: 72.6px;
   justify-content: space-around;
+  scrollbar-width: none;
+}
+
+.advantages_list::-webkit-scrollbar {
+  width: 0;
 }
 
 .advantages_item {
@@ -102,12 +107,7 @@
   background-position: 65% 2%, 113% 56%;
 }
 
-.advantages_list {
-  scrollbar-width: none;
-}
-.advantages_list::-webkit-scrollbar {
-  width: 0;
-}
+
 
 
 @media (width < 1440px) {
@@ -117,6 +117,7 @@
   }
   .advantages_list {
     padding-inline: 40px;
+    justify-content: flex-start;
   }
 }
 @media (width < 768px) {
