@@ -93,6 +93,7 @@
 .fieldset_caption {
   justify-self: flex-start;
   grid-column: 1 / -1;
+  width: max-content;
   margin-block-end: 12px;
   opacity: 60%;
 }
