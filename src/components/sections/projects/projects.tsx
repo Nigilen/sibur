@@ -1,12 +1,12 @@
 'use client'
 
+import Image from 'next/image';
 import styles from './projects.module.css';
-// import Image from 'next/image';
-// import cn from 'classnames';
+import cn from 'classnames';
 
-// import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-// import { Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 
 export const Projects = () => {
@@ -19,7 +19,7 @@ export const Projects = () => {
         Мы создаем условия для роста и развития школьников, студентов и молодых специалистов
       </p>
 
-      {/* <div className={styles.slider_wrapper}>
+      <div className={styles.slider_wrapper}>
         <Swiper 
           breakpoints={{
             1440: {
@@ -87,6 +87,14 @@ export const Projects = () => {
             </p>
             <a className={styles.project_link} target='_blank' href="https://sibur-pump.ru/">Узнать подробнее →</a>
           </SwiperSlide>
+          {/* <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-fest.png" alt="" />
+            <h3 className={styles.project_heading}>СИБУР ФЕСТ</h3>
+            <p className={styles.project_description}>
+              Ежегодное мероприятие, где молодежь знакомится с новейшими достижениями в области химической промышленности, посещает лекции, мастер-классы и интерактивные стенды
+            </p>
+            <a className={styles.project_link} target='_blank' href="https://changellenge.com/event/sibur">Узнать подробнее →</a>
+          </SwiperSlide> */}
         </Swiper>
         <button className={cn(styles.slider_control, styles.slider_control__left, 'swiper-button-prev')} type='button'>
           <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +127,7 @@ export const Projects = () => {
           </svg>
 
         </button>
-      </div> */}
+      </div>
 
     </section>
   );
