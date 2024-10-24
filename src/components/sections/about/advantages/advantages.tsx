@@ -1,12 +1,12 @@
 import styles from './advantages.module.css';
 import cn from 'classnames';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export const Advantages = () => {
   return (
     <div className={styles.about_main}>
       <h3 className={cn(styles.about_main_title, 'container')}>О компании</h3>
-      {/* <ul className={styles.advantages_list}>
+      <ul className={styles.advantages_list}>
         <li className={styles.advantages_item}>
           <div className={styles.item_decor}></div>
           <Image className={styles.item_img} src="/advantage-item-future.png" width={387} height={360} alt="" quality={100}/>
@@ -43,7 +43,7 @@ export const Advantages = () => {
             </p>
           </div>
         </li>
-      </ul> */}
+      </ul>
     </div>
   );
 }

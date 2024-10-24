@@ -1,4 +1,4 @@
 .option {
-  white-space: nowrap;
+  text-wrap: balance;
   margin-block-end: 16px;
 }
