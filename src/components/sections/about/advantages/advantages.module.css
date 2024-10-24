@@ -124,6 +124,7 @@
   .item_img { 
     width: 328px;
     height: 305px;
+    margin-inline: auto;
   }
   .item_content {
     padding: 40px 0 0;
