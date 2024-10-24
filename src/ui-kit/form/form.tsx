@@ -17,24 +17,34 @@ const posts = [
   { title: 'Родитель', value: 'parent' },
 ];
 const cities = [
-  { title: 'Благовещенск', value: 'blagoveshchensk' },
+  { title: 'Балахна', value: 'blagoveshchensk' },
+  { title: 'Благовещенск (Дальний Восток)', value: 'blagoveshchensk-dv' },
+  { title: 'Благовещенск (Республика Башкортостан)', value: 'blagoveshchensk-bashk' },
   { title: 'Воронеж', value: 'voronezh' },
   { title: 'Дзержинск', value: 'dzerzhinsk' },
   { title: 'Казань', value: 'kazan' },
   { title: 'Красноярск', value: 'krasnoyarsk' },
   { title: 'Кстово', value: 'kstovo' },
-  { title: 'Тверь', value: 'tver' },
-  { title: 'Томск', value: 'tomsk' },
-  { title: 'Тобольск', value: 'tobolsk' },
-  { title: 'с. Черниговка', value: 'chernigovka' },
-  { title: 'Усть-Лужское с/п', value: 'ust-luzhskoe' },
-  { title: 'Курск', value: 'kursk' },
   { title: 'Москва и МО', value: 'moskva-i-mo' },
   { title: 'Нижневартовск', value: 'nizhnevartovsk' },
   { title: 'Нижнекамск', value: 'nizhnekamsk' },
+  { title: 'Нижний Новгород', value: 'n-novgorod' },
   { title: 'Новокуйбышевск', value: 'novokujbyshevsk' },
+  { title: 'Ноябрьск', value: 'noyabrsk' },
+  { title: 'Нягань', value: 'nyagan' },
   { title: 'Пермь', value: 'perm' },
+  { title: 'Пыть-Ях', value: 'pyt-yah' },
+  { title: 'Свободный', value: 'svobodnyj' },
+  { title: 'Тверь', value: 'tver' },
+  { title: 'Тобольск', value: 'tobolsk' },
+  { title: 'Томск', value: 'tomsk' },
+  { title: 'Тюмень', value: 'tyumen' },
+  { title: 'Усть-Лужское с/п', value: 'ust-luzhskoe' },
+  { title: 'Уфа', value: 'ufa' },
 ];
+
+
+
 
 // 58, 59, 26, 28, 49, 48
 export type Inputs = {
