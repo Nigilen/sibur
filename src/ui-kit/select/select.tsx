@@ -74,7 +74,7 @@ export const Select = (props: SelectProps) => {
     >
       <div className={cn(styles.arrow, isOpen && styles.arrow_open)} onClick={handlePlaceHolderClick}></div>
       <input
-        // readOnly
+        readOnly
         className={cn(styles.placeholder, isError && styles.placeholder_error)}
         data-status={status}
         data-selected={!!selected?.value}
