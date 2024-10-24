@@ -174,10 +174,10 @@
 
   .decor:after {
     background-image: 
-      url('/decor-projects-top-left-mob.png'),
+      url('/decor-projects-top-left-tab.png'),
       url('/decor-projects-top-right.svg');
-    background-size: 295px 325px, 195px 280px;
-    background-position: -19% 21%, 112% 250%;
+    background-size: 203px 319px, 195px 280px;
+    background-position: 0% 21%, 112% 250%;
     
   }
   .decor {
@@ -191,6 +191,9 @@
     top: 1%;
   }
   .decor:after {
+    background-image: 
+      url('/decor-projects-top-left-mob.png'),
+      url('/decor-projects-top-right.svg');
     background-size: 97px 140px, 135px 170px;
     background-position: -1% -4%, 112% 99%;
   }
