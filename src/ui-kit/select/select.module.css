@@ -95,13 +95,13 @@
 }
 
 .cells {
-  /* display: block;
+  display: block;
   columns: 3 max-content;
   column-count: 3;
   column-rule: 1px solid #00313C33;
   column-gap: 24px;
   column-fill: balance;
-  column-width: max-content; */
+  /* column-width: max-content; */
   /* padding-inline-end: 80px; */
 }
 
