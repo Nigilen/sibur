@@ -98,6 +98,10 @@
   opacity: 60%;
 }
 
+.label_wrapper:has(ul) {
+  z-index: 11;
+}
+
 .label_wrapper {
   display: flex;
   flex-direction: column;
