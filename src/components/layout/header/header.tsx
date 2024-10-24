@@ -15,6 +15,10 @@ export const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const hadnlerClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={cn('container', styles.wrapper)}>
       <nav className={styles.nav}>
@@ -23,13 +27,13 @@ export const Header = () => {
         </a>
         <ul className={cn(styles.nav_list, isMenuOpen && styles.mob_menu_open)}>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#project" onClick={() => setIsMenuOpen(!isMenuOpen)}>О проекте</a>
+            <a className={styles.nav_link} href="#project" onClick={hadnlerClose}>О проекте</a>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#about" onClick={() => setIsMenuOpen(!isMenuOpen)}>О компании</a>
+            <a className={styles.nav_link} href="#about" onClick={hadnlerClose}>О компании</a>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#projects" onClick={() => setIsMenuOpen(!isMenuOpen)}>Наши проекты</a>
+            <a className={styles.nav_link} href="#projects" onClick={hadnlerClose}>Наши проекты</a>
           </li>
           {/* <li className={styles.nav_item}>
             <a className={styles.nav_link} href="#contacts" onClick={() => setIsMenuOpen(!isMenuOpen)}>Как это было</a>
