@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footer/footer";
 import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
-import { Cookies } from "@/ui-kit/cookies/cookies";
+// import { Cookies } from "@/ui-kit/cookies/cookies";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
         <Form />
       </Modal>
 
-      <Cookies isOpen={true}/>
+      {/* <Cookies isOpen={true}/> */}
 
       {/* <Preloader /> */}
     </>
