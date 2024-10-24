@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 html {
   scroll-behavior: smooth;
+  scroll-padding-block: 5rem;
 }
 
 html,
@@ -69,6 +70,10 @@ dialog::backdrop {
   background: rgba(0, 0, 0, 0.1);
 }
 
+
+#project {
+  scroll-margin-top: 3rem;
+}
 
 .container {
   padding-inline: 120px;

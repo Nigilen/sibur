@@ -5,9 +5,9 @@ import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
 
 export const Project = () => {
   return (
-    <article id='project' className={cn(styles.project, 'container')}>
+    <article className={cn(styles.project, 'container')}>
       <header className={styles.project_header}>
-        <h2 className={cn(styles.project_caption, 'section_caption')}>Проект</h2>
+        <h2 id='project' className={cn(styles.project_caption, 'section_caption')}>Проект</h2>
         <p className={styles.project_title}>
           Менделеевская<br/>
           <span className={styles.project_title__decor}>Смена </span>
