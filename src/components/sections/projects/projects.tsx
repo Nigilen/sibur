@@ -48,7 +48,7 @@ export const Projects = () => {
           className={styles.slider_list}
         >
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src="/projects-item-mendeleev.png" alt="" />
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-mendeleev.png" alt="" quality={100} />
             <h3 className={styles.project_heading}>Нейроменделеев</h3>
             <p className={styles.project_description}>
               СИБУР «оживил» Дмитрия Ивановича Менделеева при помощи нейросетей. Он может ответить на ваши вопросы о СИБУРе, науке и даже о вакансиях в компании. Просто напишите ему сообщение в чате!
@@ -56,7 +56,7 @@ export const Projects = () => {
             <a className={styles.project_link} target='_blank' href="https://mendeleev.sibur.ru/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src="/projects-item-polymers.png" alt="" />
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-polymers.png" alt="" quality={100} />
             <h3 className={styles.project_heading}>Дом Полимеров</h3>
             <p className={styles.project_description}>
               Интерактивный павильон компании СИБУР, где мы показываем и рассказываем как рождаются полимеры и где они применяются. Здесь проходят мастер-классы, экскурсии и показывают фильмы. 
@@ -64,7 +64,7 @@ export const Projects = () => {
             <a className={styles.project_link} target='_blank' href="https://домполимеров.рф/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src="/projects-item-life.png" alt="" />
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-life.png" alt="" quality={100}/>
             <h3 className={styles.project_heading}>Вторая жизнь пластика</h3>
             <p className={styles.project_description}>
               Интерактивный общероссийский экологический урок для школьников 5-11 классов, который посвящен развитию отрасли переработки отходов в России
@@ -72,7 +72,7 @@ export const Projects = () => {
             <a className={styles.project_link} target='_blank' href="https://втораяжизньпластика.рф/">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src="/projects-item-junior.png" alt="" />
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-junior.png" alt="" quality={100} />
             <h3 className={styles.project_heading}>«Траектория Junior» от СИБУРа</h3>
             <p className={styles.project_description}>
               Программа для старшеклассников, готовящая их к поступлению в лучшие инженерные вузы и карьере в промышленности
@@ -80,7 +80,7 @@ export const Projects = () => {
             <a className={styles.project_link} target='_blank' href="https://sibured.ru/school">Узнать подробнее →</a>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src="/projects-item-students.png" alt="" />
+            <Image className={styles.project_img} width={240} height={240} src="/projects-item-students.png" alt="" quality={100} />
             <h3 className={styles.project_heading}>Студенческая практика</h3>
             <p className={styles.project_description}>
               Образовательная онлайн-платформа для студентов, будущих молодых специалистов, где можно изучить производственные процессы СИБУРа и погрузиться в специфику нефтегазохимической отрасли!
