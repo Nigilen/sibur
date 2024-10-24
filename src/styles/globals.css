@@ -10,6 +10,7 @@ body {
   /* margin-inline: auto; */
   overflow-x: hidden;
   min-width: 360px;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -17,13 +18,13 @@ body {
   background: var(--white, #FFFFFF);
   font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
   width: 100%;
-  /* display: flex;
-  flex-direction: column; */
 }
 
+html:has(.modal[open]),
 body:has(.modal[open]) {
-  position: fixed;
   overflow: hidden;
+  touch-action: none;
+  /* height: 100vh; */
 }
 
 
