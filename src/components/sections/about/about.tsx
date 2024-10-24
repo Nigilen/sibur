@@ -11,7 +11,7 @@ export const About = () => {
           
       <AboutHeader/> 
 
-      <Video video='https://rutube.ru/play/embed/866a47fde368dc0f283c376215b08937' />
+      <Video video='https://rutube.ru/play/embed/b96effb0a4004369c6fee2adcaa75e20' />
           
       <Advantages /> 
       
