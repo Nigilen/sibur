@@ -78,7 +78,9 @@
     background-position: 0% 3%, 85% 10%, 102% 92%;
   }
   .preloader {
-    background-image: url('/about-video-preloader-tab.png');
+    /* background-image: url('/about-video-preloader-tab.png'); */
+    background-position: top left;
+    background-size: cover;
   }
 }
 @media (width < 768px) {
@@ -104,6 +106,6 @@
     border-radius: 24px;
   }
   .preloader {
-    background-image: url('/about-video-preloader-mob.png');
+    /* background-image: url('/about-video-preloader-mob.png'); */
   }
 }
