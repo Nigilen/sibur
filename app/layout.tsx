@@ -14,13 +14,13 @@ const roboto = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: 'Сибур',
-  description: 'Сайт Сибур',
+  title: 'СИБУР',
+  description: 'Менделеевская смена',
   openGraph: {
     title: 'СИБУР',
     description: 'Менделеевская смена',
     url: FRONT_BASE_URL,
-    siteName: 'Сибур',
+    siteName: 'СИБУР',
     locale: 'ru_RU',
     type: 'website',
   },
