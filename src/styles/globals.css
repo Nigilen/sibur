@@ -24,7 +24,7 @@ html:has(.modal[open]),
 body:has(.modal[open]) {
   /* overflow: hidden; */
   touch-action: none;
-  position: fixed;
+  /* position: fixed; */
   height: 100vh;
 }
 
