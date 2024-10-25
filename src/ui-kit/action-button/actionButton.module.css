@@ -19,4 +19,8 @@
   .with_arrow {
     padding-inline: 22px;
   }
+  .action_btn {
+    justify-content: center;
+    width: 100%;
+  }
 }
