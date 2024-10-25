@@ -118,6 +118,18 @@
 }
 @media (width < 768px) {
   .cells {
-    column-count: 1;
+    max-height: 312px;
+    column-count: auto;
+    overflow: scroll;
   }
+  /* .cells::after {
+    content: "";
+    display: flex;
+    position: sticky;
+    bottom: -6%;
+    width: 123%;
+    margin-inline: -12%;
+    height: 80px;
+    background-image: linear-gradient(0, #EDEFF1 0, transparent 90%);
+  } */
 }
