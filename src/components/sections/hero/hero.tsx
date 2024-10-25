@@ -19,7 +19,7 @@ export const Hero = () => {
         </li>
         <li className={cn(styles.badge, styles.badge__pink)}>
           <div className={cn(styles.badge_icon, styles.badge_icon__school)}></div>          
-          <p className={styles.badge_caption}>Примут участие <span>&#62;200</span>школ</p>
+          <p className={styles.badge_caption}>Примут участие <span>&#62;600</span>школ</p>
         </li>
       </ul>
 
