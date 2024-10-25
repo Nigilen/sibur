@@ -115,6 +115,7 @@ export const Form = () => {
                     className={cn(styles.input, [methods.formState.errors.name && styles.error])}
                     id="name"
                     type="text"
+                    tabIndex={0}
                     placeholder="Имя"
                     {...methods.register('name', {
                       required: 'Обязательное поле',
@@ -150,6 +151,7 @@ export const Form = () => {
                     className={cn(styles.input, [methods.formState.errors.surname && styles.error])}
                     id="surname"
                     type="text"
+                    tabIndex={0}
                     placeholder="Фамилия"
                     {...methods.register('surname', {
                       required: 'Обязательное поле',
@@ -184,6 +186,7 @@ export const Form = () => {
                   <input
                     className={cn(styles.input, [methods.formState.errors.middle_name && styles.error])}
                     id="middle_name"
+                    tabIndex={0}
                     placeholder="Отчество"
                     type="text"
                     {...methods.register('middle_name', {
@@ -274,6 +277,7 @@ export const Form = () => {
                   <input
                     className={cn(styles.input, [methods.formState.errors.school && styles.error])}
                     id="school"
+                    tabIndex={0}
                     type="text"
                     {...methods.register('school', {
                       required: 'Обязательное поле',
@@ -307,6 +311,7 @@ export const Form = () => {
                   <input
                     className={cn(styles.input, [methods.formState.errors.adress && styles.error])}
                     id="adress"
+                    tabIndex={0}
                     type="text"
                     {...methods.register('adress', {
                       required: 'Обязательное поле',
@@ -352,6 +357,7 @@ export const Form = () => {
                   <input
                     className={cn(styles.input, [methods.formState.errors.phone_number && styles.error])}
                     id="phone_number"
+                    tabIndex={0}
                     type="phone"
                     placeholder="Телефон"
                     {...methods.register('phone_number', {
@@ -388,6 +394,7 @@ export const Form = () => {
                   <input
                     className={cn(styles.input, [methods.formState.errors.email && styles.error])}
                     id="email"
+                    tabIndex={0}
                     type="email"
                     placeholder="Email"
                     {...methods.register('email', {
