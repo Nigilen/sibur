@@ -12,7 +12,6 @@
   z-index: 10;
   transition-duration: .8s;
   transition-timing-function: cubic-bezier(1,-0.01,.11,.83);
-
   inset-inline: 0;
 }
 
@@ -157,7 +156,7 @@
 
   .mob_menu_open {
     height: 100dvh;
-    padding-block-end: 14dvh;
+    padding-block-end: 21dvh;
   }
   
   .burger_btn {
