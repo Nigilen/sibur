@@ -210,3 +210,11 @@
     inline-size: 37px;
   }
 }
+
+@media screen and (orientation:landscape) {
+  .mob_menu_open {
+    height: 100vh;
+    padding-block-end: 40vh;
+    padding-block-start: 40vh;
+  }
+}
