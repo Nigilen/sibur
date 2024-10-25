@@ -18,6 +18,7 @@ export const Modal:FC<Props> = ({ children }) => {
   useEffect(()=> {
     if (isOpen) {
       modal.current?.showModal();
+      window.scrollTo(0, 0);
     } else {
       modal.current?.close();
     }
