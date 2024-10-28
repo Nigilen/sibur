@@ -60,23 +60,23 @@ export const PastLesson = () => {
             speed={300}
             navigation={
               {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-gallery-button-next',
+                prevEl: '.swiper-gallery-button-prev',
               }
             }
-            slideClass='swiper-slide'
+            slideClass='swiper-slide-gallery'
 
             modules={[Navigation]}
             className={styles.slider_list}
           >
             {dataSlider.map((item) => (
-              <SwiperSlide key={item.src} className={cn(styles.slider_item, 'swiper-slide')}>
+              <SwiperSlide key={item.src} className={cn(styles.slider_item, 'swiper-slide-gallery')}>
                 <Image className={styles.slider_item__img} src={item.src} alt={item.alt} width={387} height={387} />
               </SwiperSlide>
             ))}
           </Swiper>
 
-          <button className={cn(styles.slider_control, styles.slider_control__left, 'swiper-button-prev')} type='button'>
+          <button className={cn(styles.slider_control, styles.slider_control__left, 'swiper-gallery-button-prev')} type='button'>
             <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="40.5" cy="40.001" r="40" fill="#008C95"/>
               <g clipPath="url(#clip0_4911_2218)">
@@ -91,7 +91,7 @@ export const PastLesson = () => {
 
 
           </button>
-          <button className={cn(styles.slider_control, styles.slider_control__right, 'swiper-button-next')} type='button'>
+          <button className={cn(styles.slider_control, styles.slider_control__right, 'swiper-gallery-button-next')} type='button'>
 
             <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="40.8193" cy="40.6973" r="40" fill="#008C95"/>

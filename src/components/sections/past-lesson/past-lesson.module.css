@@ -19,7 +19,24 @@
 
 .title_decor {
   color: var(--transparent-blue-primary);
+  position: relative;
 }
+
+.title_decor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  background-image: url('/past-lesson-title-decor.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 113%;
+  height: 30px;
+  bottom: -21%;
+  left: -4%;
+}
+
 
 .slider_wrapper {
   position: relative;
@@ -35,24 +52,20 @@
 }
 
 .slider_control__left {
-  left: -100px;
-  top: 195px;
+  left: -8%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .slider_control__right {
-  right: -100px;
-  top: 195px;
+  right: -8%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .slider_control:hover circle {
   fill: var(--green);
 }
-
-/* .slider_item {
-  overflow: hidden;
-} */
 
 
 .slider_item__img {
@@ -62,27 +75,43 @@
 }
 
 @media (width < 1440px) {
+
+  .slider_item {
+    text-align: center;
+  }
+  .slider_item__img {
+    width: 276px;
+    height: 276px;
+  }
   .pastLesson {
     padding-block: 40px;
   }
   .slider_wrapper {
-    margin-inline: 52px;
+    margin-inline: 96px;
   }
   .slider_control svg {
     width: 55px;
     height: 55px;
   }
   .slider_control__left {
-    left: -35px;
-    top: 273px;
+    left: -14%;
+    top: 49%;
   }
   .slider_control__right {
-    right: -35px;
-    top: 273px;
+    right: -14%;
+    top: 49%;
   }
 }
 
 @media (width < 768px) {
+  .slider_item__img {
+    width: 222px;
+    height: 222px;
+  }
+
+  .title {
+    margin-block-end: 24px;
+  }
 
   .slider_wrapper {
     margin-inline: 16px;
@@ -94,10 +123,8 @@
   }
   .slider_control__left {
     left: 0;
-    top: 100px;
   }
   .slider_control__right {
     right: 0;
-    top: 100px;
   }
 }
