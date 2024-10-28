@@ -2,7 +2,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-block: 5rem;
-  scrollbar-gutter: stable;
 }
 
 html,
