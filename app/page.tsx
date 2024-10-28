@@ -6,11 +6,11 @@ import { About } from "@/components/sections/about/about";
 import { Contacts } from "@/components/sections/contacts/contacts";
 import { Footer } from "@/components/layout/footer/footer";
 // import { Preloader } from "@/src/preloader/preloader";
+// import { Cookies } from "@/ui-kit/cookies/cookies";
 import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
-// import { PastLesson } from "@/components/sections/past-lesson/past-lesson";
-// import { Cookies } from "@/ui-kit/cookies/cookies";
+import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
 
         <Projects />
 
-        {/* <PastLesson /> */}
+        <PastLesson />
 
         <Contacts />
         

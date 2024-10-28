@@ -7,9 +7,10 @@
   max-width: 2400px;
   margin-inline: auto;
   display: flex;
+
 }
 
-.video::after {
+/* .video::after {
   content: '';
   display: flex;
   position: absolute;
@@ -24,7 +25,7 @@
   background-size: 178px, 112px, 294px;
   background-position: 0% 4%, 97% 8%, 100% 97%;
   background-repeat: no-repeat;
-}
+} */
 
 
 .video iframe {
@@ -33,6 +34,8 @@
   border-radius: 48px;
   z-index: 3;
   max-width: 1392px;
+  outline: none;
+  border: none;
 }
 
 .preloader {
@@ -42,7 +45,7 @@
   border-radius: 48px;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('/about-video-preloader.png');
+  /* background-image: url('/about-video-preloader.png'); */
 }
 
 .play {
@@ -56,14 +59,14 @@
 }
 
 @media (width > 1440px) {
-  .video::after {
+  /* .video::after {
     background-image: 
       url('/video-decor-blue-line-wild.svg'),
       url('/video-decor-star.svg'),
       url('/video-decor-red-line-wild.svg');
     background-size: 262px, 112px, 754px;
     background-position: 18% 5%, 77% 8%, 99% 97%;
-  }
+  } */
   
 }
 
@@ -73,30 +76,19 @@
     height: 690px;
   }
 
-  .video::after {
-    background-size: 171px, 128px, 290px;
-    background-position: 0% 3%, 85% 10%, 102% 92%;
-  }
   .preloader {
-    /* background-image: url('/about-video-preloader-tab.png'); */
     background-position: top left;
     background-size: cover;
   }
+  /* .video::after {
+    background-size: 171px, 128px, 290px;
+    background-position: 0% 3%, 85% 10%, 102% 92%;
+  } */
 }
 @media (width < 768px) {
   .video {
     padding-inline: 16px;
     height: 354px;
-  }
-  .video::after {
-    height: 143%;
-    top: -63px;
-    background-size: 80px, 70px, 160px;
-    background-position: 0% 3%, 94% 11%, 98% 91%;
-    background-image: 
-      url('/video-decor-blue-line.svg'),
-      url('/video-decor-star.svg'),
-      url('/video-decor-red-line.svg');
   }
   .play img {
     width: 61px;
@@ -106,6 +98,16 @@
     border-radius: 24px;
   }
   .preloader {
-    /* background-image: url('/about-video-preloader-mob.png'); */
+    border-radius: 24px;
   }
+  /* .video::after {
+    height: 143%;
+    top: -63px;
+    background-size: 80px, 70px, 160px;
+    background-position: 0% 3%, 94% 11%, 98% 91%;
+    background-image: 
+      url('/video-decor-blue-line.svg'),
+      url('/video-decor-star.svg'),
+      url('/video-decor-red-line.svg');
+  } */
 }

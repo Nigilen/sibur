@@ -5,6 +5,7 @@ import '@/styles/globals.css';
 import { LevelProvider } from '@/src/context/context';
 import Script from 'next/script';
 import { FRONT_BASE_URL } from '@/src/utils/config';
+// import { DataProvider } from '@/src/context/data-context';
 
 const roboto = Roboto_Flex({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -33,44 +34,46 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={roboto.variable}>
-      <LevelProvider>
-        <body>
-          {process.env.NEXT_PUBLIC_IS_PRODUCTION_MODE === 'true' && (
-            <>
-              <Script
-                id="yandex-metrika"
-                type="text/javascript"
-                dangerouslySetInnerHTML={{
-                  __html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                            m[i].l=1*new Date();
-                            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-                            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-                            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      {/* <DataProvider> */}
+        <LevelProvider>
+          <body>
+            {process.env.NEXT_PUBLIC_IS_PRODUCTION_MODE === 'true' && (
+              <>
+                <Script
+                  id="yandex-metrika"
+                  type="text/javascript"
+                  dangerouslySetInnerHTML={{
+                    __html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                              m[i].l=1*new Date();
+                              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-                            ym(98677476, "init", {
-                              clickmap:true,
-                              trackLinks:true,
-                              accurateTrackBounce:true,
-                              webvisor:true
-                            });`,
-                }}
-              />
-              <noscript>
-                <div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://mc.yandex.ru/watch/98677476"
-                    style={{ position: 'absolute', left: '-9999px' }}
-                    alt=""
-                  />
-                </div>
-              </noscript>
-            </>
-          )}
+                              ym(98677476, "init", {
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce:true,
+                                webvisor:true
+                              });`,
+                  }}
+                />
+                <noscript>
+                  <div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="https://mc.yandex.ru/watch/98677476"
+                      style={{ position: 'absolute', left: '-9999px' }}
+                      alt=""
+                    />
+                  </div>
+                </noscript>
+              </>
+            )}
 
-          {children}
-        </body>
-      </LevelProvider>
+            {children}
+          </body>
+        </LevelProvider>
+      {/* </DataProvider> */}
     </html>
   );
 }

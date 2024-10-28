@@ -3,24 +3,20 @@
 import { createContext, FC, useState } from 'react';
 
 export interface UserContextValue {
-  login: string | undefined;
-  currency: string;
   isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
   isSuccess: boolean;
-  setSuccess: (isSuccess: boolean) => void;
   isMenuOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  setSuccess: (isSuccess: boolean) => void;
   setIsMenuOpen: (isMenuOpen: boolean) => void;
 }
 
 export const LevelContext = createContext<UserContextValue>({ 
-  login: undefined, 
-  currency: 'rub', 
   isOpen: false, 
-  setIsOpen: () => {},
   isSuccess: false, 
-  setSuccess: () => {},
   isMenuOpen: false, 
+  setIsOpen: () => {},
+  setSuccess: () => {},
   setIsMenuOpen: () => {}
 });
 
@@ -28,10 +24,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-const userValue = { 
-  login: 'vasiliy', 
-  currency: '$'
-}
 
 export const LevelProvider: FC<Props> = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +31,6 @@ export const LevelProvider: FC<Props> = ({children}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const contextValue = { 
-    ...userValue, 
     isOpen, 
     setIsOpen, 
     isSuccess, 

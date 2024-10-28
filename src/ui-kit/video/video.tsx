@@ -3,18 +3,21 @@
 import { FC, useState } from 'react';
 import styles from './video.module.css';
 import Image from 'next/image';
+import cn from 'classnames';
 
 type Props = {
   video: string;
+  preloader: string;
+  classNames?: string;
 };
 
-export const Video: FC<Props> = ({ video }) => {
+export const Video: FC<Props> = ({ video, preloader, classNames }) => {
   const [isPlay, setIsPlay] = useState(false);
 
   return (
-    <div className={styles.video}>
+    <div className={cn(styles.video, classNames)}>
       {!isPlay ? 
-        <div className={styles.preloader}>
+        <div className={styles.preloader} style={{backgroundImage: `url(${preloader})`}}>
           <button
             className={styles.play}
             onClick={() => setIsPlay(!isPlay)}

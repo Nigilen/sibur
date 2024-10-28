@@ -11,7 +11,15 @@ export const About = () => {
           
       <AboutHeader/> 
 
-      <Video video='https://rutube.ru/play/embed/b96effb0a4004369c6fee2adcaa75e20' />
+      <div className={styles.video_decor}>
+        <div className={styles.video_decor_blue_line}></div>
+        <div className={styles.video_decor_red_line}></div>
+        <div className={styles.video_decor_star}></div>
+        <Video 
+          video='https://rutube.ru/play/embed/b96effb0a4004369c6fee2adcaa75e20' 
+          preloader='/about-video-preloader.png'
+        />
+      </div>
           
       <Advantages /> 
       

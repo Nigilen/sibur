@@ -1,3 +1,5 @@
+import { API_URL } from "../utils/config";
+
 type ApiBaseResponse = {
   status: 200 | 201 | 204 | 400 | 500;
   message?: string;
@@ -28,3 +30,16 @@ export const sendRequest = async (body: TData): Promise<ApiBaseResponse> => {
     },
   }).then((res) => parseResponse(res));
 };
+
+
+
+export const getSettings = async () => {
+  return await fetch(`${API_URL}/api/v1/settings`)
+    .then(response => response.json());
+};
+
+export const getProjects = async () => {
+  return await fetch(`${API_URL}/api/v1/projects`, { next: {revalidate: 1800 }})
+    .then(response => response.json());
+};
+
