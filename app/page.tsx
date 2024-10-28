@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/footer/footer";
 import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
+// import { PastLesson } from "@/components/sections/past-lesson/past-lesson";
 // import { Cookies } from "@/ui-kit/cookies/cookies";
 
 export default function Home() {
@@ -26,6 +27,8 @@ export default function Home() {
         <About />
 
         <Projects />
+
+        {/* <PastLesson /> */}
 
         <Contacts />
         

@@ -196,6 +196,7 @@
   .nav_list {
     padding-inline: 16px;
     row-gap: 30px;
+    font-size: 30px;
   }
   .nav_list .action_btn__header {
     display: flex;
