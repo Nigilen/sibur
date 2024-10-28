@@ -41,7 +41,7 @@ export const Gallery = () => {
       <div className={styles.decor_top}></div>
       <div className={styles.decor_bottom}></div>
       <h3 className={styles.title}>
-        Это было <span className={styles.title_decor}>эпично</span><br className={styles.br}/><span className={styles.title_italic}>химично!</span>
+        Это было <span className={styles.title_decor}>эпично</span><br className={styles.br}/> <span className={styles.title_italic}>химично!</span>
       </h3>
       <div className={styles.slider_wrapper}>
         <Swiper 
