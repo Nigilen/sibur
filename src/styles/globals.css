@@ -2,6 +2,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-block: 5rem;
+  scrollbar-gutter: stable;
 }
 
 html,
@@ -16,7 +17,6 @@ body {
   background: var(--white, #FFFFFF);
   font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
   width: 100%;
-  scrollbar-gutter: stable;
 }
 
 html:has(.modal[open]),
