@@ -16,9 +16,11 @@ export const ActionButton: FC<Props> = ({ withArrow, className }) => {
   const { setIsOpen, isOpen, isMenuOpen, setIsMenuOpen } = useContext(LevelContext);
 
   const hadnlerOpen = () => {
+    window.scrollTo(0, 0);
     setIsOpen(!isOpen);
     if(isMenuOpen) {
       setIsMenuOpen(false)
+      window.onscroll = null;
     }
   };
 
