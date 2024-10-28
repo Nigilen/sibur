@@ -13,6 +13,7 @@ export const Hero = () => {
       </div>
 
       <ul className={styles.badges_list}>
+        <p className={styles.badges_list__caption}>Результаты первой смены,<br/>с 21 по  26 октября 2024 года:</p>
         <li className={styles.badge}>
           <div className={cn(styles.badge_icon, styles.badge_icon__people)}></div>
           <p className={styles.badge_caption}>Узнают больше о химии <span>&#62;15 000</span>учеников</p>

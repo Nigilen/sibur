@@ -31,10 +31,11 @@
 
 .badges_list {
   display: flex;
-  margin-block-start: 128px;
+  margin-block-start: 38px;
   gap: 32px;
   grid-column: 1 / 1;
   grid-row: 2 / 3;
+  flex-wrap: wrap;
 }
 
 .badge {
@@ -86,6 +87,12 @@
   color: var(--dark-blue);
   opacity: 100%;
   margin-block: 2px;
+}
+
+.badges_list__caption {
+  flex-shrink: 0;
+  font-size: 20px;
+  width: 100%;
 }
 
 .hero_img_container {
