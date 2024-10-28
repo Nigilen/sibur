@@ -23,10 +23,11 @@ html:has(.modal[open]),
 body:has(.modal[open]) {
   /* overflow: hidden; */
   /* touch-action: none; */
-
+  scrollbar-gutter: stable;
   position: fixed;
   height: 100vh;
 }
+
 
 
 * {
