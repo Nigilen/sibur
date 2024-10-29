@@ -3,12 +3,12 @@
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
 import styles from './form.module.css';
 import cn from 'classnames';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Success } from '../success/success';
 import { LevelContext } from '@/src/context/context';
 import { Select } from '../select/select';
 import { ErrorMessage } from '@hookform/error-message';
-import { sendRequest } from '@/src/api/internal';
+import { getSettings, sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 
 const posts = [
@@ -43,9 +43,6 @@ const cities = [
   { title: 'Уфа', value: 'ufa' },
 ];
 
-
-
-
 // 58, 59, 26, 28, 49, 48
 export type Inputs = {
   name: string;
@@ -61,7 +58,31 @@ export type Inputs = {
   policy: string;
 };
 
+type TSettings = {
+  policy: string,
+  participation: string,
+  tg_sibur: string,
+  tg_career: string,
+  tg_polymar: string,
+  vk: string
+}
+
 export const Form = () => {
+  const [docs, setDocs] = useState<TSettings | null>(null);
+
+  const fetchAndSetCommonDocs = async () => {
+    try {
+      setDocs(await getSettings().then((res) => res.data[0]));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAndSetCommonDocs()
+  }, []);
+
+  
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
 
   const { isSuccess, setSuccess } = useContext(LevelContext);
@@ -227,6 +248,7 @@ export const Form = () => {
                     placeholder="Статус"
                     onChange={handleSelectPost}
                     name={'status'}
+                    mode='rows'
                     isError={methods.formState.errors.status ? true : false}
                   />
                   <ErrorMessage
@@ -447,7 +469,7 @@ export const Form = () => {
                   ></span>
                   <span className={styles.checkbox__text}>
                     Согласен с обработкой {' '}
-                    <a href="./personal.pdf" target="_blank">
+                    <a href={docs?.participation} target="_blank">
                       персональных данных
                     </a>
                   </span>
@@ -476,7 +498,7 @@ export const Form = () => {
                   <span className={cn(styles.custom_checkbox, methods.formState.errors.policy && styles.error)}></span>
                   <span className={styles.checkbox__text}>
                     Согласен с {' '}
-                    <a href="./policy.pdf" target="_blank">
+                    <a href={docs?.policy} target="_blank">
                       политикой конфиденциальности
                     </a>
                   </span>

@@ -43,3 +43,8 @@ export const getProjects = async () => {
     .then(response => response.json());
 };
 
+export const getGallery = async () => {
+  return await fetch(`${API_URL}/api/v1/gallery`, { next: {revalidate: 1800 }})
+    .then(response => response.json());
+};
+

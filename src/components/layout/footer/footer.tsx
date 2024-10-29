@@ -1,9 +1,18 @@
+import { getSettings } from "@/src/api/internal";
 import styles from "./footer.module.css";
 import cn from "classnames";
 import Image from "next/image";
 
 
-export const Footer = () => {
+export const Footer = async () => {
+  let data = null;
+
+  try {
+    data = await getSettings().then(data => data.data[0]);
+  } catch (e) {
+    console.error(e);
+  }
+
   return (
     <footer className={cn(styles.wrapper, 'container')}>
       <div className={styles.column_logo}>
@@ -14,7 +23,7 @@ export const Footer = () => {
       </div>
       <div className={styles.column_copy}>
         <p className={styles.copyrite}><span>© 2024&nbsp;</span> ПАО «‎СИБУР-Холдинг»‎</p>
-        <a className={styles.policy} href="./policy.pdf" target="blank">Политика в области обработки персональных данных</a>
+        <a className={styles.policy} href={data.policy} target="blank">Политика в области обработки персональных данных</a>
       </div>
     </footer>
   );

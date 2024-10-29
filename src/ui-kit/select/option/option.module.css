@@ -14,7 +14,13 @@
   border-right: 1px solid #00313C33;
 }
 
-
+.option_rows:not(:nth-of-type(n+4)),
+.option_rows:not(:nth-of-type(3n)) {
+  border-right: none;
+}
+.option_rows:not(:nth-of-type(n+4)) {
+  padding-block-start: 0;
+}
 
 
 @media (width < 1440px) {
@@ -32,6 +38,12 @@
   }
   .option:not(:nth-of-type(2n)) {
     border-right: 1px solid #00313C33;
+  }
+  .option_rows:not(:nth-of-type(2n)) {
+    border-right: none;
+  }
+  .option_rows:not(:nth-of-type(n+4)) {
+    padding-block-start: 0;
   }
 }
 

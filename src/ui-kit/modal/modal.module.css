@@ -11,6 +11,9 @@
   max-width: 1200px;
   width: max-content;
   scrollbar-width: none;
+
+  overflow: scroll;
+  height: 100%;
 }
 
 
@@ -59,7 +62,7 @@
   }
 
   .dialog__wrapper {
-    margin-bottom: 120px;
+    margin-bottom: 180px;
     padding: 24px;
   }
   .close_btn {

@@ -115,6 +115,8 @@
   font: var(--menu-primary);
 }
 
+
+
 @media (width < 1440px) {
   .cells {
     /* flex-wrap: wrap; */

@@ -1,0 +1,132 @@
+.slider_wrapper {
+  position: relative;
+  margin-inline: 120px;
+  margin-block-end: 72px; 
+}
+
+.slider_list {
+  list-style: none;
+}
+
+.slider_list .slider_item {
+  padding-block-start: 11px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+}
+
+.slider_control {
+  position: absolute;
+  width: max-content;
+  z-index: 1;
+}
+
+.slider_control__left {
+  left: -80px;
+  top: 223px;
+  transform: translateY(-50%);
+}
+
+.slider_control__right {
+  right: -80px;
+  top: 223px;
+  transform: translateY(-50%);
+}
+
+.slider_control:hover circle {
+  fill: var(--green);
+}
+
+.project_img {
+  border-radius: 32px;
+  box-shadow: -12px -12px 0 0 var(--bg-light-blue-secondary);
+  margin-block-end: 24px;
+  display: flex;
+  margin-inline: auto;
+}
+
+.project_heading {
+  font: var(--h5-primary);
+  color: var(--dark-blue);
+  margin-block-end: 1rem;
+}
+
+.project_description {
+  font: var(--p-medium);
+  color: var(--dark-blue);
+  margin-block-end: 24px;
+  opacity: 60%;
+  max-width: 386px;
+  margin-inline: auto;
+}
+
+.project_link {
+  display: inline-block;
+  font: var(--button-small);
+  padding: 10px 24px;
+  background-color: var(--cyan);
+  border-radius: 12px;
+  color: var(--white);
+  margin-block: auto 0;
+  align-self: center;
+}
+
+.project_link:hover {
+  background-color: var(--green);
+}
+
+@media (width < 1440px) {
+  .slider_wrapper {
+    margin-inline: 52px;
+  }
+
+  .slider_control svg {
+    width: 55px;
+    height: 55px;
+  }
+  .slider_control__left {
+    left: -35px;
+    top: 273px;
+  }
+  .slider_control__right {
+    right: -35px;
+    top: 273px;
+  }
+
+  .decor:after {
+    background-image: 
+      url('/decor-projects-top-left-tab.png'),
+      url('/decor-projects-top-right.svg');
+    background-size: 203px 319px, 195px 280px;
+    background-position: 0% 21%, 112% 250%;
+    
+  }
+  .decor {
+    width: 100%;
+  }
+}
+
+@media (width < 768px) {
+  .slider_wrapper {
+    margin-inline: 16px;
+  }
+
+  .slider_control svg {
+    width: 41px;
+    height: 41px;
+  }
+  .slider_control__left {
+    left: 0;
+    top: 100px;
+  }
+  .slider_control__right {
+    right: 0;
+    top: 100px;
+  }
+  .project_img {
+    width: 196px;
+    height: 196px;
+    margin-block-end: 40px;
+  }
+}

@@ -17,6 +17,7 @@ export const ActionButton: FC<Props> = ({ withArrow, className }) => {
 
   const hadnlerOpen = () => {
     window.scrollTo(0, 0);
+    window.onscroll = () => false;
     setIsOpen(!isOpen);
     if(isMenuOpen) {
       setIsMenuOpen(false)

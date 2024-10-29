@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/footer/footer";
 import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
-// import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
+import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
 
         <Projects />
 
-        {/* <PastLesson /> */}
+        <PastLesson />
 
         <Contacts />
         
