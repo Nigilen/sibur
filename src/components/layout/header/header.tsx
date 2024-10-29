@@ -35,9 +35,9 @@ export const Header = () => {
           <li className={styles.nav_item}>
             <a className={styles.nav_link} href="#projects" onClick={hadnlerClose}>Наши проекты</a>
           </li>
-          {/* <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#contacts" onClick={() => setIsMenuOpen(!isMenuOpen)}>Как это было</a>
-          </li> */}
+          <li className={styles.nav_item}>
+            <a className={styles.nav_link} href="#lesson" onClick={hadnlerClose}>Как это было</a>
+          </li>
           <ActionButton className={cn(styles.action_btn__header, !isMenuOpen && 'visually-hidden')} withArrow />
           
         </ul>

@@ -214,8 +214,10 @@
 
 @media screen and (orientation:landscape) {
   .mob_menu_open {
-    height: 100vh;
+    height: 80vh;
     padding-block-end: 40vh;
-    padding-block-start: 40vh;
+    padding-block-start: 30vh;
+    font-size: 30px;
+    row-gap: 15px;
   }
 }

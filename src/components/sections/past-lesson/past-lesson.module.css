@@ -1,5 +1,6 @@
 .lesson_video {
   margin-block-end: 136px;
+  background-size: cover;
 }
 
 .lesson_title {
@@ -99,12 +100,12 @@
 }
 
 @media (width < 1440px) {
+  .lesson_video div {
+    background-position: center;
+  }
   .lesson_description {
     max-width: 688px;
   }
-
-
-
   .video_decor_blue_line {
     top: -166px;
     left: -99px;
@@ -147,9 +148,6 @@
   .lesson_video {
     margin-block-end: 80px;
   }
-
-
-
   .video_decor_blue_line {
     top: -56px;
     left: -30px;
