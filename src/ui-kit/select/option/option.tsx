@@ -8,7 +8,6 @@ type OptionProps = {
   option: Option;
   onClick: (value: Option['value'], title: Option['title']) => void;
   mode?: 'rows' | 'cells';
-  onMouseDown: () => void
 };
 
 export const Option = (props: OptionProps) => {
@@ -16,7 +15,6 @@ export const Option = (props: OptionProps) => {
     option: { value, title },
     onClick,
     mode = 'rows',
-    onMouseDown
   } = props;
 
   const handleClick = (clickedValue: Option['value'], clickedTitle: Option['title']): MouseEventHandler<HTMLLIElement> => () => {onClick(clickedValue, clickedTitle);};
@@ -25,9 +23,8 @@ export const Option = (props: OptionProps) => {
     <li
       className={cn(styles.option, mode === 'rows' && styles.option_rows)}
       value={value}
-      onClick={handleClick(value, title)}
-      tabIndex={0}
-      onMouseDown={onMouseDown}
+      onMouseDown={handleClick(value, title)}
+      tabIndex={-1}
     >
       {title}
     </li>

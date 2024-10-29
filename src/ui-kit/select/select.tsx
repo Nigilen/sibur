@@ -57,7 +57,6 @@ export const Select = (props: SelectProps) => {
   }, [isOpen, onClose]);
 
   const handleOptionClick = (value: Option['value'], title: Option['title'] ) => {
-    console.log('click')
     setValue(name, title, { shouldValidate: true });
     onChange?.(title);
     setIsOpen(false);
@@ -65,6 +64,7 @@ export const Select = (props: SelectProps) => {
   const handlePlaceHolderClick: MouseEventHandler<HTMLInputElement> = () => {
     setIsOpen((prev) => !prev);
   };
+
 
   return (
     <div
@@ -85,16 +85,19 @@ export const Select = (props: SelectProps) => {
         tabIndex={0}
         type='text'
         {...register(name, { required: 'Обязательное поле' })}
+        
       />
 
       {isOpen && 
-        <ul className={cn(styles.select, mode === 'cells' && styles.cells)} onMouseDown={() => setFocus('city')}>
+        <ul className={cn(styles.select, mode === 'cells' && styles.cells)} 
+          tabIndex={-1}
+          onFocus={() => setFocus(name)}
+          >
           {options.map((option) => (
             <Option
               key={option.value}
               option={option}
               onClick={handleOptionClick}
-              onMouseDown={() => setFocus('city', )}
               mode={mode}
             />
           ))}
