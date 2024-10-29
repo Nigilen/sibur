@@ -39,12 +39,12 @@ export const getSettings = async () => {
 };
 
 export const getProjects = async () => {
-  return await fetch(`${API_URL}/api/v1/projects`, { next: {revalidate: 1800 }})
+  return await fetch(`${API_URL}/api/v1/projects`, { next: {revalidate: 10 }})
     .then(response => response.json());
 };
 
 export const getGallery = async () => {
-  return await fetch(`${API_URL}/api/v1/gallery`, { next: {revalidate: 1800 }})
+  return await fetch(`${API_URL}/api/v1/gallery`, { next: {revalidate: 10 }})
     .then(response => response.json());
 };
 

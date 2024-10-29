@@ -34,7 +34,7 @@ export const Select = (props: SelectProps) => {
     name,
     isError
   } = props;
-  const { register, setValue } = useFormContext()
+  const { register, setValue, setFocus } = useFormContext()
   
   
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -57,6 +57,7 @@ export const Select = (props: SelectProps) => {
   }, [isOpen, onClose]);
 
   const handleOptionClick = (value: Option['value'], title: Option['title'] ) => {
+    console.log('click')
     setValue(name, title, { shouldValidate: true });
     onChange?.(title);
     setIsOpen(false);
@@ -87,12 +88,13 @@ export const Select = (props: SelectProps) => {
       />
 
       {isOpen && 
-        <ul className={cn(styles.select, mode === 'cells' && styles.cells)}>
+        <ul className={cn(styles.select, mode === 'cells' && styles.cells)} onMouseDown={() => setFocus('city')}>
           {options.map((option) => (
             <Option
               key={option.value}
               option={option}
               onClick={handleOptionClick}
+              onMouseDown={() => setFocus('city', )}
               mode={mode}
             />
           ))}
