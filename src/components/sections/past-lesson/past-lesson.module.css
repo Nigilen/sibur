@@ -1,5 +1,8 @@
 .lesson_video {
   margin-block-end: 136px;
+}
+
+.lesson_video div {
   background-size: cover;
 }
 
