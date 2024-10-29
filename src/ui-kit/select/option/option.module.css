@@ -22,6 +22,10 @@
   padding-block-start: 0;
 }
 
+.option_rows {
+  width: 100%;
+}
+
 
 @media (width < 1440px) {
   .option {
