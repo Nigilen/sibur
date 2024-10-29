@@ -73,10 +73,10 @@ export const Select = (props: SelectProps) => {
       data-is-active={isOpen}
       data-mode={mode}
     >
-      <div className={cn(styles.arrow, isOpen && styles.arrow_open)} onClick={handlePlaceHolderClick}></div>
+      <div className={cn(styles.arrow, { [styles.arrow_open]: isOpen })} onClick={handlePlaceHolderClick}></div>
       <input
         readOnly
-        className={cn(styles.placeholder, isError && styles.placeholder_error)}
+        className={cn(styles.placeholder, {[styles.placeholder_error]: isError })}
         data-status={status}
         data-selected={!!selected?.value}
         defaultValue={selected?.title || undefined}
@@ -89,7 +89,7 @@ export const Select = (props: SelectProps) => {
       />
 
       {isOpen && 
-        <ul className={cn(styles.select, mode === 'cells' && styles.cells)} 
+        <ul className={cn(styles.select, {[styles.cells]: mode === 'cells'})} 
           tabIndex={-1}
           onFocus={() => setFocus(name)}
           >

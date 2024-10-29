@@ -171,7 +171,6 @@
 
 
 .message {
-  /* position: absolute; */
   top: 103%;
   left: 0;
   color: var(--pink);

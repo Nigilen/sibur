@@ -6,6 +6,7 @@ import cn from "classnames";
 import Image from "next/image";
 import { useContext } from "react";
 import { LevelContext } from "@/src/context/context";
+import Link from "next/link";
 
 
 export const Header = () => {
@@ -27,16 +28,16 @@ export const Header = () => {
         </a>
         <ul className={cn(styles.nav_list, isMenuOpen && styles.mob_menu_open)}>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#project" onClick={hadnlerClose}>О проекте</a>
+            <Link className={styles.nav_link} href="#project" onClick={hadnlerClose}>О проекте</Link>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#about" onClick={hadnlerClose}>О компании</a>
+            <Link className={styles.nav_link} href="#about" onClick={hadnlerClose}>О компании</Link>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#projects" onClick={hadnlerClose}>Наши проекты</a>
+            <Link className={styles.nav_link} href="#projects" onClick={hadnlerClose}>Наши проекты</Link>
           </li>
           <li className={styles.nav_item}>
-            <a className={styles.nav_link} href="#lesson" onClick={hadnlerClose}>Как это было</a>
+            <Link className={styles.nav_link} href="#lesson" onClick={hadnlerClose}>Как это было</Link>
           </li>
           <ActionButton className={cn(styles.action_btn__header, !isMenuOpen && 'visually-hidden')} withArrow />
           

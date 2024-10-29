@@ -20,6 +20,7 @@
 
 .pride_title_decor {
   position: relative;
+  font-style: italic;
 }
 .pride_title_decor::after {
   content: '';
@@ -34,17 +35,10 @@
   height: 176%;
 }
 
-.pride_title span {
-  font-style: italic;
-}
-
 .pride_description {
   font: var(--p-primary);
 }
 
-/* .pride_img {
-  border-radius: 48px;
-  } */
   
 @media (width < 1400px) {
   .pride {

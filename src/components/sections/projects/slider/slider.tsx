@@ -7,6 +7,7 @@ import { Navigation } from 'swiper/modules';
 import styles from './slider.module.css';
 import 'swiper/css';
 import { FC } from 'react';
+import Link from 'next/link';
 
 type SliderProps = {
   data: [
@@ -58,7 +59,7 @@ export const Slider: FC<SliderProps> = ({data}) => {
             <p className={styles.project_description}>
               {item.description}
             </p>
-            <a className={styles.project_link} target='_blank' href={item.link}>Узнать подробнее →</a>
+            <Link className={styles.project_link} target='_blank' href={item.link}>Узнать подробнее →</Link>
           </SwiperSlide>
         ))}
         

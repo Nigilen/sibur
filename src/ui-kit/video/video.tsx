@@ -22,11 +22,12 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
             className={styles.play}
             onClick={() => setIsPlay(!isPlay)}
           >
-            <Image src="./play-btn.svg" width={94.37} height={96} alt="" />
+            <Image className={styles.play_icon} src="./play-btn.svg" width={94.37} height={96} alt="" />
           </button>
         </div>
       : 
         <iframe
+          className={styles.video_iframe}
           width="100%"
           height="100%"
           src={video}
