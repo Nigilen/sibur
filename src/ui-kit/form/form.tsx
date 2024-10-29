@@ -81,7 +81,6 @@ export const Form = () => {
   useEffect(() => {
     fetchAndSetCommonDocs()
   }, []);
-
   
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
 
