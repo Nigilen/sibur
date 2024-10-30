@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 999;
   inset: 0;
-  scrollbar-gutter: stable;
+  
   background-color: transparent;
   border-radius: 24px;
   border: none;
