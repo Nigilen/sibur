@@ -114,13 +114,6 @@
   opacity: 60%;
 }
 
-.label:focus {
-  background-color: none;
-}
-.label:focus-visible {
-  background-color: none;
-}
-
 .input {
   padding: 21.5px 20px;
   border-radius: 16px;
@@ -141,6 +134,11 @@
   background-color: #EDEFF1; */
 }
 .input:focus-visible {
+  outline: none;
+  border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1;
+}
+.input:active {
   outline: none;
   border: 1px solid var(--transparent-blue-primary);
   background-color: #EDEFF1;
