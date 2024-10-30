@@ -2,7 +2,6 @@
   position: fixed;
   z-index: 999;
   inset: 0;
-  overscroll-behavior: none;
   background-color: transparent;
   border-radius: 24px;
   border: none;
