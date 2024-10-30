@@ -20,7 +20,7 @@ body {
 
 html:has(.modal[open]),
 body:has(.modal[open]) {
-  overflow: hidden;
+  /* overflow: hidden; */
   /* overscroll-behavior: contain; */
   /* touch-action: none; */
   /* position: fixed; */
