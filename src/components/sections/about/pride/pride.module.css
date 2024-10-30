@@ -41,6 +41,9 @@
 
   
 @media (width < 1400px) {
+  .br_1440 {
+    display: none;
+  }
   .pride {
     grid-template-columns: auto;
     align-items: center;
@@ -57,9 +60,7 @@
 }
   
 @media (width < 768px) {
-  .br {
-    display: none;
-  }
+
   .pride_title_decor::after {
     top: -19px;
     left: -3px;
