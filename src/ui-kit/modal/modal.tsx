@@ -19,11 +19,11 @@ export const Modal:FC<Props> = ({ children }) => {
     const margin =`${window.innerWidth - document.documentElement.clientWidth}px`;
     if (isOpen) {
       modal.current?.showModal();
-      document.body.style.marginLeft = margin;
+      document.body.style.marginRight = margin;
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
-      document.body.style.marginLeft = '0px';
+      document.body.style.marginRight = '0px';
     }
   }, [isOpen, setIsOpen])
 
