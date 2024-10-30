@@ -114,6 +114,13 @@
   opacity: 60%;
 }
 
+.label:focus {
+  background-color: none;
+}
+.label:focus-visible {
+  background-color: none;
+}
+
 .input {
   padding: 21.5px 20px;
   border-radius: 16px;
