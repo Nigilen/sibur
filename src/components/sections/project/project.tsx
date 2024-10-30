@@ -6,13 +6,13 @@ import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
 export const Project = () => {
   return (
     <article className={cn(styles.project, 'container')}>
-      <header className={styles.project_header}>
+      <div className={styles.project_header}>
         <h2 id='project' className={cn(styles.project_caption, 'section_caption')}>Проект</h2>
         <p className={styles.project_title}>
           Менделеевская<br/>
           <span className={styles.project_title__decor}>Смена </span>
         </p>
-      </header>
+      </div>
       <section className={styles.project_section}>
         <p className={cn(styles.section_text, styles.section_text__decor)}>
           Всё, что нас окружает — это химия! Доска, парты, линейки, пеналы и телефоны! 8 из 10 предметов вокруг нас сделаны благодаря нефтегазохимии. Как полимерная продукция влияет на&nbsp;экономику страны? Почему без нефтегазохимии невозможно представить не только будущее, <br className={styles.br}/>но и наше настоящее?

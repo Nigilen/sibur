@@ -17,13 +17,16 @@ export const Modal:FC<Props> = ({ children }) => {
   
   useEffect(()=> {
     const padding =`${window.innerWidth - document.documentElement.clientWidth}px`;
+    const header = document.querySelectorAll('header');
     if (isOpen) {
       modal.current?.showModal();
       document.body.style.paddingRight = padding;
+      header[0].style.marginRight = padding;
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
       document.body.style.paddingRight = '0px';
+      header[0].style.marginRight = '0px';
     }
   }, [isOpen, setIsOpen])
 
