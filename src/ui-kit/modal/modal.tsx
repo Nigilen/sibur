@@ -18,6 +18,7 @@ export const Modal:FC<Props> = ({ children }) => {
   useEffect(()=> {
     if (isOpen) {
       modal.current?.showModal();
+      document.body.style.padding = `${window.innerWidth - document.documentElement.clientWidth}px`
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
