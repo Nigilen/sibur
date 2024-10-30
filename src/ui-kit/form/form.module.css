@@ -114,13 +114,16 @@
   opacity: 60%;
 }
 
+
 .input {
+  appearance: none;
   padding: 21.5px 20px;
   border-radius: 16px;
   background-color: var(--light-gray);
   color: var(--dark-blue);
   width: 100%;
   border: 1px solid transparent;
+  transition-duration: .3s;
 }
 
 .input:hover {
@@ -129,10 +132,8 @@
 
 .input:focus {
   outline: none;
-  border: none;
-  background-color: none;
-  /* border: 1px solid var(--transparent-blue-primary);
-  background-color: #EDEFF1; */
+  border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1;
 }
 .input:focus-visible {
   outline: none;
