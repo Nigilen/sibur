@@ -19,7 +19,7 @@ export const Modal:FC<Props> = ({ children }) => {
     const padding =`${window.innerWidth - document.documentElement.clientWidth}px`;
     if (isOpen) {
       modal.current?.showModal();
-      document.body.style.padding = padding;
+      document.body.style.paddingLeft = padding;
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
