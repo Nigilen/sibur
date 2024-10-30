@@ -14,11 +14,12 @@ export const Modal:FC<Props> = ({ children }) => {
   const modal = useRef<HTMLDialogElement>(null);
 
   const { setIsOpen, isOpen, setSuccess } = useContext(LevelContext);
-
+  
   useEffect(()=> {
+    const padding =`${window.innerWidth - document.documentElement.clientWidth}px`;
     if (isOpen) {
       modal.current?.showModal();
-      document.body.style.padding = `${window.innerWidth - document.documentElement.clientWidth}px`
+      document.body.style.padding = padding;
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
