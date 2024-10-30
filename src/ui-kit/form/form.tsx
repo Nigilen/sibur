@@ -139,13 +139,13 @@ export const Form = () => {
                     }
                   />
                 </label>
-                <label htmlFor="surname" className={styles.label_wrapper}>
+                <label htmlFor="surname" className={styles.label_wrapper} onClick={(e: React.MouseEvent) => {e.stopPropagation(); console.log(e); }}>
                   <input
                     className={cn(styles.input, [methods.formState.errors.surname && styles.error])}
                     id="surname"
                     type="text"
                     tabIndex={0}
-                    onClick={(e: SyntheticEvent) => e.stopPropagation()}
+                    
                     placeholder="Фамилия"
                     {...methods.register('surname', {
                       required: 'Обязательное поле',
@@ -181,7 +181,6 @@ export const Form = () => {
                     className={cn(styles.input, [methods.formState.errors.middle_name && styles.error])}
                     id="middle_name"
                     tabIndex={0}
-                    onClick={(e: SyntheticEvent) => e.stopPropagation()}
                     placeholder="Отчество"
                     type="text"
                     {...methods.register('middle_name', {
