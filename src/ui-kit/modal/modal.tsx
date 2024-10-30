@@ -16,14 +16,14 @@ export const Modal:FC<Props> = ({ children }) => {
   const { setIsOpen, isOpen, setSuccess } = useContext(LevelContext);
   
   useEffect(()=> {
-    const margin =`${window.innerWidth - document.documentElement.clientWidth}px`;
+    const padding =`${window.innerWidth - document.documentElement.clientWidth}px`;
     if (isOpen) {
       modal.current?.showModal();
-      document.body.style.marginRight = margin;
+      document.body.style.paddingRight = padding;
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
-      document.body.style.marginRight = '0px';
+      document.body.style.paddingRight = '0px';
     }
   }, [isOpen, setIsOpen])
 
