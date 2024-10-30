@@ -126,11 +126,7 @@
 .input:hover {
   border: 1px solid var(--transparent-blue-primary);
 }
-.input:focus-within {
-  outline: none;
-  border: none;
-  background-color: none;
-}
+
 .input:focus {
   outline: none;
   border: none;

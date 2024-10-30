@@ -22,8 +22,8 @@ body:has(.modal[open]) {
   overflow: hidden;
   /* overscroll-behavior: contain; */
   /* touch-action: none; */
-  /* position: fixed; */
-  /* height: 100vh; */
+  position: fixed;
+  height: 100vh;
 }
 
 

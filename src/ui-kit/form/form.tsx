@@ -3,7 +3,7 @@
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
 import styles from './form.module.css';
 import cn from 'classnames';
-import { SyntheticEvent, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Success } from '../success/success';
 import { LevelContext } from '@/src/context/context';
 import { Select } from '../select/select';
@@ -108,7 +108,6 @@ export const Form = () => {
                     id="name"
                     type="text"
                     tabIndex={0}
-                    onClick={(e: SyntheticEvent) => e.stopPropagation()}
                     placeholder="Имя"
                     {...methods.register('name', {
                       required: 'Обязательное поле',
@@ -139,13 +138,12 @@ export const Form = () => {
                     }
                   />
                 </label>
-                <label htmlFor="surname" className={styles.label_wrapper} onClick={(e: React.MouseEvent) => {e.stopPropagation(); console.log(e); }}>
+                <label htmlFor="surname" className={styles.label_wrapper}>
                   <input
                     className={cn(styles.input, [methods.formState.errors.surname && styles.error])}
                     id="surname"
                     type="text"
                     tabIndex={0}
-                    
                     placeholder="Фамилия"
                     {...methods.register('surname', {
                       required: 'Обязательное поле',
