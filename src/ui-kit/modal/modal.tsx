@@ -23,6 +23,7 @@ export const Modal:FC<Props> = ({ children }) => {
       window.scrollTo(0, 0);
     } else {
       modal.current?.close();
+      document.body.style.paddingLeft = '0px';
     }
   }, [isOpen, setIsOpen])
 
