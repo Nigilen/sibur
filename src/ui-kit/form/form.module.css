@@ -126,16 +126,18 @@
 .input:hover {
   border: 1px solid var(--transparent-blue-primary);
 }
-/* .input:focus {
+.input:focus {
   outline: none;
-  border: 1px solid var(--transparent-blue-primary);
-  background-color: #EDEFF1;
+  border: none;
+  background-color: none;
+  /* border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1; */
 }
 .input:focus-visible {
   outline: none;
   border: 1px solid var(--transparent-blue-primary);
   background-color: #EDEFF1;
-} */
+}
 
 
 .input option {
