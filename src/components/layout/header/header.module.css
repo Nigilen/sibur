@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  justify-self: center;
   padding-block: 24px;
   background-color: var(--cyan, #008C95);
   color: var(--white, #FFFFFF);
@@ -13,6 +14,7 @@
   transition-duration: .8s;
   transition-timing-function: cubic-bezier(1,-0.01,.11,.83);
   inset-inline: 0;
+  padding-inline: 120px;
 }
 
 .action_btn__header {
@@ -115,6 +117,7 @@
 
   .wrapper {
     gap: 40px;
+    padding-inline: 40px;
   }
   
   .wrapper:has(.mob_menu_open) {
@@ -188,7 +191,7 @@
   }
 
   .wrapper {
-    padding-block: 16px;
+    padding: 16px;
   }
   .action_btn__header {
     display: none;
@@ -221,3 +224,4 @@
     row-gap: 15px;
   }
 }
+

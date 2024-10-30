@@ -21,7 +21,7 @@ export const Header = () => {
   };
 
   return (
-    <header className={cn('container', styles.wrapper)}>
+    <header className={cn(styles.wrapper)}>
       <nav className={styles.nav}>
         <a className={styles.logo} href="#">
           <Image src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
