@@ -10,38 +10,9 @@ import { Select } from '../select/select';
 import { ErrorMessage } from '@hookform/error-message';
 import { getSettings, sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
+import { CITIES, POSTS } from './data';
 
-const posts = [
-  { title: 'Директор', value: 'director' },
-  { title: 'Учитель', value: 'teacher' },
-  { title: 'Родитель', value: 'parent' },
-];
-const cities = [
-  { title: 'Балахна', value: 'blagoveshchensk' },
-  { title: 'Благовещенск (Дальний Восток)', value: 'blagoveshchensk-dv' },
-  { title: 'Благовещенск (Республика Башкортостан)', value: 'blagoveshchensk-bashk' },
-  { title: 'Воронеж', value: 'voronezh' },
-  { title: 'Дзержинск', value: 'dzerzhinsk' },
-  { title: 'Казань', value: 'kazan' },
-  { title: 'Красноярск', value: 'krasnoyarsk' },
-  { title: 'Кстово', value: 'kstovo' },
-  { title: 'Москва и МО', value: 'moskva-i-mo' },
-  { title: 'Нижневартовск', value: 'nizhnevartovsk' },
-  { title: 'Нижнекамск', value: 'nizhnekamsk' },
-  { title: 'Нижний Новгород', value: 'n-novgorod' },
-  { title: 'Новокуйбышевск', value: 'novokujbyshevsk' },
-  { title: 'Ноябрьск', value: 'noyabrsk' },
-  { title: 'Нягань', value: 'nyagan' },
-  { title: 'Пермь', value: 'perm' },
-  { title: 'Пыть-Ях', value: 'pyt-yah' },
-  { title: 'Свободный', value: 'svobodnyj' },
-  { title: 'Тверь', value: 'tver' },
-  { title: 'Тобольск', value: 'tobolsk' },
-  { title: 'Томск', value: 'tomsk' },
-  { title: 'Тюмень', value: 'tyumen' },
-  { title: 'Усть-Лужское с/п', value: 'ust-luzhskoe' },
-  { title: 'Уфа', value: 'ufa' },
-];
+
 
 // 58, 59, 26, 28, 49, 48
 export type Inputs = {
@@ -107,8 +78,8 @@ export const Form = () => {
     methods.setValue('city', value);
   };
 
-  const selectedPost = posts.find((item) => item.value === selectPost);
-  const selectedCity = cities.find((item) => item.value === selectCity);
+  const selectedPost = POSTS.find((item) => item.value === selectPost);
+  const selectedCity = CITIES.find((item) => item.value === selectCity);
 
   return (
     <>
@@ -122,6 +93,7 @@ export const Form = () => {
               </p>
             </div>
             <form action="" className={styles.form} onSubmit={methods.handleSubmit(onSubmit)}>
+              
               <fieldset className={cn(styles.fieldset, styles.fieldset__fullname)}>
                 <legend
                   className={cn(styles.fieldset_caption, [
@@ -243,7 +215,7 @@ export const Form = () => {
                   </span>
                   <Select
                     selected={selectedPost || null}
-                    options={posts}
+                    options={POSTS}
                     placeholder="Статус"
                     onChange={handleSelectPost}
                     name={'status'}
@@ -268,7 +240,7 @@ export const Form = () => {
                   <span className={cn(styles.label, [methods.formState.errors.city && styles.error])}>Город</span>
                   <Select
                     selected={selectedCity || null}
-                    options={cities}
+                    options={CITIES}
                     placeholder="Город"
                     onChange={handleSelectCity}
                     name="city"
