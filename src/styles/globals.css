@@ -8,7 +8,7 @@ html,
 body {
   overflow-x: hidden;
   /* min-width: 360px; */
-  scrollbar-gutter: stable;
+  
 }
 
 body {
@@ -21,6 +21,7 @@ body {
 html:has(.modal[open]),
 body:has(.modal[open]) {
   overflow: hidden;
+  scrollbar-gutter: stable;
   /* touch-action: none; */
   /* position: fixed; */
   /* height: 100vh; */
