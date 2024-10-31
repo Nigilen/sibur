@@ -24,12 +24,6 @@
   font: var(--p-extra-small);
 }
 
-.logo {
-  display: flex;
-  width: 93px; 
-  height: 18px;
-}
-
 @media (width < 768px) {
   .wrapper {
     flex-direction: column;

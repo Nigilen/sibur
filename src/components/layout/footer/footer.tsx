@@ -1,8 +1,8 @@
 import { getSettings } from "@/src/api/internal";
 import styles from "./footer.module.css";
 import cn from "classnames";
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/src/ui-kit/logo/logo";
 
 
 export const Footer = async () => {
@@ -17,9 +17,7 @@ export const Footer = async () => {
   return (
     <footer className={cn(styles.wrapper, 'container')}>
       <div className={styles.column_logo}>
-        <Link className={styles.logo} href="#">
-          <Image src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
-        </Link>
+        <Logo />
         <p className={styles.descriptor}>Цели, достойные тебя</p>
       </div>
       <div className={styles.column_copy}>

@@ -1,12 +1,14 @@
 'use client'
 
 import { ActionButton } from "@/src/ui-kit/action-button/actionButton";
-import styles from "./header.module.css";
-import cn from "classnames";
-import Image from "next/image";
 import { useContext } from "react";
 import { LevelContext } from "@/src/context/context";
 import Link from "next/link";
+import { Logo } from "@/src/ui-kit/logo/logo";
+import { links } from "./utils";
+import cn from "classnames";
+import styles from "./header.module.css";
+
 
 
 export const Header = () => {
@@ -23,22 +25,13 @@ export const Header = () => {
   return (
     <header className={cn(styles.wrapper)}>
       <nav className={styles.nav}>
-        <Link className={styles.logo} href="#">
-          <Image className={styles.logo_img} src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
-        </Link>
+        <Logo className={styles.logo_header} />
         <ul className={cn(styles.nav_list, isMenuOpen && styles.mob_menu_open)}>
-          <li className={styles.nav_item}>
-            <Link className={styles.nav_link} href="#project" onClick={hadnlerClose}>О проекте</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link className={styles.nav_link} href="#about" onClick={hadnlerClose}>О компании</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link className={styles.nav_link} href="#projects" onClick={hadnlerClose}>Наши проекты</Link>
-          </li>
-          {/* <li className={styles.nav_item}>
-            <Link className={styles.nav_link} href="#lesson" onClick={hadnlerClose}>Как это было</Link>
-          </li> */}
+          {links.map((link) => (
+            <li className={styles.nav_item} key={link.id}>
+              <Link className={styles.nav_link} href={link.id} onClick={hadnlerClose}>{link.title}</Link>
+            </li>
+          ))}
           <ActionButton className={cn(styles.action_btn__header)} withArrow />
         </ul>
       </nav>

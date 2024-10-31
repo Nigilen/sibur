@@ -3,7 +3,6 @@
   padding-block: 96px 120px;
 }
 
-
 .section_caption {
   margin-block-end: 24px;
   color: var(--dark-blue);
@@ -14,7 +13,6 @@
   color: var(--dark-blue);
   letter-spacing: -0.05em;
 }
-
 
 .br_768 {
   display: none;
