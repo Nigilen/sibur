@@ -21,6 +21,10 @@
   z-index: 10;
 }
 
+.action_btn__header_hide {
+  display: none;
+}
+
 .nav {
   display: flex;
   width: 100%;
@@ -145,7 +149,7 @@
     transition: height 0.4s ease-in-out, padding 0.4s ease-in-out;
     z-index: 20;
     padding-block-end: 0;
-    font-size: 30px;
+    font-size: 64px;
   }
 
   .nav_list .nav_item:first-of-type {

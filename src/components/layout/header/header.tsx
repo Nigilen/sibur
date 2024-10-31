@@ -42,7 +42,7 @@ export const Header = () => {
           <ActionButton className={cn(styles.action_btn__header)} withArrow />
         </ul>
       </nav>
-      <ActionButton className={cn(styles.action_btn__header, isMenuOpen && 'visually-hidden')} />
+      <ActionButton className={cn(styles.action_btn__header, isMenuOpen && styles.action_btn__header_hide)} />
       <button className={cn(styles.burger_btn, isMenuOpen && styles.burger_btn__open)} type="button" onClick={hadnlerOpen}>
         <div className={cn(styles.burger_line, styles.top_line)}></div>
         <div className={cn(styles.burger_line, styles.bottom_line)}></div>
