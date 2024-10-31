@@ -40,9 +40,11 @@
   .column_logo {
     align-items: center;
   }
+
   .column_copy {
     text-align: center;
   }
+  
   .copyrite_span {
     display: block;
     margin-block-end: 2px;
