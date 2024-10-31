@@ -11,6 +11,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import { getSettings, sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 import { CITIES, POSTS } from './data';
+import Link from 'next/link';
 
 
 
@@ -440,9 +441,9 @@ export const Form = () => {
                   ></span>
                   <span className={styles.checkbox__text}>
                     Согласен с обработкой {' '}
-                    <a href={docs?.participation} target="_blank">
+                    <Link href={docs?.participation || ''} target="_blank">
                       персональных данных
-                    </a>
+                    </Link>
                   </span>
                 </label>
                 <label htmlFor="policy" className={styles.checkbox}>
@@ -469,9 +470,9 @@ export const Form = () => {
                   <span className={cn(styles.custom_checkbox, methods.formState.errors.policy && styles.error)}></span>
                   <span className={styles.checkbox__text}>
                     Согласен с {' '}
-                    <a href={docs?.policy} target="_blank">
+                    <Link href={docs?.policy || ''} target="_blank">
                       политикой конфиденциальности
-                    </a>
+                    </Link>
                   </span>
                 </label>
               </fieldset>

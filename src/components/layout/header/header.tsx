@@ -40,7 +40,6 @@ export const Header = () => {
             <Link className={styles.nav_link} href="#lesson" onClick={hadnlerClose}>Как это было</Link>
           </li> */}
           <ActionButton className={cn(styles.action_btn__header, !isMenuOpen && 'visually-hidden')} withArrow />
-          
         </ul>
       </nav>
       <ActionButton className={cn(styles.action_btn__header, isMenuOpen && 'visually-hidden')} />

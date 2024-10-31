@@ -1,5 +1,6 @@
 import { getSettings } from '@/src/api/internal';
 import styles from './contacts.module.css';
+import Link from 'next/link';
 
 export const Contacts = async () => {
   let data = null;
@@ -19,7 +20,7 @@ export const Contacts = async () => {
       </h2>
       <ul className={styles.contacts_list}>
         <li className={styles.contacts_item}>
-          <a href={data.tg_sibur} target='_blank' className={styles.contacts_link}>
+          <Link href={data.tg_sibur} target='_blank' className={styles.contacts_link}>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -30,10 +31,10 @@ export const Contacts = async () => {
               </svg>
             </div>
             СИБУР в TG
-          </a>
+          </Link>
         </li>
         <li className={styles.contacts_item}>
-          <a href={data.tg_career} target='_blank' className={styles.contacts_link}>
+          <Link href={data.tg_career} target='_blank' className={styles.contacts_link}>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -44,10 +45,10 @@ export const Contacts = async () => {
               </svg>
             </div>
             Менделеевская смена в TG
-          </a>
+          </Link>
         </li>
         {/* <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href="https://домполимеров.рф/" target='_blank'>
+          <Link className={styles.contacts_link} href="https://домполимеров.рф/" target='_blank'>
             <div className={styles.contacts_icon}>
               <svg viewBox="0 0 48 48" id="Layer_2" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -58,10 +59,10 @@ export const Contacts = async () => {
               </svg>
             </div>
             Дом полимеров
-          </a>
+          </Link>
         </li> */}
         <li className={styles.contacts_item}>
-          <a className={styles.contacts_link} href={data.vk} target='blank'>
+          <Link className={styles.contacts_link} href={data.vk} target='blank'>
             <div className={styles.contacts_icon}>
               <svg fill="#ffffff" viewBox="-2.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -70,7 +71,7 @@ export const Contacts = async () => {
               </svg>
             </div>
             СИБУР в VK
-          </a>
+          </Link>
         </li>
       </ul>
     </section>
