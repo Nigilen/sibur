@@ -24,7 +24,7 @@ export const Header = () => {
     <header className={cn(styles.wrapper)}>
       <nav className={styles.nav}>
         <a className={styles.logo} href="#">
-          <Image src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
+          <Image className={styles.logo_img} src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
         </a>
         <ul className={cn(styles.nav_list, isMenuOpen && styles.mob_menu_open)}>
           <li className={styles.nav_item}>
