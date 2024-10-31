@@ -2,7 +2,7 @@ import { Roboto_Flex } from 'next/font/google';
 import type { Metadata } from 'next';
 import '@/styles/variables.css';
 import '@/styles/globals.css';
-import { LevelProvider } from '@/src/context/context';
+import { MainProvider } from '@/src/context/context';
 import Script from 'next/script';
 import { FRONT_BASE_URL } from '@/src/utils/config';
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={roboto.variable}>
-      <LevelProvider>
+      <MainProvider>
         <body>
           {process.env.NEXT_PUBLIC_IS_PRODUCTION_MODE === 'true' && (
             <>
@@ -70,7 +70,7 @@ export default function RootLayout({
 
           {children}
         </body>
-      </LevelProvider>
+      </MainProvider>
     </html>
   );
 }

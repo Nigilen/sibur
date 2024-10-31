@@ -4,7 +4,7 @@ import { FC, useContext } from 'react';
 import styles from './actionButton.module.css';
 import Image from 'next/image';
 import cn from 'classnames';
-import { LevelContext } from '@/src/context/context';
+import { MainContext } from '@/src/context/context';
 
 type Props = {
   withArrow?: boolean;
@@ -13,7 +13,7 @@ type Props = {
 
 export const ActionButton: FC<Props> = ({ withArrow, className }) => {
 
-  const { setIsOpen, isOpen, isMenuOpen, setIsMenuOpen } = useContext(LevelContext);
+  const { setIsOpen, isOpen, isMenuOpen, setIsMenuOpen } = useContext(MainContext);
 
   const hadnlerOpen = () => {
     window.scrollTo(0, 0);

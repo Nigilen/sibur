@@ -2,7 +2,7 @@
 
 import { createContext, FC, useState } from 'react';
 
-export interface UserContextValue {
+export interface ContextValues {
   isOpen: boolean;
   isSuccess: boolean;
   isMenuOpen: boolean;
@@ -11,7 +11,7 @@ export interface UserContextValue {
   setIsMenuOpen: (isMenuOpen: boolean) => void;
 }
 
-export const LevelContext = createContext<UserContextValue>({ 
+export const MainContext = createContext<ContextValues>({ 
   isOpen: false, 
   isSuccess: false, 
   isMenuOpen: false, 
@@ -25,7 +25,7 @@ type Props = {
 };
 
 
-export const LevelProvider: FC<Props> = ({children}) => {
+export const MainProvider: FC<Props> = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,8 +40,8 @@ export const LevelProvider: FC<Props> = ({children}) => {
   };
 
   return (
-    <LevelContext.Provider value={contextValue}>
+    <MainContext.Provider value={contextValue}>
       {children}
-    </LevelContext.Provider>
+    </MainContext.Provider>
   );
 };

@@ -2,7 +2,7 @@
 
 import { ActionButton } from "@/src/ui-kit/action-button/actionButton";
 import { useContext } from "react";
-import { LevelContext } from "@/src/context/context";
+import { MainContext } from "@/src/context/context";
 import Link from "next/link";
 import { Logo } from "@/src/ui-kit/logo/logo";
 import { links } from "./utils";
@@ -12,7 +12,7 @@ import styles from "./header.module.css";
 
 
 export const Header = () => {
-  const {isMenuOpen, setIsMenuOpen} = useContext(LevelContext);
+  const {isMenuOpen, setIsMenuOpen} = useContext(MainContext);
 
   const hadnlerOpen = () => {
     setIsMenuOpen(!isMenuOpen);

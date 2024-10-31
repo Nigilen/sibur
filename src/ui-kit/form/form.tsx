@@ -5,7 +5,7 @@ import styles from './form.module.css';
 import cn from 'classnames';
 import { useContext, useEffect, useState } from 'react';
 import { Success } from '../success/success';
-import { LevelContext } from '@/src/context/context';
+import { MainContext } from '@/src/context/context';
 import { Select } from '../select/select';
 import { ErrorMessage } from '@hookform/error-message';
 import { getSettings, sendRequest } from '@/src/api/internal';
@@ -56,7 +56,7 @@ export const Form = () => {
   
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
 
-  const { isSuccess, setSuccess } = useContext(LevelContext);
+  const { isSuccess, setSuccess } = useContext(MainContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     await sendRequest(data)

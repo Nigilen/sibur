@@ -3,7 +3,7 @@
 import { FC, useContext, useEffect, useRef } from 'react';
 import styles from './modal.module.css';
 import cn from 'classnames';
-import { LevelContext } from '@/src/context/context';
+import { MainContext } from '@/src/context/context';
 
 type Props = {
   // isOpen: boolean;
@@ -13,7 +13,7 @@ type Props = {
 export const Modal:FC<Props> = ({ children }) => {
   const modal = useRef<HTMLDialogElement>(null);
 
-  const { setIsOpen, isOpen, setSuccess } = useContext(LevelContext);
+  const { setIsOpen, isOpen, setSuccess } = useContext(MainContext);
   
   useEffect(()=> {
     const padding =`${window.innerWidth - document.documentElement.clientWidth}px`;
