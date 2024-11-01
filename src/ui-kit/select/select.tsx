@@ -7,7 +7,7 @@ import cn from 'classnames';
 import { useFormContext } from 'react-hook-form';
 
 
-type Option = { title: string; value: string };
+type Option = { label: string; value: string };
 
 
 type SelectProps = {
@@ -56,7 +56,7 @@ export const Select = (props: SelectProps) => {
     };
   }, [isOpen, onClose]);
 
-  const handleOptionClick = (value: Option['value'], title: Option['title'] ) => {
+  const handleOptionClick = (value: Option['value'], title: Option['label'] ) => {
     setValue(name, title, { shouldValidate: true });
     onChange?.(title);
     setIsOpen(false);
@@ -79,9 +79,9 @@ export const Select = (props: SelectProps) => {
         className={cn(styles.placeholder, {[styles.placeholder_error]: isError })}
         data-status={status}
         data-selected={!!selected?.value}
-        defaultValue={selected?.title || undefined}
+        defaultValue={selected?.label || undefined}
         onClick={handlePlaceHolderClick}
-        placeholder={selected?.title || placeholder}
+        placeholder={selected?.label || placeholder}
         tabIndex={0}
         type='text'
         {...register(name, { required: 'Обязательное поле' })}

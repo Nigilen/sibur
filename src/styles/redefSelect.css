@@ -30,19 +30,40 @@
   background-color: #EDEFF1;
 }
 
+.react-select-container .react-select__placeholder {
+  color: var(--dark-blue);
+}
 
 .react-select-container .react-select__menu {
   border-radius: 16px;
   box-shadow: none;
-  overflow: hidden;
   background-color: #EDEFF1;
+  margin: 0;
 }
 
+
+.cells .react-select__menu {
+  display: block;
+  height: 210px;
+  overflow: scroll;
+  position: absolute;
+  max-height: none;
+}
+
+.cells .react-select__menu-list {
+  box-sizing: content-box;
+  position: absolute;
+  inset: 0;
+  column-count: 3;
+  column-rule: 1px solid #00313C33;
+  column-gap: 24px;
+  column-fill: balance;
+  max-height: none;
+}
 
 .react-select-container .react-select__value-container {
   padding: 0;
 }
-
 
 .react-select-container .react-select__indicators {
   border-radius: 24px;
@@ -65,11 +86,9 @@
   display: none;
 }
 
-
 .react-select-container .react-select__menu-list {
   padding: 10px;
 }
-
 
 .react-select-container .react-select__option {
   background-color: transparent;
@@ -79,4 +98,54 @@
 
 .react-select-container .react-select__option:hover {
   color: var(--gray);
+}
+
+.error .react-select__placeholder {
+  color: var(--pink);
+}
+.error .react-select__control {
+  border-color: var(--pink);
+}
+
+.error .react-select__indicators {
+  background-color: var(--pink);
+  opacity: 100%;
+}
+
+.error:hover .react-select__indicators,
+.error:has(.react-select__menu) .react-select__indicators {
+  background-color: var(--pink);
+}
+
+@media (width < 1440px) {
+  .cells .react-select__menu {
+    display: block;
+    border-radius: 16px;
+    box-shadow: none;
+    background-color: #EDEFF1;
+    margin: 0;
+    height: 310px;
+    overflow: scroll;
+    position: absolute;
+    box-sizing: content-box;
+  }
+
+  .cells .react-select__menu-list {
+    display: block;
+    box-sizing: content-box;
+    position: absolute;
+    inset: 0;
+    column-count: 2;
+    column-rule: 1px solid #00313C33;
+    column-gap: 24px;
+    column-fill: balance;
+    word-break: break-word;
+  }
+}
+
+@media (width < 768px) {
+  .cells .react-select__menu-list {
+    column-count: auto;
+    overflow: scroll;
+  }
 }

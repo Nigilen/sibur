@@ -1,12 +1,11 @@
 'use client';
 
-import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
+import { SubmitHandler, useForm, FormProvider, Controller } from 'react-hook-form';
 import styles from './form.module.css';
 import cn from 'classnames';
 import { useContext, useEffect, useState } from 'react';
 import { Success } from '../success/success';
 import { MainContext } from '@/src/context/context';
-import { Select } from '../select/select';
 import { ErrorMessage } from '@hookform/error-message';
 import { getSettings, sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
@@ -14,7 +13,7 @@ import { CITIES, POSTS } from './data';
 import Link from 'next/link';
 import { Input } from './input/input';
 import { Checkbox } from './checkbox/checkbox';
-// import RSelect from 'react-select'
+import RSelect from 'react-select'
 import '@/styles/redefSelect.css';
 
 // const options = [
@@ -65,7 +64,7 @@ export const Form = () => {
   }, []);
   
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
-  const { register, handleSubmit, reset, setValue, formState } = methods;
+  const { register, handleSubmit, reset, formState, control } = methods;
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     await sendRequest(data)
@@ -76,20 +75,23 @@ export const Form = () => {
       .catch(console.error);
   };
 
-  const [selectPost, setSelectPost] = useState('');
-  const [selectCity, setSelectCity] = useState('');
+  // const [selectPost, setSelectPost] = useState('');
+  // const [selectCity, setSelectCity] = useState('');
 
-  const handleSelectPost = (value: string) => {
-    setSelectPost(value);
-    setValue('status', value);
-  };
-  const handleSelectCity = (value: string) => {
-    setSelectCity(value);
-    setValue('city', value);
-  };
+  // const handleSelectPost = (value: string) => {
+  //   setSelectPost(value);
+  //   setValue('status', value);
+  // };
+  // const handleSelectCity = (value: string) => {
+  //   setSelectCity(value);
+  //   setValue('city', value);
+  // };
 
-  const selectedPost = POSTS.find((item) => item.value === selectPost);
-  const selectedCity = CITIES.find((item) => item.value === selectCity);
+  // const selectedPost = POSTS.find((item) => item.value === selectPost);
+  // const selectedCity = CITIES.find((item) => item.value === selectCity);
+
+  // console.log(methods.watch('status'));
+  // console.log(methods.watch('city'));
 
   return (
     <>
@@ -174,19 +176,82 @@ export const Form = () => {
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__other)}>
 
-              {/* <label htmlFor="status" className={styles.label_wrapper}>
-                  <span className={cn(styles.label, [formState.errors.status && styles.error])}>
-                    Ваша должность
-                  </span>
-                <RSelect 
-                  options={options}
-                  className="react-select-container"
-                  classNamePrefix="react-select"
+              <label htmlFor="status" className={styles.label_wrapper}>
+                <span className={cn(styles.label, [formState.errors.status && styles.error])}>
+                  Ваша должность
+                </span>
+                <Controller 
+                  control={control}
+                  name="status"
+                  rules={{
+                    required: 'Обязательное поле',
+                  }}
+                  render={({ field }) => 
+                    <RSelect 
+                      {...field}
+                      id='status'
+                      placeholder='Статус'
+                      name='status'
+                      options={POSTS}
+                      value={POSTS.find(c => c.value === field.value)}
+                      onChange={val => field.onChange(val?.label)}
+                      className={cn("react-select-container", [formState.errors.status && 'error'])}
+                      classNamePrefix="react-select"
+                    />
+                  }
                 />
-              </label> */}
+                <ErrorMessage
+                  errors={formState.errors}
+                  name="status"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>
+                        {message}
+                      </span>
+                    ))
+                  }
+                  />
+              </label>
+              <label htmlFor="city" className={styles.label_wrapper}>
+                <span className={cn(styles.label, [formState.errors.city && styles.error])}>
+                  Город
+                </span>
+                <Controller 
+                  control={control}
+                  name="city"
+                  rules={{
+                    required: 'Обязательное поле',
+                  }}
+                  render={({ field }) => 
+                    <RSelect 
+                      {...field}
+                      id='city'
+                      placeholder='Город'
+                      name='city'
+                      options={CITIES}
+                      value={CITIES.find(c => c.value === field.value)}
+                      onChange={val => field.onChange(val?.label)}
+                      className={cn("react-select-container", "cells", [formState.errors.city && 'error'])}
+                      classNamePrefix="react-select"
+                    />
+                  }
+                />
+                <ErrorMessage
+                  errors={formState.errors}
+                  name="city"
+                  render={({ messages }) =>
+                    messages &&
+                    Object.entries(messages).map(([type, message]) => (
+                      <span className={styles.message} key={type}>
+                        {message}
+                      </span>
+                    ))
+                  }
+                  />
+              </label>
 
-
-                <label htmlFor="status" className={styles.label_wrapper}>
+                {/* <label htmlFor="status" className={styles.label_wrapper}>
                   <span className={cn(styles.label, [formState.errors.status && styles.error])}>
                     Ваша должность
                   </span>
@@ -211,9 +276,9 @@ export const Form = () => {
                       ))
                     }
                   />
-                </label>
+                </label> */}
 
-                <label htmlFor="city" className={styles.label_wrapper}>
+                {/* <label htmlFor="city" className={styles.label_wrapper}>
                   <span className={cn(styles.label, [formState.errors.city && styles.error])}>Город</span>
                   <Select
                     selected={selectedCity || null}
@@ -236,7 +301,7 @@ export const Form = () => {
                       ))
                     }
                   />
-                </label>
+                </label> */}
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__school)}>

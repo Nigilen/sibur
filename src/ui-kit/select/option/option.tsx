@@ -2,31 +2,31 @@ import { MouseEventHandler } from 'react';
 import styles from './option.module.css';
 import cn from 'classnames';
 
-type Option = { title: string; value: string };
+type Option = { label: string; value: string };
 
 type OptionProps = {
   option: Option;
-  onClick: (value: Option['value'], title: Option['title']) => void;
+  onClick: (value: Option['value'], title: Option['label']) => void;
   mode?: 'rows' | 'cells';
 };
 
 export const Option = (props: OptionProps) => {
   const {
-    option: { value, title },
+    option: { value, label },
     onClick,
     mode = 'rows',
   } = props;
 
-  const handleClick = (clickedValue: Option['value'], clickedTitle: Option['title']): MouseEventHandler<HTMLLIElement> => () => {onClick(clickedValue, clickedTitle);};
+  const handleClick = (clickedValue: Option['value'], clickedTitle: Option['label']): MouseEventHandler<HTMLLIElement> => () => {onClick(clickedValue, clickedTitle);};
 
   return (
     <li
       className={cn(styles.option, mode === 'rows' && styles.option_rows)}
       value={value}
-      onMouseDown={handleClick(value, title)}
+      onMouseDown={handleClick(value, label)}
       tabIndex={-1}
     >
-      {title}
+      {label}
     </li>
   );
 };
