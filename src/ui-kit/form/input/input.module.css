@@ -1,0 +1,78 @@
+.label_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+
+.label {
+  opacity: 60%;
+}
+
+
+.input {
+  appearance: none;
+  padding: 21.5px 20px;
+  border-radius: 16px;
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+  width: 100%;
+  border: 1px solid transparent;
+  transition-duration: .3s;
+}
+
+.input:hover {
+  border: 1px solid var(--transparent-blue-primary);
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1;
+}
+.input:focus-visible {
+  outline: none;
+  border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1;
+}
+.input:active {
+  outline: none;
+  border: 1px solid var(--transparent-blue-primary);
+  background-color: #EDEFF1;
+}
+
+.input::placeholder {
+  color: var(--dark-blue);
+}
+
+
+.error {
+  border-color: var(--pink);
+  color: var(--pink);
+  opacity: 1;
+}
+.error:active {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.error:focus {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.error:focus-visible {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.error::placeholder {
+  color: var(--pink);
+}
+
+
+.message {
+  top: 103%;
+  left: 0;
+  color: var(--pink);
+  font: var(--p-medium-500);
+}

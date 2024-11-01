@@ -12,6 +12,8 @@ import { getSettings, sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 import { CITIES, POSTS } from './data';
 import Link from 'next/link';
+import { Input } from './input/input';
+import { Checkbox } from './checkbox/checkbox';
 
 
 
@@ -28,6 +30,7 @@ export type Inputs = {
   status: string;
   personal: string;
   policy: string;
+  test: string;
 };
 
 type TSettings = {
@@ -40,6 +43,7 @@ type TSettings = {
 }
 
 export const Form = () => {
+  const { isSuccess, setSuccess } = useContext(MainContext);
   const [docs, setDocs] = useState<TSettings | null>(null);
 
   const fetchAndSetCommonDocs = async () => {
@@ -55,13 +59,12 @@ export const Form = () => {
   }, []);
   
   const methods = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
-
-  const { isSuccess, setSuccess } = useContext(MainContext);
+  const { register, handleSubmit, reset, setValue, formState } = methods;
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     await sendRequest(data)
       .then(() => {
-        methods.reset();
+        reset();
         setSuccess(true);
       })
       .catch(console.error);
@@ -72,11 +75,11 @@ export const Form = () => {
 
   const handleSelectPost = (value: string) => {
     setSelectPost(value);
-    methods.setValue('status', value);
+    setValue('status', value);
   };
   const handleSelectCity = (value: string) => {
     setSelectCity(value);
-    methods.setValue('city', value);
+    setValue('city', value);
   };
 
   const selectedPost = POSTS.find((item) => item.value === selectPost);
@@ -93,125 +96,80 @@ export const Form = () => {
                 Оставьте заявку на проведение урока от СИБУРа в период с&nbsp;ноября&nbsp;2024 по май 2025 года.
               </p>
             </div>
-            <form action="" className={styles.form} onSubmit={methods.handleSubmit(onSubmit)}>
-              
+            <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
               <fieldset className={cn(styles.fieldset, styles.fieldset__fullname)}>
                 <legend
                   className={cn(styles.fieldset_caption, [
-                    (methods.formState.errors.name || methods.formState.errors.surname) && styles.error,
+                    (formState.errors.name || formState.errors.surname) && styles.error,
                   ])}
                 >
                   ФИО
                 </legend>
-                <label htmlFor="name" className={styles.label_wrapper}>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.name && styles.error])}
-                    id="name"
-                    type="text"
-                    tabIndex={0}
-                    placeholder="Имя"
-                    {...methods.register('name', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробел и тире',
-                      },
-                      maxLength: {
-                        value: 55,
-                        message: 'Не больше 55 символов',
-                      },
-                      minLength: {
-                        value: 2,
-                        message: 'Не меньше 2 символов',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="name"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
+                <Input 
+                  register={register}
+                  name="name"
+                  placeholder='Имя'
+                  error={formState.errors.name}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: onlyCyrillicAndSpacesRegex,
+                      message: 'Допускается только кириллица, пробел и тире',
+                    },
+                    maxLength: {
+                      value: 55,
+                      message: 'Не больше 55 символов',
+                    },
+                    minLength: {
+                      value: 2,
+                      message: 'Не меньше 2 символов',
+                    },
+                  }}
+                />
+                <Input 
+                  register={register}
+                  name="surname"
+                  placeholder='Фамилия'
+                  error={formState.errors.surname}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: onlyCyrillicAndSpacesRegex,
+                      message: 'Допускается только кириллица, пробел и тире',
+                    },
+                    maxLength: {
+                      value: 55,
+                      message: 'Не больше 55 символов',
+                    },
+                    minLength: {
+                      value: 2,
+                      message: 'Не меньше 2 символов',
                     }
-                  />
-                </label>
-                <label htmlFor="surname" className={styles.label_wrapper}>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.surname && styles.error])}
-                    id="surname"
-                    type="text"
-                    tabIndex={0}
-                    placeholder="Фамилия"
-                    {...methods.register('surname', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробел и тире',
-                      },
-                      maxLength: {
-                        value: 55,
-                        message: 'Не больше 55 символов',
-                      },
-                      minLength: {
-                        value: 2,
-                        message: 'Не меньше 2 символов',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="surname"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
-                <label htmlFor="middle_name" className={styles.label_wrapper}>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.middle_name && styles.error])}
-                    id="middle_name"
-                    tabIndex={0}
-                    placeholder="Отчество"
-                    type="text"
-                    {...methods.register('middle_name', {
-                      required: false,
-                      maxLength: {
-                        value: 55,
-                        message: 'Не больше 55 символов',
-                      },
-                      pattern: {
-                        value: onlyCyrillicAndSpacesRegex,
-                        message: 'Допускается только кириллица, пробел и тире',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="middle_name"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
+                  }}
+                />
+                <Input 
+                  register={register}
+                  name="middle_name"
+                  placeholder='Отчество'
+                  error={formState.errors.middle_name}
+                  rules={{
+                    required: false,
+                    maxLength: {
+                      value: 55,
+                      message: 'Не больше 55 символов',
+                    },
+                    pattern: {
+                      value: onlyCyrillicAndSpacesRegex,
+                      message: 'Допускается только кириллица, пробел и тире',
+                    },
+                  }}
+                />
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__other)}>
+                
                 <label htmlFor="status" className={styles.label_wrapper}>
-                  <span className={cn(styles.label, [methods.formState.errors.status && styles.error])}>
+                  <span className={cn(styles.label, [formState.errors.status && styles.error])}>
                     Ваша должность
                   </span>
                   <Select
@@ -221,10 +179,10 @@ export const Form = () => {
                     onChange={handleSelectPost}
                     name={'status'}
                     mode='rows'
-                    isError={methods.formState.errors.status ? true : false}
+                    isError={formState.errors.status ? true : false}
                   />
                   <ErrorMessage
-                    errors={methods.formState.errors}
+                    errors={formState.errors}
                     name="status"
                     render={({ messages }) =>
                       messages &&
@@ -238,7 +196,7 @@ export const Form = () => {
                 </label>
 
                 <label htmlFor="city" className={styles.label_wrapper}>
-                  <span className={cn(styles.label, [methods.formState.errors.city && styles.error])}>Город</span>
+                  <span className={cn(styles.label, [formState.errors.city && styles.error])}>Город</span>
                   <Select
                     selected={selectedCity || null}
                     options={CITIES}
@@ -246,10 +204,10 @@ export const Form = () => {
                     onChange={handleSelectCity}
                     name="city"
                     mode="cells"
-                    isError={methods.formState.errors.city ? true : false}
+                    isError={formState.errors.city ? true : false}
                   />
                   <ErrorMessage
-                    errors={methods.formState.errors}
+                    errors={formState.errors}
                     name="city"
                     render={({ messages }) =>
                       messages &&
@@ -264,217 +222,119 @@ export const Form = () => {
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__school)}>
-                <label htmlFor="school" className={styles.label_wrapper}>
-                  <span className={cn(styles.label, [methods.formState.errors.school && styles.error])}>
-                    Номер школы
-                  </span>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.school && styles.error])}
-                    id="school"
-                    tabIndex={0}
-                    type="text"
-                    {...methods.register('school', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: addressRegexp,
-                        message: 'Недопустимые символы',
-                      },
-                      maxLength: {
-                        value: 100,
-                        message: 'Не больше 100 символов',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="school"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
-                <label htmlFor="adress" className={styles.label_wrapper}>
-                  <span className={cn(styles.label, [methods.formState.errors.adress && styles.error])}>
-                    Адрес школы
-                  </span>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.adress && styles.error])}
-                    id="adress"
-                    tabIndex={0}
-                    type="text"
-                    {...methods.register('adress', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: addressRegexp,
-                        message: 'Недопустимые символы',
-                      },
-                      maxLength: {
-                        value: 100,
-                        message: 'Не больше 100 символов',
-                      },
-                      minLength: {
-                        value: 5,
-                        message: 'Не меньше 5 символов',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="adress"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
+                <Input 
+                  register={register}
+                  name="school"
+                  fieldLabel='Номер школы'
+                  placeholder='Номер школы'
+                  error={formState.errors.school}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: addressRegexp,
+                      message: 'Недопустимые символы',
+                    },
+                    maxLength: {
+                      value: 100,
+                      message: 'Не больше 100 символов',
+                    },
+                  }}
+                />
+                <Input 
+                  register={register}
+                  name="adress"
+                  fieldLabel='Адрес школы'
+                  placeholder='Адрес школы'
+                  error={formState.errors.adress}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: addressRegexp,
+                      message: 'Недопустимые символы',
+                    },
+                    maxLength: {
+                      value: 100,
+                      message: 'Не больше 100 символов',
+                    },
+                    minLength: {
+                      value: 5,
+                      message: 'Не меньше 5 символов',
+                    },
+                  }}
+                />
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__contacts)}>
                 <legend
                   className={cn(styles.fieldset_caption, [
-                    (methods.formState.errors.phone_number || methods.formState.errors.email) && styles.error,
+                    (formState.errors.phone_number || formState.errors.email) && styles.error,
                   ])}
                 >
                   Контактные данные
                 </legend>
-                <label className={styles.label_wrapper} htmlFor="phone_number">
-                  <span className="visually-hidden">Телефон</span>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.phone_number && styles.error])}
-                    id="phone_number"
-                    tabIndex={0}
-                    type="phone"
-                    placeholder="Телефон"
-                    {...methods.register('phone_number', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: /\d/,
-                        message: 'Только цифры',
-                      },
-                      maxLength: {
-                        value: 12,
-                        message: 'Не больше 12 символов',
-                      },
-                      minLength: {
-                        value: 11,
-                        message: 'Не меньше 11 символов',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="phone_number"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
-                <label className={styles.label_wrapper} htmlFor="email">
-                  <span className="visually-hidden">Email</span>
-                  <input
-                    className={cn(styles.input, [methods.formState.errors.email && styles.error])}
-                    id="email"
-                    tabIndex={0}
-                    type="email"
-                    placeholder="Email"
-                    {...methods.register('email', {
-                      required: 'Обязательное поле',
-                      pattern: {
-                        value: emailRegex,
-                        message: 'Введите валидный email',
-                      },
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="email"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                </label>
+                <Input 
+                  register={register}
+                  name="phone_number"
+                  placeholder='Телефон'
+                  error={formState.errors.phone_number}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: /\d/,
+                      message: 'Только цифры',
+                    },
+                    maxLength: {
+                      value: 12,
+                      message: 'Не больше 12 символов',
+                    },
+                    minLength: {
+                      value: 11,
+                      message: 'Не меньше 11 символов',
+                    },
+                  }}
+                />
+                <Input 
+                  register={register}
+                  name="email"
+                  placeholder='Email'
+                  error={formState.errors.email}
+                  rules={{
+                    required: 'Обязательное поле',
+                    pattern: {
+                      value: emailRegex,
+                      message: 'Введите валидный email',
+                    },
+                  }}
+                />
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__agreements)}>
-                <label htmlFor="personal" className={styles.checkbox}>
-                  <input
-                    id="personal"
-                    className={'visually-hidden'}
-                    type="checkbox"
-                    {...methods.register('personal', {
-                      required: 'Обязательное поле',
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="personal"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                  <span
-                    className={cn(styles.custom_checkbox, methods.formState.errors.personal && styles.error)}
-                  ></span>
-                  <span className={styles.checkbox__text}>
-                    Согласен с обработкой {' '}
-                    <Link href={docs?.participation || ''} target="_blank">
-                      персональных данных
-                    </Link>
-                  </span>
-                </label>
-                <label htmlFor="policy" className={styles.checkbox}>
-                  <input
-                    id="policy"
-                    className={'visually-hidden'}
-                    type="checkbox"
-                    {...methods.register('policy', {
-                      required: 'Обязательное поле',
-                    })}
-                  />
-                  <ErrorMessage
-                    errors={methods.formState.errors}
-                    name="policy"
-                    render={({ messages }) =>
-                      messages &&
-                      Object.entries(messages).map(([type, message]) => (
-                        <span className={styles.message} key={type}>
-                          {message}
-                        </span>
-                      ))
-                    }
-                  />
-                  <span className={cn(styles.custom_checkbox, methods.formState.errors.policy && styles.error)}></span>
-                  <span className={styles.checkbox__text}>
-                    Согласен с {' '}
-                    <Link href={docs?.policy || ''} target="_blank">
-                      политикой конфиденциальности
-                    </Link>
-                  </span>
-                </label>
+                <Checkbox 
+                  register={register}
+                  name="personal"
+                  error={formState.errors.personal}
+                  rules={{
+                    required: 'Обязательное поле',
+                  }}
+                >
+                  Согласен с обработкой {' '}
+                  <Link href={docs?.participation || ''} target="_blank" className={styles.checkbox_link}>
+                    персональных данных
+                  </Link>
+                </Checkbox>
+                <Checkbox 
+                  register={register}
+                  name="policy"
+                  error={formState.errors.policy}
+                  rules={{
+                    required: 'Обязательное поле',
+                  }}
+                >
+                  Согласен с {' '}
+                  <Link href={docs?.policy || ''} target="_blank" className={styles.checkbox_link}>
+                    политикой конфиденциальности
+                  </Link>
+                </Checkbox>
               </fieldset>
 
               <button className={styles.submit_btn} type="submit">

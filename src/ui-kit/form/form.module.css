@@ -40,55 +40,6 @@
   grid-column: 1 / 2;
 }
 
-.fieldset__agreements label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: var(--transparent-blue-secondary);
-}
-
-.fieldset__agreements input {
-  margin-inline-end: 12px;
-}
-
-.fieldset__agreements a {
-  color: var(--cyan);
-  text-decoration: underline;
-}
-
-.fieldset__agreements a:hover {
-  color: var(--green);
-}
-
-.fieldset__agreements .message {
-  position: absolute;
-  top: 100%;
-  left: 0;
-}
-
-.fieldset__agreements .custom_checkbox {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--cyan);
-  border-radius: 4px;
-  margin-inline-end: 12px;
-}
-
-.fieldset__agreements input[type='checkbox']:checked + .custom_checkbox {
-  background-image: url('/agree.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: var(--cyan);
-}
-.fieldset__agreements input[type='checkbox']:focus-visible + .custom_checkbox {
-  outline: 2px solid var(--gray);
-}
-
-.custom_checkbox.error {
-  border-color: var(--pink);
-}
 
 .fieldset_caption {
   justify-self: flex-start;
@@ -109,11 +60,9 @@
   position: relative;
 }
 
-
 .label {
   opacity: 60%;
 }
-
 
 .input {
   appearance: none;
@@ -146,9 +95,6 @@
   background-color: #EDEFF1;
 }
 
-
-
-
 .input option {
   font: var(--p-medium);
 }
@@ -157,29 +103,11 @@
   color: var(--dark-blue);
 }
 
-
 .error {
   border-color: var(--pink);
   color: var(--pink);
   opacity: 1;
 }
-.error:active {
-  border-color: var(--pink);
-  color: var(--pink);
-}
-.error:focus {
-  border-color: var(--pink);
-  color: var(--pink);
-}
-.error:focus-visible {
-  border-color: var(--pink);
-  color: var(--pink);
-}
-
-.error::placeholder {
-  color: var(--pink);
-}
-
 
 .message {
   top: 103%;
@@ -187,7 +115,6 @@
   color: var(--pink);
   font: var(--p-medium-500);
 }
-
 
 .submit_btn {
   grid-column: 2 / -1;
@@ -204,6 +131,14 @@
   background-color: var(--green);
 }
 
+.checkbox_link {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.checkbox_link:hover {
+  color: var(--green);
+}
 
 
 @media (width < 1440px) {
@@ -245,22 +180,7 @@
   .fieldset {
     row-gap: 32px;
   }
-  .fieldset__agreements label {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-  }
-
-  .fieldset__agreements .checkbox {
-    display: grid;
-    grid-template-rows: max-content 1fr;
-    grid-template-columns: max-content 1fr;
-  }
-
-  .fieldset__agreements input {
-    grid-row: 1 / 3;
-  }
-  .fieldset__agreements a {
+  .checkbox_link {
     grid-column: 2 / -1;
   }
 }
