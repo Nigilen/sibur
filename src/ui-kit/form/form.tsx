@@ -14,8 +14,14 @@ import { CITIES, POSTS } from './data';
 import Link from 'next/link';
 import { Input } from './input/input';
 import { Checkbox } from './checkbox/checkbox';
+// import RSelect from 'react-select'
+import '@/styles/redefSelect.css';
 
-
+// const options = [
+//   { value: 'chocolate', label: 'Chocolate' },
+//   { value: 'strawberry', label: 'Strawberry' },
+//   { value: 'vanilla', label: 'Vanilla' }
+// ]
 
 // 58, 59, 26, 28, 49, 48
 export type Inputs = {
@@ -167,7 +173,19 @@ export const Form = () => {
               </fieldset>
 
               <fieldset className={cn(styles.fieldset, styles.fieldset__other)}>
-                
+
+              {/* <label htmlFor="status" className={styles.label_wrapper}>
+                  <span className={cn(styles.label, [formState.errors.status && styles.error])}>
+                    Ваша должность
+                  </span>
+                <RSelect 
+                  options={options}
+                  className="react-select-container"
+                  classNamePrefix="react-select"
+                />
+              </label> */}
+
+
                 <label htmlFor="status" className={styles.label_wrapper}>
                   <span className={cn(styles.label, [formState.errors.status && styles.error])}>
                     Ваша должность

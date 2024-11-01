@@ -89,19 +89,21 @@ export const Select = (props: SelectProps) => {
       />
 
       {isOpen && 
-        <ul className={cn(styles.select, {[styles.cells]: mode === 'cells'})} 
-          tabIndex={-1}
-          onFocus={() => setFocus(name)}
-          >
-          {options.map((option) => (
-            <Option
-              key={option.value}
-              option={option}
-              onClick={handleOptionClick}
-              mode={mode}
-            />
-          ))}
-        </ul>
+        <div className={styles.cells_wrapper}>
+          <ul className={cn(styles.select, {[styles.cells]: mode === 'cells'})} 
+            tabIndex={-1}
+            onFocus={() => setFocus(name)}
+            >
+            {options.map((option) => (
+              <Option
+                key={option.value}
+                option={option}
+                onClick={handleOptionClick}
+                mode={mode}
+              />
+            ))}
+          </ul>
+        </div>
       }
     </div>
   );

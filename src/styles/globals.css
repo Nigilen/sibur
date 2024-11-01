@@ -27,7 +27,6 @@ body:has(.modal[open]) {
 }
 
 
-
 * {
   box-sizing: border-box;
   padding: 0;

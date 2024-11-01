@@ -1,0 +1,82 @@
+.react-select-container .react-select__control {
+  padding: 13px 20px;
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--light-gray);
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+}
+
+.react-select-container:has(.react-select__menu) .react-select__indicators {
+  transform: rotate(180deg);
+  background-color: var(--green);
+  opacity: 100%;
+}
+
+
+.react-select-container .react-select__control:hover {
+  border-color: #00263C4D;
+}
+
+.react-select-container .react-select__control:focus {
+  outline: none;
+  border: none;
+}
+
+.react-select-container .react-select__control--is-focused {
+  outline: none;
+  border-color: #00263C4D;
+  box-shadow: none;
+  background-color: #EDEFF1;
+}
+
+
+.react-select-container .react-select__menu {
+  border-radius: 16px;
+  box-shadow: none;
+  overflow: hidden;
+  background-color: #EDEFF1;
+}
+
+
+.react-select-container .react-select__value-container {
+  padding: 0;
+}
+
+
+.react-select-container .react-select__indicators {
+  border-radius: 24px;
+  opacity: 30%;
+  background-color: var(--dark-blue);
+}
+.react-select-container:hover .react-select__indicators {
+  background-color: var(--green);
+  opacity: 100%;
+}
+.react-select-container .react-select__indicator {
+  padding: 3px;
+}
+.react-select-container .react-select__indicators svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+.react-select__indicator-separator {
+  display: none;
+}
+
+
+.react-select-container .react-select__menu-list {
+  padding: 10px;
+}
+
+
+.react-select-container .react-select__option {
+  background-color: transparent;
+  cursor: pointer;
+  color: #00313C;
+}
+
+.react-select-container .react-select__option:hover {
+  color: var(--gray);
+}
