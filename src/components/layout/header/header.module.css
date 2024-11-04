@@ -14,6 +14,7 @@
   
   inset-inline: 0;
   padding-inline: 120px;
+  margin-inline: auto;
 }
 
 .action_btn__header {
