@@ -69,6 +69,7 @@
 @media (width < 1440px) {
   .projects {
     padding-block: 40px;
+    max-width: 100vw;
   }
   .decor:after {
     background-image: 

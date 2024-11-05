@@ -5,6 +5,7 @@
   align-items: center;
   color: var(--white, #FFFFFF);
   padding-block: 32px;
+  width: 100%;
 }
 
 .column_logo {

@@ -12,9 +12,9 @@
   align-items: center;
   z-index: 10;
   
-  inset-inline: 0;
+  /* inset-inline: 0; */
   padding-inline: 120px;
-  margin-inline: auto;
+  /* margin-inline: auto; */
 }
 
 .action_btn__header {
