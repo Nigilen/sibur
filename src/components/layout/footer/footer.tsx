@@ -1,17 +1,14 @@
-import { getSettings } from "@/src/api/internal";
 import styles from "./footer.module.css";
 import cn from "classnames";
 import Link from "next/link";
 import { Logo } from "@/src/ui-kit/logo/logo";
+import { FC } from "react";
 
-export const Footer = async () => {
-  let data = null;
+type FooterProps = {
+  policy: string;
+};
 
-  try {
-    data = await getSettings().then(data => data.data[0]);
-  } catch (e) {
-    console.error(e);
-  }
+export const Footer: FC<FooterProps> = ({ policy }) => {
 
   return (
     <footer className={cn(styles.wrapper, 'container')}>
@@ -23,7 +20,7 @@ export const Footer = async () => {
         <p className={styles.copyrite}>
           <span className={styles.copyrite_span}>© 2024&nbsp;</span> ПАО «‎СИБУР-Холдинг»
         </p>
-        <Link className={styles.policy} href={data.policy} target="blank">
+        <Link className={styles.policy} href={policy} target="blank">
           Политика в области обработки персональных данных
         </Link>
       </div>

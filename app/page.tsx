@@ -10,8 +10,22 @@ import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
 import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
+import { getGallery, getProjects, getSettings } from "@/src/api/internal";
 
-export default function Home() {
+export default async function Home() {
+
+  let settings = null;
+  let gallery = null;
+  let projects = null;
+  
+  try {
+    settings = await getSettings().then(data => data.data[0]);
+    gallery = await getGallery().then(data => data.data);
+    projects = await getProjects().then(data => data.data);
+  } catch (e) {
+    console.error(e);
+  }
+
   return (
     <>
       <Header />
@@ -19,24 +33,24 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className="visually-hidden">Проекты компании Сибур</h1>
         
-        <Hero /> 
+        <Hero />
         
         <Project />
 
         <About />
 
-        <Projects />
+        <Projects projects={projects} />
 
-        <PastLesson />
+        <PastLesson dataSlider={gallery} />
 
-        <Contacts />
+        <Contacts tg_sibur={settings.tg_sibur} tg_career={settings.tg_career} vk_sibur={settings.vk} />
         
       </main>
 
-      <Footer />
+      <Footer policy={settings.policy} />
 
       <Modal>
-        <Form />
+        <Form policy={settings.policy} participation={settings.participation} />
       </Modal>
 
       {/* <Cookies isOpen={true}/> */}

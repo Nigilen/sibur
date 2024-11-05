@@ -10,15 +10,13 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 type SliderProps = {
-  data: [
-    {
-      id: null,
-      preview: "",
-      title: "",
-      description: "",
-      link: ""
-    }
-  ]
+  data: {
+    id: number,
+    preview: string,
+    title: string,
+    description: string,
+    link: string
+  }[]
 };
 
 export const Slider: FC<SliderProps> = ({data}) => {

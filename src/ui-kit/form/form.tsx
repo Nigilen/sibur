@@ -3,11 +3,11 @@
 import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import styles from './form.module.css';
 import cn from 'classnames';
-import { useContext, useEffect, useState } from 'react';
+import { FC, useContext } from 'react';
 import { Success } from '../success/success';
 import { MainContext } from '@/src/context/context';
 import { ErrorMessage } from '@hookform/error-message';
-import { getSettings, sendRequest } from '@/src/api/internal';
+import { sendRequest } from '@/src/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 import { CITIES, POSTS } from './data';
 import Link from 'next/link';
@@ -31,18 +31,13 @@ export type Inputs = {
   test: string;
 };
 
-type TSettings = {
-  policy: string,
-  participation: string,
-  tg_sibur: string,
-  tg_career: string,
-  tg_polymar: string,
-  vk: string
-}
+type FormProps = {
+  policy?: string;
+  participation?: string;
+};
 
-export const Form = () => {
+export const Form: FC<FormProps> = ({ policy, participation }) => {
   const { isSuccess, setSuccess } = useContext(MainContext);
-  const [docs, setDocs] = useState<TSettings | null>(null);
 
   const { 
     register, 
@@ -52,19 +47,6 @@ export const Form = () => {
     control 
   } = useForm<Inputs>({ criteriaMode: 'all', mode: 'onTouched' });
 
-  const fetchAndSetCommonDocs = async () => {
-    try {
-      setDocs(await getSettings().then((res) => res.data[0]));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchAndSetCommonDocs()
-  }, []);
-  
-
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     await sendRequest(data)
       .then(() => {
@@ -73,7 +55,6 @@ export const Form = () => {
       })
       .catch(console.error);
   };
-
 
   return (
     <>
@@ -331,7 +312,7 @@ export const Form = () => {
                 }}
               >
                 Согласен с обработкой {' '}
-                <Link href={docs?.participation || ''} target="_blank" className={styles.checkbox_link}>
+                <Link href={participation || ''} target="_blank" className={styles.checkbox_link}>
                   персональных данных
                 </Link>
               </Checkbox>
@@ -344,7 +325,7 @@ export const Form = () => {
                 }}
               >
                 Согласен с {' '}
-                <Link href={docs?.policy || ''} target="_blank" className={styles.checkbox_link}>
+                <Link href={policy || ''} target="_blank" className={styles.checkbox_link}>
                   политикой конфиденциальности
                 </Link>
               </Checkbox>

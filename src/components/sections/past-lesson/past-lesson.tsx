@@ -1,8 +1,16 @@
 // import { Video } from '@/src/ui-kit/video/video';
+import { FC } from 'react';
 import { Gallery } from './gallery/gallery';
 import styles from './past-lesson.module.css';
 
-export const PastLesson = () => {
+type PastLessonProps = {
+  dataSlider: {
+    id: number;
+    photo: string;
+  }[]
+}
+
+export const PastLesson: FC<PastLessonProps> = ({dataSlider}) => {
   return (
     <section id='lesson' className={styles.pastLesson}>
       {/* <h2 className={styles.lesson_title}>Урок <span className={styles.lesson_title_decor}>«Менделеевская Смена»</span></h2>
@@ -22,7 +30,7 @@ export const PastLesson = () => {
         />
       </div> */}
 
-      <Gallery />
+      <Gallery dataSlider={dataSlider}/>
 
     </section>
   );

@@ -1,16 +1,15 @@
-import { getGallery } from '@/src/api/internal';
+import { FC } from 'react';
 import styles from './gallery.module.css';
 import { SliderLesson } from './slider/slider';
 
-export const Gallery = async () => {
-  let dataSlider = null;
+type GalleryProps = {
+  dataSlider: {
+    id: number;
+    photo: string;
+  }[]
+};
 
-  try {
-    dataSlider = await getGallery().then(res => res.data);
-  } catch(error){
-    console.error(error)
-  }
-
+export const Gallery: FC<GalleryProps> = ({dataSlider}) => {
   return (
     <>
       {dataSlider.length > 0 &&
