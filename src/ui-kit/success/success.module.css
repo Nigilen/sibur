@@ -8,13 +8,13 @@
   margin-block-end: 12px;
   letter-spacing: -1.96px;
 }
-.success_title span {
+.success_title__decor {
   position: relative;
   font: var(--h4-primary-italic);
   color: var(--green);
 }
 
-.success_title span::after {
+.success_title__decor::after {
   background-image: url('/decor-success.svg');
   content: '';
   position: absolute;
@@ -42,7 +42,7 @@
   .success {
     margin-inline-end: 0;
   }
-  .success_title span::after {
+  .success_title__decor::after {
     width: 34.88px;
     height: 30.51px;
   }

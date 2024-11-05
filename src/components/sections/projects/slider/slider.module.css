@@ -81,7 +81,7 @@
     margin-inline: 52px;
   }
 
-  .slider_control svg {
+  .slider_control__icon {
     width: 55px;
     height: 55px;
   }
@@ -112,7 +112,7 @@
     margin-inline: 16px;
   }
 
-  .slider_control svg {
+  .slider_control__icon {
     width: 41px;
     height: 41px;
   }

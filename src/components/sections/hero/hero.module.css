@@ -18,7 +18,7 @@
   letter-spacing: var(--letter-spacing-extra-small);
   margin-block-end: 2rem;
 }
-.hero_heading span {
+.hero_heading__decor {
   font: var(--h2-primary-italic);
   color: var(--green);
 }
@@ -81,7 +81,7 @@
   color: #00313C99;
 }
 
-.badge_caption span {
+.badge_caption__decor {
   display: block;
   font: var(--button-secondary);
   color: var(--dark-blue);
@@ -147,7 +147,6 @@
     grid-row: 3 / 4;
     margin-block-start: 0;
   }
-
 
 }
 

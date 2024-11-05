@@ -5,11 +5,9 @@
   position: relative;
 }
 
-
 .label {
   opacity: 60%;
 }
-
 
 .input {
   appearance: none;
@@ -46,7 +44,6 @@
   color: var(--dark-blue);
 }
 
-
 .error {
   border-color: var(--pink);
   color: var(--pink);
@@ -68,7 +65,6 @@
 .error::placeholder {
   color: var(--pink);
 }
-
 
 .message {
   top: 103%;

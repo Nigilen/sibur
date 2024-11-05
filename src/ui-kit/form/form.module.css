@@ -1,8 +1,3 @@
-.menu_list {
-  border-radius: 24px;
-  border: 1px solid var(--light-blue);
-}
-
 .form_header {
   margin-inline-end: 198px;
 }
@@ -54,10 +49,6 @@
   opacity: 60%;
 }
 
-.label_wrapper:has(ul) {
-  z-index: 11;
-}
-
 .label_wrapper {
   display: flex;
   flex-direction: column;
@@ -67,45 +58,6 @@
 
 .label {
   opacity: 60%;
-}
-
-.input {
-  appearance: none;
-  padding: 21.5px 20px;
-  border-radius: 16px;
-  background-color: var(--light-gray);
-  color: var(--dark-blue);
-  width: 100%;
-  border: 1px solid transparent;
-  transition-duration: .3s;
-}
-
-.input:hover {
-  border: 1px solid var(--transparent-blue-primary);
-}
-
-.input:focus {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
-  background-color: #EDEFF1;
-}
-.input:focus-visible {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
-  background-color: #EDEFF1;
-}
-.input:active {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
-  background-color: #EDEFF1;
-}
-
-.input option {
-  font: var(--p-medium);
-}
-
-.input::placeholder {
-  color: var(--dark-blue);
 }
 
 .error {
