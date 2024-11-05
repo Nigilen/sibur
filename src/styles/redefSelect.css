@@ -45,7 +45,7 @@
 .cells .react-select__menu {
   display: block;
   height: 210px;
-  /* overflow: scroll; */
+  overflow: scroll;
   position: absolute;
   max-height: none;
 }
@@ -53,7 +53,10 @@
 .cells .react-select__menu-list {
   box-sizing: content-box;
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   column-count: 3;
   column-rule: 1px solid #00313C33;
   column-gap: 24px;
@@ -125,7 +128,7 @@
     background-color: #EDEFF1;
     margin: 0;
     height: 310px;
-    /* overflow: scroll; */
+    overflow: scroll;
     position: absolute;
     box-sizing: content-box;
   }
@@ -146,6 +149,6 @@
 @media (width < 768px) {
   .cells .react-select__menu-list {
     column-count: auto;
-    /* overflow: scroll; */
+    overflow: scroll;
   }
 }
