@@ -3,7 +3,6 @@ import { AboutHeader } from './about-header/aboutHeader';
 import styles from './about.module.css';
 import { Advantages } from './advantages/advantages';
 import { Pride } from './pride/pride';
-// import cn from "classnames";
 
 export const About = () => {
   return (
@@ -23,10 +22,8 @@ export const About = () => {
           
       <Advantages /> 
       
-
       <Pride />
       
-
     </section>
   );
 }

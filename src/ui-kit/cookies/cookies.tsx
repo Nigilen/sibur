@@ -19,7 +19,7 @@ export const Cookies:FC<Props> = ({isOpen}) => {
     }
   }, [isOpen])
 
-  const handlerClose = () => {
+  const handleClose = () => {
     modal.current?.close();
     
   };
@@ -35,7 +35,7 @@ export const Cookies:FC<Props> = ({isOpen}) => {
             С их помощью работать<br className={styles.br}/>с сайтом проще и удобнее
           </p>
         </div>
-        <button onClick={handlerClose} className={styles.button_accept} type='button'>Принимаю</button>
+        <button onClick={handleClose} className={styles.button_accept} type='button'>Принимаю</button>
       </div>
     </dialog>
   );

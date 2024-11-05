@@ -5,7 +5,6 @@ import { Projects } from "@/components/sections/projects/projects";
 import { About } from "@/components/sections/about/about";
 import { Contacts } from "@/components/sections/contacts/contacts";
 import { Footer } from "@/components/layout/footer/footer";
-// import { Preloader } from "@/src/preloader/preloader";
 // import { Cookies } from "@/ui-kit/cookies/cookies";
 import styles from "./page.module.css";
 import { Modal } from "@/ui-kit/modal/modal";
@@ -41,8 +40,6 @@ export default function Home() {
       </Modal>
 
       {/* <Cookies isOpen={true}/> */}
-
-      {/* <Preloader /> */}
     </>
   );
 }
