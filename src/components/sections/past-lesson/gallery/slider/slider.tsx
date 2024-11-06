@@ -2,6 +2,7 @@
 
 import cn from 'classnames';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 
@@ -47,7 +48,7 @@ export const SliderLesson: FC<SliderLessonProps> = ({dataSlider}) => {
         >
           {dataSlider.map((item) => (
             <SwiperSlide key={item.id} className={cn(styles.slider_item, 'swiper-slide-gallery')}>
-              <img className={styles.slider_item__img} src={item.photo} alt='' width={387} height={387} />
+              <Image className={styles.slider_item__img} src={item.photo} alt='' width={387} height={387} />
             </SwiperSlide>
           ))}
         </Swiper>
