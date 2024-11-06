@@ -3,6 +3,9 @@ import styles from './project.module.css';
 import cn from "classnames";
 import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
 
+import mendeleevImg from '@/src/assets/images/project-mendeleev.png';
+import studentImg from '@/src/assets/images/project-student.png';
+
 export const Project = () => {
   return (
     <article className={cn(styles.project, 'container')}>
@@ -24,7 +27,7 @@ export const Project = () => {
 
       <section className={cn(styles.project_section, styles.project_section__grid)}>
         <h3 className={styles.section_heading}>Увлекательный<br/><span className={styles.section_heading__decor}>Урок Химии</span></h3>
-        <Image className={styles.section_img} width={540} height={634} src="/project/mendeleev.png" alt="" />
+        <Image className={styles.section_img} width={540} height={634} src={mendeleevImg} alt="" />
         <p className={styles.section_text}>
           Сотрудники СИБУРа и НейроМенделеев проведут интерактивный урок химии в&nbsp;600+&nbsp;классах <br className={styles.br}/>по всей стране. Школьники станут участниками увлекательной квест-легенды, которая наглядно покажет возможности современной науки. Завершим урок зрелищным химическим экспериментом!
         </p>
@@ -43,7 +46,7 @@ export const Project = () => {
           <ActionButton className={styles.section_button} withArrow/>
         </div>
         <div className={styles.section_img_wrapper}>
-          <Image className={styles.section_img} width={710} height={579} src="/project/student.png" alt="" />
+          <Image className={styles.section_img} width={710} height={579} src={studentImg} alt="" />
         </div>
       </section>
     </article>

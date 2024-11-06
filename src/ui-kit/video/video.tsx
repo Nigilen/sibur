@@ -2,12 +2,13 @@
 
 import { FC, useState } from 'react';
 import styles from './video.module.css';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import cn from 'classnames';
+import playBtn from '@/src/assets/decor/play-btn.svg';
 
 type Props = {
   video: string;
-  preloader: string;
+  preloader: StaticImageData;
   classNames?: string;
 };
 
@@ -17,12 +18,12 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
   return (
     <div className={cn(styles.video, classNames)}>
       {!isPlay ? 
-        <div className={styles.preloader} style={{backgroundImage: `url(${preloader})`}}>
+        <div className={styles.preloader} style={{backgroundImage: `url(${preloader.src})`}}>
           <button
             className={styles.play}
             onClick={() => setIsPlay(!isPlay)}
           >
-            <Image className={styles.play_icon} src="./play-btn.svg" width={94.37} height={96} alt="" />
+            <Image className={styles.play_icon} src={playBtn} width={94.37} height={96} alt="" unoptimized />
           </button>
         </div>
       : 

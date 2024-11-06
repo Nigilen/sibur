@@ -3,6 +3,7 @@ import { AboutHeader } from './about-header/aboutHeader';
 import styles from './about.module.css';
 import { Advantages } from './advantages/advantages';
 import { Pride } from './pride/pride';
+import videoPreloader from '@/src/assets/images/about-video-preloader.png'
 
 export const About = () => {
   return (
@@ -16,7 +17,7 @@ export const About = () => {
         <div className={styles.video_decor_star}></div>
         <Video 
           video='https://rutube.ru/play/embed/b96effb0a4004369c6fee2adcaa75e20' 
-          preloader='/about-video-preloader.png'
+          preloader={videoPreloader}
         />
       </div>
           

@@ -53,10 +53,7 @@
 .cells .react-select__menu-list {
   box-sizing: content-box;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   column-count: 3;
   column-rule: 1px solid #00313C33;
   column-gap: 24px;

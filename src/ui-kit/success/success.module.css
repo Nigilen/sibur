@@ -15,7 +15,7 @@
 }
 
 .success_title__decor::after {
-  background-image: url('/decor-success.svg');
+  background-image: url('../../../src/assets/decor/success-decor.svg');
   content: '';
   position: absolute;
   bottom: 32%;

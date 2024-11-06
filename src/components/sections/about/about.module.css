@@ -6,7 +6,7 @@
 }
 
 .video_decor_blue_line {
-  background-image: url('/video-decor-blue-line-wild.svg');
+  background-image: url('../../../../src/assets/decor/video-decor-blue-line-wild.svg');
   background-repeat: no-repeat;
   position: absolute;
   top: -150px;
@@ -19,7 +19,7 @@
 }
 
 .video_decor_red_line {
-  background-image: url('/video-decor-red-line-wild.svg');
+  background-image: url('../../../../src/assets/decor/video-decor-red-line-wild.svg');
   background-repeat: no-repeat;
   position: absolute;
   top: 370px;
@@ -32,7 +32,7 @@
 }
 
 .video_decor_star {
-  background-image: url('/video-decor-star.svg');
+  background-image: url('../../../../src/assets/decor/video-decor-star.svg');
   background-repeat: no-repeat;
   position: absolute;
   top: -100px;

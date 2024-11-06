@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './logo.module.css';
 import { FC } from 'react';
 import cn from 'classnames';
+import logoImg from '@/src/assets/images/logo.svg';
 
 type LogoProps = {
   className?: string;
@@ -11,7 +12,7 @@ type LogoProps = {
 export const Logo:FC<LogoProps> = ({className}) => {
   return (
     <Link className={cn(styles.logo, className)} href="#">
-      <Image className={styles.logo_img} src="./logo.svg" width={93} height={18} alt="Логотип компании Сибур" />
+      <Image className={styles.logo_img} src={logoImg} width={93} height={18} alt="Логотип компании Сибур" unoptimized />
     </Link>
   )
 }

@@ -19,8 +19,8 @@
   content: '';
   background-repeat: no-repeat;
   background-image: 
-    url('/decor-projects-top-left.png'),
-    url('/decor-projects-top-right.svg');
+    url('../../../../src/assets/decor/projects-decor-top-left.png'),
+    url('../../../../src/assets/decor/projects-decor-top-right.svg');
   background-size: 445px 455px, 265px 315px;
   background-position: -4% 50%, 96% 250%;
   top: 0;
@@ -45,7 +45,7 @@
   content: "";
   position: absolute;
   left: 0;
-  background-image: url('/decor-projects-title.svg');
+  background-image: url('../../../../src/assets/decor/projects-decor-title.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -73,8 +73,8 @@
   }
   .decor:after {
     background-image: 
-      url('/decor-projects-top-left-tab.png'),
-      url('/decor-projects-top-right.svg');
+      url('../../../../src/assets/decor/projects-decor-top-left-tab.png'),
+      url('../../../../src/assets/decor/projects-decor-top-right.svg');
     background-size: 203px 319px, 195px 280px;
     background-position: 0% 21%, 112% 250%;
   }
@@ -90,8 +90,8 @@
   }
   .decor:after {
     background-image: 
-      url('/decor-projects-top-left-mob.png'),
-      url('/decor-projects-top-right.svg');
+      url('../../../../src/assets/decor/projects-decor-top-left-mob.png'),
+      url('../../../../src/assets/decor/projects-decor-top-right.svg');
     background-size: 97px 140px, 135px 170px;
     background-position: -1% -4%, 112% 99%;
   }

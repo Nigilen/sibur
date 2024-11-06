@@ -4,7 +4,7 @@
   margin-block-end: 120px;
   padding: 72px 56px;
   text-align: center;
-  background-image: url('/contacts-bg.svg');
+  background-image: url('../../../../src/assets/images/contacts-bg.svg');
   background-repeat: no-repeat;
   background-position: -300px -557px;
   background-size: 140%;
@@ -34,12 +34,12 @@
   height: 170%;
   top: -42%;
   background-image: 
-    url('/contacts-decor-circle.svg'),
-    url('/contacts-decor-star-top.svg'),
-    url('/contacts-decor-line.svg'),
-    url('/contacts-decor-star-bottom-left.svg'),
-    url('/contacts-decor-star-bottom.svg'),
-    url('/contacts-decor-star-bottom-right.svg');
+    url('../../../../src/assets/decor/contacts-decor-circle.svg'),
+    url('../../../../src/assets/decor/contacts-decor-star-top.svg'),
+    url('../../../../src/assets/decor/contacts-decor-line.svg'),
+    url('../../../../src/assets/decor/contacts-decor-star-bottom-left.svg'),
+    url('../../../../src/assets/decor/contacts-decor-star-bottom.svg'),
+    url('../../../../src/assets/decor/contacts-decor-star-bottom-right.svg');
   background-size: 178px, 82px, 264px, 94px, 144px, 134px;
   background-position: 3% 26%, 37.4% 20%, 101% 0%, 12% 88%, 57.5% 91%, 96% 77%;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@
   width: 63px;
   height: 37.8px;
   display: block;
-  background-image: url('/contacts-title-decor.svg');
+  background-image: url('../../../../src/assets/decor/contacts-title-decor.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }

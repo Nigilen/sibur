@@ -189,8 +189,8 @@ export const Form: FC<FormProps> = ({ policy, participation }) => {
                     <RSelect 
                       {...field}
                       id='city'
-                      closeMenuOnSelect={false}
-                      defaultMenuIsOpen={true}
+                      // closeMenuOnSelect={false}
+                      // defaultMenuIsOpen={true}
                       placeholder='Город'
                       name='city'
                       options={CITIES}

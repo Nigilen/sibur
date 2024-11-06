@@ -2,6 +2,7 @@ import { ActionButton } from '@/src/ui-kit/action-button/actionButton';
 import styles from './hero.module.css';
 import cn from "classnames";
 import Image from 'next/image';
+import heroImage from '@/src/assets/images/hero-img.png';
 
 export const Hero = () => {
   return (
@@ -25,7 +26,7 @@ export const Hero = () => {
       </ul>
 
       <div className={styles.hero_img_container}>
-        <Image className={styles.hero_img} width={809} height={867} src="/hero-img.png" alt="" priority quality={100}/>
+        <Image className={styles.hero_img} width={809} height={867} src={heroImage} alt="" priority quality={100}/>
       </div>
 
     </section>

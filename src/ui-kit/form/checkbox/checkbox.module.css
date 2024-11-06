@@ -27,7 +27,7 @@
 }
 
 .input:checked + .custom_checkbox {
-  background-image: url('/agree.svg');
+  background-image: url('../../../../src/assets/decor/agree.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

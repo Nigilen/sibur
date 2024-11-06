@@ -5,6 +5,7 @@ import styles from './actionButton.module.css';
 import Image from 'next/image';
 import cn from 'classnames';
 import { MainContext } from '@/src/context/context';
+import arrowIcon from '@/src/assets/decor/arrow-icon.svg';
 
 type Props = {
   withArrow?: boolean;
@@ -33,7 +34,7 @@ export const ActionButton: FC<Props> = ({ withArrow, className }) => {
     >
       Пригласить СИБУР к себе
       {
-        withArrow && <Image src={'./arrow-icon.svg'} width={28} height={28} alt={''} />
+        withArrow && <Image src={arrowIcon} width={28} height={28} unoptimized alt={''} />
       }
     </button>
   );

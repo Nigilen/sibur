@@ -3,7 +3,7 @@
   border-radius: 48px;
   padding-block-start: 120px;
   overflow: hidden;
-  background-image: url('/decor-project-bg.svg');
+  background-image: url('../../../../src/assets/decor/project-bg.svg');
   background-repeat: no-repeat;
   background-position: 95% -5.8%;
   background-size: 39%;
@@ -39,7 +39,7 @@
   width: 106.86px;
   height: 72.78px;
   display: block;
-  background-image: url('/project-title-decor.svg');
+  background-image: url('../../../../src/assets/decor/project-title-decor.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -126,7 +126,7 @@
   width: 160.49px;
   height: 158.63px;
   display: block;
-  background-image: url('/decor-section-text.svg');
+  background-image: url('../../../../src/assets/decor/project-decor-section-text.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -187,7 +187,7 @@
   left: -2%;
   width: 104%;
   height: 100%;
-  background-image: url('/decor-through.svg');
+  background-image: url('../../../../src/assets/decor/project-decor-through.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

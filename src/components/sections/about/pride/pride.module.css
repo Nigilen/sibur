@@ -27,7 +27,7 @@
   position: absolute;
   top: -35px;
   left: -10px;
-  background-image: url(/decor-proud-title.svg);
+  background-image: url('../../../../assets/decor/pride-title-decor.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

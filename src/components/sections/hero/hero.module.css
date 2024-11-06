@@ -58,13 +58,13 @@
 }
 
 .badge_icon__people {
-  background-image: url('/badge-icon-people.svg');
+  background-image: url('../../../../src/assets/decor/badge-icon-people.svg');
   box-shadow: 3.36px 3.36px 0 0 #29BCAD80;
   background-color: var(--green);
 }
 
 .badge_icon__school {
-  background-image: url('/badge-icon-school.svg');
+  background-image: url('../../../../src/assets/decor/badge-icon-school.svg');
   box-shadow: 3.36px 3.36px 0 0 #F1566380;
   background-color: var(--pink);
 }

@@ -1,6 +1,8 @@
 import styles from './pride.module.css';
 import Image from 'next/image';
 
+import prideBg from '@/src/assets/images/pride-bg.png'
+
 export const Pride = () => {
   return (
     <div className={styles.pride}>
@@ -10,7 +12,7 @@ export const Pride = () => {
           Результатами выпускников <br className={styles.br_1440}/>наших образовательных <br className={styles.br_1440}/>проектов, целью которых <br className={styles.br_1440}/>является создание инноваций и&nbsp;развитие российской экономики
         </p>
       </div>
-      <Image className={styles.pride_img} src="/praid.png" alt="" width={808} height={569} quality={100}/>
+      <Image className={styles.pride_img} src={prideBg} alt="" width={808} height={569} quality={100}/>
     </div>
   );
 };
