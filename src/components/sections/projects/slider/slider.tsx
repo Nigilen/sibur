@@ -8,7 +8,6 @@ import styles from './slider.module.css';
 import 'swiper/css';
 import { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 type SliderProps = {
   data: {
@@ -53,7 +52,7 @@ export const Slider: FC<SliderProps> = ({data}) => {
       >
         {data && data.map((item, index) => (
           <SwiperSlide key={index} className={cn(styles.slider_item, 'swiper-slide')}>
-            <Image className={styles.project_img} width={240} height={240} src={item.preview} alt="" />
+            <img className={styles.project_img} width={240} height={240} src={item.preview} alt="" />
             <h3 className={styles.project_heading}>{item.title}</h3>
             <p className={styles.project_description}>
               {item.description}
