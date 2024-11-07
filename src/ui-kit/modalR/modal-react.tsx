@@ -23,13 +23,13 @@ export const ModalReact: FC<Props> = ({ children }) => {
       document.body.style.paddingRight = padding;
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
-      header[0].style.paddingRight = padding;
+      header[0].style.marginRight = padding;
       window.scrollTo(0, 0);
     } else {
       document.body.style.paddingRight = '0px';
       document.body.style.overflow = 'auto';
       document.body.style.position = 'relative';
-      header[0].style.paddingRight = '0px';
+      header[0].style.marginRight = '0px';
     }
   }, [isOpen, setIsOpen])
   
