@@ -10,7 +10,6 @@
   max-width: 1200px;
   width: max-content;
   scrollbar-width: none;
-
   overflow: scroll;
   height: 100%;
 }

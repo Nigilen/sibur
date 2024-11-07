@@ -7,12 +7,14 @@ import { Contacts } from "@/components/sections/contacts/contacts";
 import { Footer } from "@/components/layout/footer/footer";
 // import { Cookies } from "@/ui-kit/cookies/cookies";
 import styles from "./page.module.css";
-import { Modal } from "@/ui-kit/modal/modal";
+// import { Modal } from "@/ui-kit/modal/modal";
 import { Form } from "@/ui-kit/form/form";
 import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
 import { getGallery, getProjects, getSettings } from "@/src/api/internal";
+import { ModalReact } from "@/ui-kit/modalR/modal-react";
 
 export default async function Home() {
+  
 
   let settings = null;
   let gallery = null;
@@ -49,9 +51,13 @@ export default async function Home() {
 
       <Footer policy={settings.policy} />
 
-      <Modal>
+      {/* <Modal>
         <Form policy={settings.policy} participation={settings.participation} />
-      </Modal>
+      </Modal> */}
+
+      <ModalReact>
+        <Form policy={settings.policy} participation={settings.participation} />
+      </ModalReact>
 
       {/* <Cookies isOpen={true}/> */}
     </>
