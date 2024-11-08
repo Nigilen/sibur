@@ -1,5 +1,5 @@
 .wrapper {
-  padding-block: 72px 141px;
+  padding-block: 72px 230px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -26,7 +26,7 @@
 .hero_description {
   font: var(--p-secondary-bold);
   margin-block-end: 40px;
-  max-width: 488px;
+  /* max-width: 488px; */
 }
 
 .badges_list {
@@ -91,8 +91,9 @@
 
 .badges_list__caption {
   flex-shrink: 0;
-  font-size: 20px;
+  font: var(--p-secondary-bold);
   width: 100%;
+  line-height: 20px;
 }
 
 .hero_img_container {
@@ -112,15 +113,22 @@
   height: auto;
 }
 
+.br_360 {
+  display: none;
+}
+
 @media (width < 1440px) {
+  .br_1440 {
+    display: none;
+  }
   .hero_description {
-    max-width: none;
+    /* max-width: none; */
   }
   .wrapper {
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     row-gap: 64px;
-    padding-block: 72px;
+    padding-block: 82px;
   }
   .hero_img_container {
     position: static;  
@@ -152,6 +160,9 @@
 
 
 @media (width < 768px) {
+  .br_360 {
+    display: block;
+  }
   .wrapper {
     padding-block: 56px;
     row-gap: 40px;

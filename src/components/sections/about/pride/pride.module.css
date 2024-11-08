@@ -3,13 +3,14 @@
   grid-template-columns: auto 1fr;
   color: var(--dark-blue);
   align-items: center;
-  padding-inline-start: 96px;
   margin-inline: 24px;
   border-radius: 48px;
   background-color: var(--bg-light-blue-secondary);
   overflow: hidden;
   max-width: 1392px;
   margin-inline: auto;
+  padding-inline-start: 96px;
+  padding-inline-end: 84px;
 }
 
 .pride_title {
@@ -39,6 +40,9 @@
   font: var(--p-primary);
 }
 
+.pride_content {
+  padding-block-start: 30px;
+}
   
 @media (width < 1400px) {
   .br_1440 {
@@ -49,9 +53,10 @@
     align-items: center;
     padding-inline-start: 0;
     margin-inline: 0;
+    padding-inline-end: 0;
   }  
   .pride_content {
-    padding: 96px 40px 40px;
+    padding: 96px 40px 12px;
   }
   .pride_img {
     width: 100%;

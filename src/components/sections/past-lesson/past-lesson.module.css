@@ -9,7 +9,8 @@
 .lesson_title {
   font: var(--h2-primary);
   text-align: center;
-  margin-block-end: 24px;
+  margin-block-end: 14px;
+  
 }
 
 .lesson_title_decor {
@@ -20,10 +21,11 @@
 .lesson_description {
   font: var(--p-secondary-bold);
   text-align: center;
-  max-width: 1027px;
   display: block;
   margin-inline: auto;
   margin-block-end: 64px;
+  max-width: 770px;
+  line-height: 19.8px;
 }
 
 .br {
@@ -41,7 +43,7 @@
   background-image: url('../../../../src/assets/decor/video-decor-blue-line-wild.svg');
   background-repeat: no-repeat;
   position: absolute;
-  top: -185px;
+  top: -165px;
   left: -94px;
   background-size: 270px;
   background-position: 0% 114%;
@@ -54,7 +56,7 @@
   background-image: url('../../../../src/assets/decor/video-decor-red-line-wild.svg');
   background-repeat: no-repeat;
   position: absolute;
-  top: 340px;
+  top: 230px;
   right: -455px;
   background-size: 730px;
   background-position: 0% 114%;
@@ -67,7 +69,7 @@
   background-image: url('../../../../src/assets/decor/lesson-video-decor-star.svg');
   background-repeat: no-repeat;
   position: absolute;
-  bottom: -110px;
+  bottom: -70px;
   right: 37%;
   background-size: 120px;
   background-position: 40% 44%;
@@ -91,7 +93,7 @@
   background-image: url('../../../../src/assets/decor/lesson-video-decor-quote-bottom.svg');
   background-repeat: no-repeat;
   position: absolute;
-  bottom: -100px;
+  bottom: -70px;
   left: 55px;
   background-size: 120px;
   background-position: 40% 44%;
@@ -99,8 +101,14 @@
   height: 153px;
   z-index: 1;
 }
+.br {
+  display: none;
+}
 
 @media (width < 1440px) {
+  .br {
+    display: block;
+  }
   .pastLesson {
     max-width: 100vw;
   }
@@ -108,7 +116,9 @@
     background-position: center;
   }
   .lesson_description {
-    max-width: 688px;
+    /* max-width: 688px; */
+    max-width: 578px;
+    font-size: 18px;
   }
   .video_decor_blue_line {
     top: -166px;
@@ -148,6 +158,8 @@
   }
   .lesson_description {
     margin-block-end: 24px;
+    font-size: 16px;
+    padding-inline: 16px;
   }
   .lesson_video {
     margin-block-end: 80px;

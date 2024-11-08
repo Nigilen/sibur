@@ -3,6 +3,7 @@
   position: relative;
   max-width: 1440px;
   margin-inline: auto;
+  margin-block-start: -80px;
 }
 
 .title {
@@ -89,12 +90,11 @@
 }
 
 @media (width < 1440px) {
-  .br {
-    display: block;
-  }
+  
 
   .gallery {
-    padding-block: 40px;
+    margin-block-start: -60px;
+    padding-block: 80px 60px;
   }
 
   .decor_top {
@@ -117,10 +117,18 @@
   .decor_bottom:after {
     background-size: 204px 248px;
     background-position: 77% 58%;
+    top: -28px;
   }
 }
 
 @media (width < 768px) {
+  .gallery {
+    padding-block: 50px 60px;
+  }
+
+  .br {
+    display: block;
+  }
 
   .title {
     margin-block-end: 24px;
@@ -137,7 +145,7 @@
   }
 
   .decor_bottom {
-    top: 58%;
+    top: 63%;
     left: 85%;
     width: 31%;
     height: 26%;

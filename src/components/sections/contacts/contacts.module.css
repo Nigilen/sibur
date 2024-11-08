@@ -167,9 +167,7 @@
     order: 2;
   }
 
-  .contacts_title {
-    font-size: 72px;
-  }
+
   .decor::after {
     height: 131%;
     top: -23%;
@@ -177,8 +175,8 @@
     background-position: -8% 13%, 40.4% 13%, 112% 0%, 3% 98%, 87.5% 104%, 103% 100%;
   }
   .contacts_title__decor::after {
-    top: 25%;
-    right: -25%;
+    top: 15%;
+    right: -31%;
     width: 64.12px;
     height: 43.72px;
   }

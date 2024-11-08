@@ -1,6 +1,6 @@
 .about_header {
   text-align: center;
-  padding-block: 96px 120px;
+  padding-block: 96px 70px;
 }
 
 .section_caption {
@@ -9,7 +9,7 @@
 }
 
 .about_header_text {
-  font: var(--h3-primary);
+  font: var(--h4-primary);
   color: var(--dark-blue);
   letter-spacing: -0.05em;
 }
@@ -24,11 +24,12 @@
     display: block;
   }
   .about_header {
-    padding-block: 96px 72px;
+    padding-block: 76px 72px;
   }
   .about_header_text {
     width: 691px;
     margin-inline: auto;
+    line-height: 44px;
   }
 }
 @media (width < 768px) {
@@ -37,6 +38,7 @@
   }
   .about_header_text {
     width: auto;
+    line-height: 26px;
   }
   .br_none {
     display: none;

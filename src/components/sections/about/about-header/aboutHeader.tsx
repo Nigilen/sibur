@@ -7,9 +7,8 @@ export const AboutHeader = () => {
       <h2 className={cn('section_caption', styles.section_caption)}>О компании</h2>
       <p className={styles.about_header_text}>
         СИБУР — одна 
-        <br className={styles.br_768} /> из лидирующих компаний 
-        мировой нефтегазохимии, которая повышает качество жизни и&nbsp;создает новые возможности
-        <br/>для людей и планеты
+        из&nbsp;лидирующих компаний 
+        мировой нефтегазохимии, которая повышает качество жизни и&nbsp;создает новые возможности для&nbsp;людей и&nbsp;планеты
       </p>
     </div>
   );

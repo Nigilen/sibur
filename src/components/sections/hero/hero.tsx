@@ -9,12 +9,12 @@ export const Hero = () => {
     <section className={cn(styles.wrapper, 'container')}>
       <div className={styles.hero_text_container}>
         <h2 className={styles.hero_heading}>Менделеевская<br/><span className={styles.hero_heading__decor}>смена</span></h2>
-        <p className={styles.hero_description}>Откройте удивительный мир химии вместе с СИБУРом</p>
+        <p className={styles.hero_description}>Откройте удивительный мир химии <br className={styles.br_360}/>вместе с СИБУРом</p>
         <ActionButton withArrow/>  
       </div>
 
       <ul className={styles.badges_list}>
-        <p className={styles.badges_list__caption}>Результаты первой смены,<br/>с 21 по  26 октября 2024 года:</p>
+        <p className={styles.badges_list__caption}>Результаты первой смены,<br className={styles.br_1440}/>с 21 по  26 октября 2024 года:</p>
         <li className={styles.badge}>
           <div className={cn(styles.badge_icon, styles.badge_icon__people)}></div>
           <p className={styles.badge_caption}>Узнали больше о химии <span className={styles.badge_caption__decor}>&#62;15 000</span>учеников</p>

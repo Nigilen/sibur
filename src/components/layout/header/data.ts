@@ -11,8 +11,8 @@ export const links = [
     id: "#projects",
     title: "Наши проекты"
   },
-  // {
-  //   id: "#lesson",
-  //   title: "Как это было"
-  // }
+  {
+    id: "#lesson",
+    title: "Как это было"
+  }
 ]

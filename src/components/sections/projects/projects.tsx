@@ -18,7 +18,7 @@ export const Projects: FC<ProjectsProps> = ({projects}) => {
       <div className={styles.decor}></div>
       <h2 className={styles.projects_title}>Наши <span className={styles.projects_title_decor}>проекты</span></h2>
       <p className={styles.projects_description}>
-        Мы создаем условия для роста и развития школьников, студентов и молодых специалистов
+        Мы синтезируем будущее, раскрывая потенциал друг друга, применяя новаторские методы в&nbsp;решении задач и&nbsp;создавая условия для&nbsp;будущих открытий мировой нефтегазохимии
       </p>
       <Slider data={projects}/>
     </section>
