@@ -1,7 +1,7 @@
 'use client'
 
 import { ActionButton } from "@/src/ui-kit/action-button/actionButton";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MainContext } from "@/src/context/context";
 import Link from "next/link";
 import { Logo } from "@/src/ui-kit/logo/logo";
@@ -15,6 +15,11 @@ export const Header = () => {
 
   const handleToggle = () => setIsMenuOpen(!isMenuOpen);
   const handleClose = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setIsMenuOpen(false));
+    return () => window.removeEventListener('resize', () => setIsMenuOpen(false))
+  }, [])
 
   return (
     <header className={cn(styles.wrapper)}>
