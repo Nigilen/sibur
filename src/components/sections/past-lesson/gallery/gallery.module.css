@@ -11,6 +11,7 @@
   color: var(--dark-blue);
   text-align: center;
   margin-block-end: 40px;
+  letter-spacing: -1px;
 }
 
 .title_italic {
