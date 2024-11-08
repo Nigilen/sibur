@@ -62,29 +62,6 @@
   height: 100%;
 }
 
-.advantages_item:first-of-type .item_decor:after {
-  background-image: 
-    url('../../../../../../src/assets/decor/advantages-decor-circle.svg'),
-    url('../../../../../../src/assets/decor/advantages-decor-star-bottom-left.svg');
-  background-size: 162px 77px, 175px 225px;
-  background-position: -3% 11%, 105% 65%;
-}
-
-.advantages_item:nth-of-type(2) .item_decor:after {
-  background-image: 
-    url('../../../../../../src/assets/decor/advantages-decor-star-top.svg'),
-    url('../../../../../../src/assets/decor/advantages-decor-star-bottom.svg');
-  background-size: 202px 147px, 115px 225px;
-  background-position: 1% 9%, 89% 64%;
-}
-
-.advantages_item:last-of-type .item_decor:after {
-  background-image: 
-    url('../../../../../../src/assets/decor/advantages-decor-pencil.svg'),
-    url('../../../../../../src/assets/decor/advantages-decor-star-bottom-right.svg');
-  background-size: 172px 100px, 235px 235px;
-  background-position: -5% 11%, 103% 66%;
-}
 
 
 .slider_control {
@@ -110,6 +87,164 @@
 .slider_view {
   display: none;
 }
+
+.item_decor__menu {
+  position: absolute;
+  top: -5%;
+  left: 21%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 17%;
+}
+
+.item_decor__menu::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-circle.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 130px 180px;
+  background-position: 30% 20%;
+}
+.item_decor__star {
+  position: absolute;
+  top: 45%;
+  left: 81%;
+  transform: translateX(-50%);
+  width: 20%;
+  z-index: 121212;
+  height: 27%;
+}
+
+.item_decor__star::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-star-bottom-left.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 190px 200px;
+  background-position: 70% 140%;
+}
+
+
+
+.item_decor__top_star {
+  position: absolute;
+  top: -2%;
+  left: 26%;
+  transform: translateX(-50%);
+  width: 21%;
+  z-index: 121212;
+  height: 24%;
+}
+
+.item_decor__top_star::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-star-top.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 145px 170px;
+  background-position: 70% 120%;
+}
+
+.item_decor__empty_star {
+  position: absolute;
+  top: 45%;
+  left: 74%;
+  transform: translateX(-50%);
+  width: 20%;
+  z-index: 121212;
+  height: 27%;
+}
+
+.item_decor__empty_star::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-star-bottom.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 120px 200px;
+  background-position: 70% 140%;
+}
+
+
+
+
+
+
+
+
+.item_decor__pencil {
+  position: absolute;
+  top: -5%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 21%;
+  z-index: 121212;
+  height: 24%;
+}
+
+.item_decor__pencil::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-pencil.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 115px 140px;
+  background-position: 70% 120%;
+}
+
+.item_decor__bottom_star {
+  position: absolute;
+  top: 45%;
+  left: 74%;
+  transform: translateX(-50%);
+  width: 20%;
+  z-index: 121212;
+  height: 27%;
+}
+
+.item_decor__bottom_star::after {
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  background-image: 
+    url('../../../../../../src/assets/decor/advantages-decor-star-bottom-right.svg');
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 220px 220px;
+  background-position: 50% 70%;
+}
+
+
+
+
+
+
+
 
 @media (width < 1440px) {
   .slider_view {
