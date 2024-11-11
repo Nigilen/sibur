@@ -14,7 +14,6 @@ import { getGallery, getProjects, getSettings } from "@/src/api/internal";
 import { ModalReact } from "@/ui-kit/modalR/modal-react";
 
 export default async function Home() {
-  
 
   let settings = null;
   let gallery = null;

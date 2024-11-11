@@ -78,6 +78,10 @@ dialog::backdrop {
   scroll-margin-top: 3rem;
 }
 
+#lesson {
+  scroll-margin-top: 3rem;
+}
+
 .container {
   padding-inline: 120px;
   max-width: 1440px;

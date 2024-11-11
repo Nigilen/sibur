@@ -95,21 +95,13 @@
   transform: translateX(-50%);
   width: 20%;
   height: 17%;
-}
-
-.item_decor__menu::after {
-  position: absolute;
-  content: '';
-  background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-circle.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  background-repeat: no-repeat;
   background-size: 130px 180px;
   background-position: 30% 20%;
 }
+
 .item_decor__star {
   position: absolute;
   top: 45%;
@@ -118,23 +110,12 @@
   width: 20%;
   z-index: 121212;
   height: 27%;
-}
-
-.item_decor__star::after {
-  position: absolute;
-  content: '';
-  background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-star-bottom-left.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   background-size: 190px 200px;
   background-position: 70% 140%;
+  background-repeat: no-repeat;
 }
-
-
 
 .item_decor__top_star {
   position: absolute;
@@ -144,18 +125,9 @@
   width: 21%;
   z-index: 121212;
   height: 24%;
-}
-
-.item_decor__top_star::after {
-  position: absolute;
-  content: '';
   background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-star-top.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   background-size: 145px 170px;
   background-position: 70% 120%;
 }
@@ -168,27 +140,12 @@
   width: 20%;
   z-index: 121212;
   height: 27%;
-}
-
-.item_decor__empty_star::after {
-  position: absolute;
-  content: '';
   background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-star-bottom.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   background-size: 120px 200px;
   background-position: 70% 140%;
 }
-
-
-
-
-
-
 
 
 .item_decor__pencil {
@@ -199,18 +156,9 @@
   width: 21%;
   z-index: 121212;
   height: 24%;
-}
-
-.item_decor__pencil::after {
-  position: absolute;
-  content: '';
   background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-pencil.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   background-size: 115px 140px;
   background-position: 70% 120%;
 }
@@ -223,27 +171,12 @@
   width: 20%;
   z-index: 121212;
   height: 27%;
-}
-
-.item_decor__bottom_star::after {
-  position: absolute;
-  content: '';
   background-repeat: no-repeat;
   background-image: 
     url('../../../../../../src/assets/decor/advantages-decor-star-bottom-right.svg');
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
   background-size: 220px 220px;
   background-position: 50% 70%;
 }
-
-
-
-
-
-
 
 
 @media (width < 1440px) {

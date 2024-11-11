@@ -44,7 +44,6 @@ export const Slider = () => {
         <SwiperSlide className={cn(styles.advantages_item, 'swiper-slide-advantages')}>
           <div className={styles.item_decor__menu}></div>
           <div className={styles.item_decor__star}></div>
-          {/* <div className={styles.item_decor}></div> */}
           <img className={styles.item_img} src={advantageImg1.src} width={387} height={360} alt=""/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >

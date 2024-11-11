@@ -13,7 +13,7 @@ export const Gallery: FC<GalleryProps> = ({dataSlider}) => {
   return (
     <>
       {dataSlider.length > 0 &&
-        <div className={styles.gallery}>
+      <div className={styles.gallery}>
         <div className={styles.decor_top}></div>
         <div className={styles.decor_bottom}></div>
         <h3 className={styles.title}>
