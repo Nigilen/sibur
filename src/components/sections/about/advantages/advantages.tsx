@@ -3,15 +3,13 @@
 import styles from './advantages.module.css';
 import cn from 'classnames';
 import Image from 'next/image';
-
+import { Slider } from './slider/slider';
 
 import advantageImg1 from '@/src/assets/images/advantage-item-future.png';
 import advantageImg2 from '@/src/assets/images/advantage-item-tech.png';
 import advantageImg3 from '@/src/assets/images/advantage-item-exp.png';
-import { Slider } from './slider/slider';
 
 export const Advantages = () => {
-
   return (
     <div className={styles.about_main}>
       <h3 className={cn(styles.about_main_title, 'container')}>О компании</h3>

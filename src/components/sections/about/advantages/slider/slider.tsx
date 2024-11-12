@@ -42,8 +42,8 @@ export const Slider = () => {
         className={cn(styles.slider_list, styles.advantages_list)}
       >
         <SwiperSlide className={cn(styles.advantages_item, 'swiper-slide-advantages')}>
-          <div className={styles.item_decor__menu}></div>
-          <div className={styles.item_decor__star}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__menu)}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__star)}></div>
           <img className={styles.item_img} src={advantageImg1.src} width={387} height={360} alt=""/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
@@ -55,8 +55,8 @@ export const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className={cn(styles.advantages_item, 'swiper-slide-advantages')}>
-          <div className={styles.item_decor__top_star}></div>
-          <div className={styles.item_decor__empty_star}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__top_star)}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__empty_star)}></div>
           <img className={styles.item_img} src={advantageImg2.src} width={387} height={360} alt=""/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >
@@ -68,9 +68,8 @@ export const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className={cn(styles.advantages_item, 'swiper-slide-advantages')}>
-          <div className={styles.item_decor}></div>
-          <div className={styles.item_decor__pencil}></div>
-          <div className={styles.item_decor__bottom_star}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__pencil)}></div>
+          <div className={cn(styles.item_decor, styles.item_decor__bottom_star)}></div>
           <img className={styles.item_img} src={advantageImg3.src} width={387} height={360} alt=""/>
           <div className={styles.item_content}>
             <h4 className={styles.item_title} >

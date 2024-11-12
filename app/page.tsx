@@ -48,15 +48,10 @@ export default async function Home() {
 
       <Footer policy={settings.policy} />
 
-      {/* <Modal>
-        <Form policy={settings.policy} participation={settings.participation} />
-      </Modal> */}
-
       <ModalReact>
         <Form policy={settings.policy} participation={settings.participation} />
       </ModalReact>
 
-      {/* <Cookies isOpen={true}/> */}
     </>
   );
 }
