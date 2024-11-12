@@ -10,10 +10,7 @@ import advantageImg2 from '@/src/assets/images/advantage-item-tech.png';
 import advantageImg3 from '@/src/assets/images/advantage-item-exp.png';
 import { Slider } from './slider/slider';
 
-
 export const Advantages = () => {
-
-
 
   return (
     <div className={styles.about_main}>

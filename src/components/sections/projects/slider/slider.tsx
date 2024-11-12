@@ -8,19 +8,10 @@ import styles from './slider.module.css';
 import 'swiper/css';
 import { FC } from 'react';
 import Link from 'next/link';
+import type { DataProjects } from '../types';
 
-type SliderProps = {
-  data: {
-    id: number,
-    preview: string,
-    title: string,
-    description: string,
-    link: string
-  }[]
-};
 
-export const Slider: FC<SliderProps> = ({data}) => {
-  
+export const Slider: FC<DataProjects> = ({projects}) => {
   return (
     <div className={styles.slider_wrapper}>
       <Swiper 
@@ -50,7 +41,7 @@ export const Slider: FC<SliderProps> = ({data}) => {
         modules={[Navigation]}
         className={styles.slider_list}
       >
-        {data && data.map((item, index) => (
+        {projects && projects.map((item, index) => (
           <SwiperSlide key={index} className={cn(styles.slider_item, 'swiper-slide')}>
             <img className={styles.project_img} width={240} height={240} src={item.preview} alt="" />
             <h3 className={styles.project_heading}>{item.title}</h3>

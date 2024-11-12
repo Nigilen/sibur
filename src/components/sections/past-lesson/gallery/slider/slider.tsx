@@ -15,6 +15,7 @@ type SliderLessonProps = {
   }[];
 };
 
+
 export const SliderLesson: FC<SliderLessonProps> = ({dataSlider}) => {
   return (
     <div className={styles.slider_wrapper}>
