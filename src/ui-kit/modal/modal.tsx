@@ -5,7 +5,7 @@ import styles from './modal.module.css';
 import cn from 'classnames';
 import { MainContext } from '@/src/context/context';
 
-type Props = {
+interface Props {
   // isOpen: boolean;
   children: React.ReactNode;
 };

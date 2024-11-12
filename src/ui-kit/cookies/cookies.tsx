@@ -4,7 +4,7 @@ import { FC, useEffect, useRef } from 'react';
 import styles from './cookies.module.css';
 import Link from 'next/link';
 
-type Props = {
+interface Props {
   isOpen: boolean;
 };
 

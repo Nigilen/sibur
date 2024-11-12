@@ -6,7 +6,7 @@ import Image, { StaticImageData } from 'next/image';
 import cn from 'classnames';
 import playBtn from '@/src/assets/decor/play-btn.svg';
 
-type Props = {
+interface Props {
   video: string;
   preloader: StaticImageData;
   classNames?: string;

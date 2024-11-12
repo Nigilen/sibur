@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Logo } from "@/src/ui-kit/logo/logo";
 import { FC } from "react";
 
-type FooterProps = {
+interface FooterProps {
   policy: string;
 };
 

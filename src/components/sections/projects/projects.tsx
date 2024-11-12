@@ -1,7 +1,7 @@
 import styles from './projects.module.css';
 import { Slider } from './slider/slider';
 import { FC } from 'react';
-import type { DataProjects } from './types';
+import { DataProjects } from './types';
 
 export const Projects: FC<DataProjects> = ({ projects }) => {
   return (

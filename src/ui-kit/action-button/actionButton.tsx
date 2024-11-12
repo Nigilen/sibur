@@ -7,7 +7,7 @@ import cn from 'classnames';
 import { MainContext } from '@/src/context/context';
 import arrowIcon from '@/src/assets/decor/arrow-icon.svg';
 
-type Props = {
+interface Props {
   withArrow?: boolean;
   className?: string;
 };

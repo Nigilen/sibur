@@ -8,7 +8,7 @@ import styles from './slider.module.css';
 import 'swiper/css';
 import { FC } from 'react';
 import Link from 'next/link';
-import type { DataProjects } from '../types';
+import { DataProjects } from '../types';
 
 
 export const Slider: FC<DataProjects> = ({projects}) => {

@@ -21,7 +21,7 @@ export const DataContext = createContext<Values>({
   setIsMenuOpen: () => {}
 });
 
-type DataProviderProps = {
+interface DataProviderProps {
   children: React.ReactNode;
 };
 

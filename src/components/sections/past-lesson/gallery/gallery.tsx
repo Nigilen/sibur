@@ -1,15 +1,9 @@
 import { FC } from 'react';
 import styles from './gallery.module.css';
 import { SliderLesson } from './slider/slider';
+import { TSliders } from '../types';
 
-type GalleryProps = {
-  dataSlider: {
-    id: number;
-    photo: string;
-  }[]
-};
-
-export const Gallery: FC<GalleryProps> = ({dataSlider}) => {
+export const Gallery: FC<TSliders> = ({ dataSlider }) => {
   return (
     <>
       {dataSlider.length > 0 &&

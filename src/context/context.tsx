@@ -20,7 +20,7 @@ export const MainContext = createContext<ContextValues>({
   setIsMenuOpen: () => {}
 });
 
-type Props = {
+interface Props {
   children: React.ReactNode;
 };
 

@@ -3,15 +3,10 @@ import { FC } from 'react';
 import { Gallery } from './gallery/gallery';
 import styles from './past-lesson.module.css';
 import videoPreloader from '@/src/assets/images/lesson-video-preloader.png'
+import { TSliders } from './types';
 
-type PastLessonProps = {
-  dataSlider: {
-    id: number;
-    photo: string;
-  }[]
-}
 
-export const PastLesson: FC<PastLessonProps> = ({dataSlider}) => {
+export const PastLesson: FC<TSliders> = ({ dataSlider }) => {
   return (
     <section id='lesson' className={styles.pastLesson}>
       <h2 className={styles.lesson_title}>Урок <span className={styles.lesson_title_decor}>«Менделеевская Смена»</span></h2>

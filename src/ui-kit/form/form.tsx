@@ -16,7 +16,7 @@ import { Checkbox } from './checkbox/checkbox';
 import RSelect from 'react-select'
 import '@/styles/redefSelect.css';
 
-export type Inputs = {
+export interface Inputs {
   name: string;
   surname: string;
   middle_name: string;
@@ -31,7 +31,7 @@ export type Inputs = {
   test: string;
 };
 
-type FormProps = {
+interface FormProps {
   policy?: string;
   participation?: string;
 };

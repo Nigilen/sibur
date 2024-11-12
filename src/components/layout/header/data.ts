@@ -1,4 +1,9 @@
-export const links = [
+interface ILinks {
+  id: string;
+  title: string;
+}
+
+export const links: ILinks[] = [
   {
     id: "#project",
     title: "О проекте"

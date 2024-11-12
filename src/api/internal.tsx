@@ -1,11 +1,11 @@
 import { API_URL } from "../utils/config";
 
-type ApiBaseResponse = {
+interface ApiBaseResponse {
   status: 200 | 201 | 204 | 400 | 500;
   message?: string;
 };
 
-export type TData = {
+export interface TData {
   name: string;
   surname: string;
   middle_name: string;

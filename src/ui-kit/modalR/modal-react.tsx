@@ -4,9 +4,8 @@ import { FC, useContext, useEffect } from 'react';
 import styles from './modal-react.module.css';
 import ReactDOM from 'react-dom';
 import { MainContext } from '@/src/context/context';
-// import cn from 'classnames';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   onClose?: () => void;
 };

@@ -7,16 +7,9 @@ import 'swiper/css';
 
 import styles from './slider.module.css';
 import { FC } from 'react';
+import { TSliders } from '../../types';
 
-type SliderLessonProps = {
-  dataSlider: {
-    id: number;
-    photo: string;
-  }[];
-};
-
-
-export const SliderLesson: FC<SliderLessonProps> = ({dataSlider}) => {
+export const SliderLesson: FC<TSliders> = ({ dataSlider }) => {
   return (
     <div className={styles.slider_wrapper}>
       <Swiper 

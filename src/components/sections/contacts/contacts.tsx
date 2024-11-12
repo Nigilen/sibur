@@ -2,13 +2,13 @@ import { FC } from 'react';
 import styles from './contacts.module.css';
 import Link from 'next/link';
 
-type ContactsProps = {
-  tg_sibur?: string,
-  vk_sibur?: string,
-  tg_career?: string
+interface ContactsProps {
+  tg_sibur?: string | undefined,
+  vk_sibur?: string | undefined,
+  tg_career?: string | undefined
 }
 
-export const Contacts: FC<ContactsProps> = ({tg_sibur, vk_sibur, tg_career}) => {
+export const Contacts: FC<ContactsProps> = ({ tg_sibur, vk_sibur, tg_career }) => {
   return (
     <section id='contacts' className={styles.contacts}>
       <div className={styles.decor}></div>

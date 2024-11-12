@@ -5,7 +5,7 @@ import { FC } from 'react';
 import cn from 'classnames';
 import logoImg from '@/src/assets/images/logo.svg';
 
-type LogoProps = {
+interface LogoProps {
   className?: string;
 };
 
