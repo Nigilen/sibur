@@ -7,7 +7,7 @@ import { FC, useContext } from 'react';
 import { Success } from '../success/success';
 import { MainContext } from '@/src/context/context';
 import { ErrorMessage } from '@hookform/error-message';
-import { sendRequest } from '@/src/api/internal';
+import { sendRequest } from '@/src/utils/api/internal';
 import { addressRegexp, emailRegex, onlyCyrillicAndSpacesRegex } from './utils';
 import { CITIES, POSTS } from './data';
 import Link from 'next/link';

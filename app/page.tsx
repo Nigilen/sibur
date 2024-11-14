@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer/footer";
 import styles from "./page.module.css";
 import { Form } from "@/ui-kit/form/form";
 import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
-import { getGallery, getProjects, getSettings } from "@/src/api/internal";
+import { getGallery, getProjects, getSettings } from "@/src/utils/api/internal";
 import { ModalReact } from "@/ui-kit/modalR/modal-react";
 
 

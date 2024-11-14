@@ -1,4 +1,4 @@
-import { API_URL } from "../utils/config";
+import { API_URL } from "../config";
 
 interface ApiBaseResponse {
   status: 200 | 201 | 204 | 400 | 500;
