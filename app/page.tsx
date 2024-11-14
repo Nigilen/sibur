@@ -11,6 +11,8 @@ import { PastLesson } from "@/src/components/sections/past-lesson/past-lesson";
 import { getGallery, getProjects, getSettings } from "@/src/api/internal";
 import { ModalReact } from "@/ui-kit/modalR/modal-react";
 
+
+
 export default async function Home() {
 
   let settings = null;

@@ -34,17 +34,41 @@ export const sendRequest = async (body: TData): Promise<ApiBaseResponse> => {
 
 
 export const getSettings = async () => {
-  return await fetch(`${API_URL}/api/v1/settings`)
-    .then(response => response.json());
+  return await fetch(`${API_URL}/api/v1/settings`, { next: {revalidate: 10 }})
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Ошибка запроса');
+      }
+      return res.json()
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+    });
 };
 
 export const getProjects = async () => {
   return await fetch(`${API_URL}/api/v1/projects`, { next: {revalidate: 10 }})
-    .then(response => response.json());
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Ошибка запроса');
+      }
+      return res.json()
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+    });
 };
 
 export const getGallery = async () => {
   return await fetch(`${API_URL}/api/v1/gallery`, { next: {revalidate: 10 }})
-    .then(response => response.json());
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Ошибка запроса');
+      }
+      return res.json()
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+    });
 };
 

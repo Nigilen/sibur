@@ -28,7 +28,7 @@ export const Header = () => {
         <ul className={cn(styles.nav_list, {[styles.mob_menu_open]: isMenuOpen})}>
           {links.map((link) => (
             <li className={styles.nav_item} key={link.id}>
-              <Link className={styles.nav_link} href={link.id} onClick={handleClose}>{link.title}</Link>
+              <Link scroll={true} className={styles.nav_link} href={link.id} onClick={handleClose}>{link.title}</Link>
             </li>
           ))}
           <ActionButton className={cn(styles.action_btn__header)} withArrow />
