@@ -1,36 +1,28 @@
 :root {	
-	--h1-primary: normal 800 84px/0.9 var(--Roboto);
-	--h1-primary-italic: italic 800 84px/1 var(--Roboto);
-	--h2-primary: normal 800 64px/1 var(--Roboto);
-	--h2-primary-italic: italic 900 64px/1 var(--Roboto);
-	--h3-primary: normal 800 58px/1.1 var(--Roboto);
-	--h4-primary: normal 800 42px/1 var(--Roboto);
-	--h4-primary-italic: italic 800 42px/1 var(--Roboto);
-	--h5-primary: normal 600 24px/1.3 var(--Roboto);
-	
-	--p-primary: normal 500 28px/1.3 var(--Roboto);
-	--p-secondary: normal 500 18px/1.4 var(--Roboto);
-	--p-secondary-bold: bold 700 18px/1.1 var(--Roboto);
-	--p-medium: normal 400 16px/1.4 var(--Roboto);
-	--p-medium-500: normal 500 16px/1 var(--Roboto);
-	--p-small: normal 500 14px/1.1 var(--Roboto);
-	--p-extra-small: normal 400 12px/1.3 var(--Roboto);
-	
-	--button-primary: normal 600 24px/1 var(--Roboto);
-	--button-secondary: normal 800 20px/1.1 var(--Roboto);
-	--button-small: normal 600 16px/1.4 var(--Roboto);
-	
-	--numbers-primary: italic 800 64px/1 var(--Roboto);
-	
-	--menu-primary: normal 500 14px/1.1 var(--Roboto);
-	
-	--link-primary: normal 500 16px/1.2 var(--Roboto);
-	
-	
+	--h1-primary: normal 800 84px/0.9 var(--roboto);
+	--h1-primary-italic: italic 800 84px/1 var(--roboto);
+	--h2-primary: normal 800 64px/1 var(--roboto);
+	--h2-primary-italic: italic 900 64px/1 var(--roboto);
+	--h3-primary: normal 800 58px/1.1 var(--roboto);
+	--h4-primary: normal 800 42px/1 var(--roboto);
+	--h4-primary-italic: italic 800 42px/1 var(--roboto);
+	--h5-primary: normal 600 24px/1.3 var(--roboto);
+	--p-primary: normal 500 28px/1.3 var(--roboto);
+	--p-secondary: normal 500 18px/1.4 var(--roboto);
+	--p-secondary-bold: bold 700 18px/1.1 var(--roboto);
+	--p-medium: normal 400 16px/1.4 var(--roboto);
+	--p-medium-500: normal 500 16px/1 var(--roboto);
+	--p-small: normal 500 14px/1.1 var(--roboto);
+	--p-extra-small: normal 400 12px/1.3 var(--roboto);
+	--button-primary: normal 600 24px/1 var(--roboto);
+	--button-secondary: normal 800 20px/1.1 var(--roboto);
+	--button-small: normal 600 16px/1.4 var(--roboto);
+	--numbers-primary: italic 800 64px/1 var(--roboto);
+	--menu-primary: normal 500 14px/1.1 var(--roboto);
+	--link-primary: normal 500 16px/1.2 var(--roboto);
 	--letter-spacing-large: 0.02em;
 	--letter-spacing-small: 0.01em;
 	--letter-spacing-extra-small: -0.04em;
-	
 	--pink: #F15663;
 	--cyan: #008C95;
 	--green: #29BCAD;
@@ -50,45 +42,38 @@
 
 @media (width < 1440px) {	
   :root {	
-    --h1-primary: normal 800 72px/1 var(--Roboto);
-    --h1-primary-italic: italic 800 72px/1 var(--Roboto);
-    --h2-primary: normal 800 56px/1 var(--Roboto);
-    --h2-primary-italic: italic 900 56px/1 var(--Roboto);
-    --h3-primary: normal 800 40px/1.1 var(--Roboto);
-		--h4-primary: normal 800 38px/1 var(--Roboto);
-		--h4-primary-italic: italic 800 38px/1 var(--Roboto);
-    --h5-primary: normal 600 24px/1.2 var(--Roboto);
-    
-		--p-primary: normal 500 24px/1.3 var(--Roboto);
-		--p-secondary: normal 500 20px/1.3 var(--Roboto);
-		--p-secondary-bold: bold 700 20px/1.3 var(--Roboto);
-		
-		--numbers-primary: italic 800 64px/1 var(--Roboto);
-		
-		--menu-primary: normal 500 64px/0.95 var(--Roboto);
+    --h1-primary: normal 800 72px/1 var(--roboto);
+    --h1-primary-italic: italic 800 72px/1 var(--roboto);
+    --h2-primary: normal 800 56px/1 var(--roboto);
+    --h2-primary-italic: italic 900 56px/1 var(--roboto);
+    --h3-primary: normal 800 40px/1.1 var(--roboto);
+		--h4-primary: normal 800 38px/1 var(--roboto);
+		--h4-primary-italic: italic 800 38px/1 var(--roboto);
+    --h5-primary: normal 600 24px/1.2 var(--roboto);
+		--p-primary: normal 500 24px/1.3 var(--roboto);
+		--p-secondary: normal 500 20px/1.3 var(--roboto);
+		--p-secondary-bold: bold 700 20px/1.3 var(--roboto);
+		--numbers-primary: italic 800 64px/1 var(--roboto);
+		--menu-primary: normal 500 64px/0.95 var(--roboto);
   }	
 }	
 	
 @media (width < 768px) {	
   :root {	
-    --h1-primary: normal 800 40px/1 var(--Roboto);
-    --h1-primary-italic: italic 800 40px/1 var(--Roboto);
-    --h2-primary: normal 800 32px/1.1 var(--Roboto);
-    --h2-primary-italic: italic 900 32px/1.1 var(--Roboto);
-    --h3-primary: normal 800 24px/1.1 var(--Roboto);
-    --h4-primary: normal 800 22px/1.1 var(--Roboto);
-    --h4-primary-italic: italic 800 22px/1 var(--Roboto);
-		--h5-primary: normal 600 20px/1.2 var(--Roboto);
-    
-    --p-primary: normal 500 20px/1.25 var(--Roboto);
-    --p-secondary: normal 500 16px/1.3 var(--Roboto);
-    --p-secondary-bold: bold 700 16px/1.3 var(--Roboto);
-    
-    --button-primary: normal 600 20px/1.2 var(--Roboto);
-    --button-secondary: normal 800 18px/1.1 var(--Roboto);
-    
-    --numbers-primary: italic 800 56px/1 var(--Roboto);
-    
-    --menu-primary: normal 500 28px/0.95 var(--Roboto);
+    --h1-primary: normal 800 40px/1 var(--roboto);
+    --h1-primary-italic: italic 800 40px/1 var(--roboto);
+    --h2-primary: normal 800 32px/1.1 var(--roboto);
+    --h2-primary-italic: italic 900 32px/1.1 var(--roboto);
+    --h3-primary: normal 800 24px/1.1 var(--roboto);
+    --h4-primary: normal 800 22px/1.1 var(--roboto);
+    --h4-primary-italic: italic 800 22px/1 var(--roboto);
+		--h5-primary: normal 600 20px/1.2 var(--roboto);
+    --p-primary: normal 500 20px/1.25 var(--roboto);
+    --p-secondary: normal 500 16px/1.3 var(--roboto);
+    --p-secondary-bold: bold 700 16px/1.3 var(--roboto);
+    --button-primary: normal 600 20px/1.2 var(--roboto);
+    --button-secondary: normal 800 18px/1.1 var(--roboto);
+    --numbers-primary: italic 800 56px/1 var(--roboto);
+    --menu-primary: normal 500 28px/0.95 var(--roboto);
   }	
 }	

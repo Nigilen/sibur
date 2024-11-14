@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
 html {
   scroll-behavior: smooth;
   scroll-padding-block: 5rem;
@@ -7,43 +8,39 @@ html {
 html,
 body {
   overflow-x: hidden;
-  /* min-width: 360px; */
 }
 
 body {
   display: grid;
-  color: var(--dark-blue, #00313C);
-  background: var(--white, #FFFFFF);
-  font: var(--p-secondary, normal 500 24px/1.4, var(--Roboto), Arial, Helvetica, sans-serif);
   width: 100%;
+  color: var(--dark-blue, #00313C);
+  font: var(--p-secondary, normal 500 24px/1.4, var(--roboto), Arial, Helvetica, sans-serif);
+  background: var(--white, #FFFFFF);
 }
 
 html:has(.modal[open]),
 body:has(.modal[open]) {
-  overflow: hidden;
-  /* overscroll-behavior: contain; */
-  /* touch-action: none; */
   position: fixed;
   height: 100vh;
+  overflow: hidden;
 }
-
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
   font: inherit;
+  text-decoration: none;
 }
 
 input {
+  color: inherit;
   font: inherit;
   border: none;
-  color: inherit;
 }
 
 input[type="checkbox"] {
@@ -53,10 +50,10 @@ input[type="checkbox"] {
 }
 
 dialog {
+  min-width: 328px;
+  color: inherit;
   font: inherit;
   border: none;
-  color: inherit;
-  min-width: 328px;
 }
 
 button {
@@ -67,10 +64,10 @@ button {
 
 dialog::backdrop {
   position: fixed;
-  inset: 0px;
+  inset: 0;
   width: 100vw;
   min-width: 360px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(0 0 0 / 10%);
 }
 
 
@@ -90,25 +87,26 @@ dialog::backdrop {
 
 .visually-hidden {
   position: absolute;
-  overflow: hidden;
   inline-size: 1px;
   block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  white-space: nowrap;
 }
 
 .section_caption {
-  font: var(--p-secondary);
-  color: var(--blue);
   margin-block-end: 24px;
-  opacity: 50%;
+  color: var(--blue);
+  font: var(--p-secondary);
+  opacity: 0.5;
 }
 
 @media (width < 1440px) {
   .container {
     padding-inline: 40px;
   }
+
   .section_caption {
     margin-block-end: 32px;
   }

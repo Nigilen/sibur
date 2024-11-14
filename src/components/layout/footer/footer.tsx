@@ -4,25 +4,20 @@ import Link from "next/link";
 import { Logo } from "@/src/ui-kit/logo/logo";
 import { FC } from "react";
 
-interface FooterProps {
+interface Props {
   policy: string;
 };
 
-export const Footer: FC<FooterProps> = ({ policy }) => {
-
+export const Footer: FC<Props> = ({ policy }) => {
   return (
-    <footer className={cn(styles.wrapper, 'container')}>
-      <div className={styles.column_logo}>
+    <footer className={cn(styles.footer, 'container')}>
+      <div className={styles.footer_logo}>
         <Logo />
-        <p className={styles.descriptor}>Цели, достойные тебя</p>
+        <p>Цели, достойные тебя</p>
       </div>
-      <div className={styles.column_copy}>
-        <p className={styles.copyrite}>
-          <span className={styles.copyrite_span}>© 2024&nbsp;</span> ПАО «‎СИБУР-Холдинг»
-        </p>
-        <Link className={styles.policy} href={policy} target="blank">
-          Политика в области обработки персональных данных
-        </Link>
+      <div className={styles.footer_info}>
+        <p><span className={styles.info_copyrite}>© 2024&nbsp;</span> ПАО «‎СИБУР-Холдинг»</p>
+        <Link href={policy} target="_blank">Политика в области обработки персональных данных</Link>
       </div>
     </footer>
   );

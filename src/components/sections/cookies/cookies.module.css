@@ -1,16 +1,16 @@
 .cookies {
   /* display: flex; */
   position: fixed;
-  z-index: 999;
   bottom: 20px;
+  z-index: 999;
   width: 100%;
-  max-width: clamp(43rem, 6.4286rem + 76.1905vw, 75rem);;
-  margin-inline: auto;
+  min-width: 360px;
+  max-width: clamp(43rem, 6.4286rem + 76.1905vw, 75rem);
   padding: 24px;
   background-color: var(--bg-light-blue-secondary);
   border-radius: 24px;
-  box-shadow: 0 0 25px 0 #051D2259;
-  min-width: 360px;
+  box-shadow: 0 0 25px 0 #051D2259;;
+  margin-inline: auto;
 }
 
 .cookies_wrapper {
@@ -20,15 +20,16 @@
 }
 
 .message {
-  font: var(--p-small);
   display: flex;
   flex-direction: column;
   gap: 4px;
+  font: var(--p-small);
 }
 
 .link {
   color: var(--cyan);
 }
+
 .link:hover {
   color: var(--green);
 }
@@ -36,9 +37,9 @@
 .button_accept {
   padding: 10px 24px;
   color: var(--white, #FFFFFF);
+  font: var(--button-small);
   background-color: var(--cyan);
   border-radius: 12px;
-  font: var(--button-small);
   transition-duration: .3s;
 }
 
@@ -51,21 +52,23 @@
 }
 
 @media (width < 768px) {
-
   .cookies_wrapper {
     flex-direction: column;
     align-items: center;
     row-gap: 12px;
   }
+
   .cookies {
+    bottom: 0;
     padding: 16px;
     text-align: center;
-    bottom: 0;
     border-radius: 24px 24px 0 0;    
   }
+
   .br {
     display: block;
   }
+
   .button_accept {
     width: 100%;
   }

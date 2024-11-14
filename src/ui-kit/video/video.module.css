@@ -1,34 +1,35 @@
 .video {
   position: relative;
+  display: flex;
   box-sizing: border-box;
   width: 100%;
+  max-width: 2400px;
   height: 621px;
   padding-inline: 24px;
-  max-width: 2400px;
   margin-inline: auto;
-  display: flex;
 }
 
 .video_iframe {
   position: relative;
-  margin-inline: auto;
-  border-radius: 48px;
   z-index: 3;
+
   /* max-width: 1392px; */
   max-width: 1200px;
-  outline: none;
   border: none;
+  border-radius: 48px;
+  outline: none;
+  margin-inline: auto;
 }
 
 .preloader {
   position: relative;
-  margin-inline: auto;
   width: 86%;
   height: 100%;
-  border-radius: 48px;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: 100%;
+  border-radius: 48px;
+  margin-inline: auto;
 }
 
 .play {
@@ -49,23 +50,27 @@
   }
 
   .preloader {
+    width: 100%;
     background-position: top left;
     background-size: cover;
-    width: 100%;
   }
 }
+
 @media (width < 768px) {
   .video {
     padding-inline: 16px;
     height: 354px;
   }
+
   .play_icon {
     width: 61px;
     height: 61px;
   }
+
   .video_iframe {
     border-radius: 24px;
   }
+
   .preloader {
     border-radius: 24px;
   }

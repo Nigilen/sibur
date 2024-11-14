@@ -1,72 +1,74 @@
 .wrapper {
-  padding-block: 72px 230px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 21px;
+  padding-block: 72px 230px;
 }
 
 .hero_text_container {
-  grid-column: 1 / 1;
-  grid-row: 1 / 2;
   position: relative;
   z-index: 1;
+  grid-row: 1 / 2;
+  grid-column: 1 / 1;
 }
 
 .hero_heading {
+  margin-block-end: 2rem;
   font: var(--h2-primary);
   letter-spacing: var(--letter-spacing-extra-small);
-  margin-block-end: 2rem;
 }
+
 .hero_heading__decor {
-  font: var(--h2-primary-italic);
   color: var(--green);
+  font: var(--h2-primary-italic);
 }
 
 .hero_description {
-  font: var(--p-secondary-bold);
   margin-block-end: 40px;
+  font: var(--p-secondary-bold);
+
   /* max-width: 488px; */
 }
 
 .badges_list {
   display: flex;
-  margin-block-start: 38px;
-  gap: 32px;
-  grid-column: 1 / 1;
   grid-row: 2 / 3;
+  grid-column: 1 / 1;
   flex-wrap: wrap;
+  gap: 32px;
+  margin-block-start: 38px;
 }
 
 .badge {
   display: flex;
+  align-items: center;
   gap: 10px;
   padding: 12.5px 24px 13.5px 16px;
   border: 1px solid var(--gray);
   border-radius: 10px;
   box-shadow: 8px 8px 0 0 var(--green);
-  align-items: center;
 }
 
 .badge_icon {
   width: 50px;
   height: 50px;
-  border-radius: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
+  border-radius: 100%;
 }
 
 .badge_icon__people {
+  background-color: var(--green);
   background-image: url('../../../../src/assets/decor/badge-icon-people.svg');
   box-shadow: 3.36px 3.36px 0 0 #29BCAD80;
-  background-color: var(--green);
 }
 
 .badge_icon__school {
+  background-color: var(--pink);
   background-image: url('../../../../src/assets/decor/badge-icon-school.svg');
   box-shadow: 3.36px 3.36px 0 0 #F1566380;
-  background-color: var(--pink);
 }
 
 
@@ -76,39 +78,39 @@
 
 .badge_caption {
   gap: 5px;
-  white-space: nowrap;
-  font: var(--p-small);
   color: #00313C99;
+  font: var(--p-small);
+  white-space: nowrap;
 }
 
 .badge_caption__decor {
   display: block;
-  font: var(--button-secondary);
   color: var(--dark-blue);
-  opacity: 100%;
+  font: var(--button-secondary);
+  opacity: 1;
   margin-block: 2px;
 }
 
 .badges_list__caption {
   flex-shrink: 0;
-  font: var(--p-secondary-bold);
   width: 100%;
+  font: var(--p-secondary-bold);
   line-height: 20px;
 }
 
 .hero_img_container {
   position: relative;
+  grid-row: 1 / 3;
+  grid-column: 2 / 2;
   width: 100%;
   height: 100%;
-  grid-column: 2 / 2;
-  grid-row: 1 / 3;
 }
 
 .hero_img {
   position: absolute;
-  z-index: -1;
   top: -145px;
   left: -85px;
+  z-index: -1;
   width: 135%;
   height: auto;
 }
@@ -121,22 +123,26 @@
   .br_1440 {
     display: none;
   }
+
   .hero_description {
     /* max-width: none; */
   }
+
   .wrapper {
-    grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
+    grid-template-columns: auto;
     row-gap: 64px;
     padding-block: 82px;
   }
+
   .hero_img_container {
-    position: static;  
+    position: static;
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;  
     width: 90vw;
     height: auto;
-    grid-column: 1 / 1;
-    grid-row: 2 / 3;
   }
+
   .hero_img {
     position: static;
     width: 100%;
@@ -146,13 +152,13 @@
   }
 
   .hero_text_container {
-    grid-column: 1 / 1;
     grid-row: 1 / 2;
+    grid-column: 1 / 1;
   }
 
   .badges_list {
-    grid-column: 1 / 1;
     grid-row: 3 / 4;
+    grid-column: 1 / 1;
     margin-block-start: 0;
   }
 
@@ -163,20 +169,25 @@
   .br_360 {
     display: block;
   }
+
   .wrapper {
     padding-block: 56px;
     row-gap: 40px;
   }
+
   .hero_heading {
     margin-block-end: 24px;
   }
+
   .hero_description {
     margin-block-end: 24px;
   }
+
   .badges_list {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .hero_img {
     transform: scale(1.37) translate(3%, -3%);
   }

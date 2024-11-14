@@ -10,7 +10,7 @@ const roboto = Roboto_Flex({
   weight: ['400', '500', '600', '700', '800', '900'],
   style: ['normal'],
   subsets: ['cyrillic', 'latin'],
-  variable: '--Roboto',
+  variable: '--roboto',
 });
 
 export const metadata: Metadata = {

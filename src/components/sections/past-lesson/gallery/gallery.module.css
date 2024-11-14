@@ -7,83 +7,84 @@
 }
 
 .title {
-  font: var(--h2-primary);
-  color: var(--dark-blue);
-  text-align: center;
   margin-block-end: 40px;
+  color: var(--dark-blue);
+  font: var(--h2-primary);
   letter-spacing: -1px;
+  text-align: center;
 }
 
 .title_italic {
-  font: var(--h2-primary-italic);
   color: var(--green);
+  font: var(--h2-primary-italic);
 }
 
 .title_decor {
-  color: var(--transparent-blue-primary);
   position: relative;
+  color: var(--transparent-blue-primary);
 }
 
 .title_decor::after {
-  content: "";
-  display: block;
   position: absolute;
+  bottom: -21%;
   left: 0;
+  left: -4%;
+  display: block;
+  width: 113%;
+  height: 30px;
   background-image: url('../../../../../src/assets/decor/past-lesson-title-decor.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  width: 113%;
-  height: 30px;
-  bottom: -21%;
-  left: -4%;
+  content: "";
 }
 
 .decor_top {
   position: absolute;
   top: 12%;
   left: 14%;
-  transform: translateX(-50%);
+  z-index: 2;
   width: 9%;
   height: 23%;
-  z-index: 2;
+  transform: translateX(-50%);
 }
+
 .decor_bottom {
   position: absolute;
-  transform: translateX(-50%);
-  z-index: 2;
   top: 69%;
   left: 9%;
+  z-index: 2;
   width: 11%;
   height: 23%;
+  transform: translateX(-50%);
 }
 
-.decor_top:after {
+.decor_top::after {
   position: absolute;
-  content: '';
-  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   background-image: 
     url('../../../../../src/assets/decor/past-lesson-decor-pencil.svg');
-  background-size: 120px 150px;
+  background-repeat: no-repeat;
   background-position: 0% 50%;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  background-size: 120px 150px;
+  content: '';
 }
 
-.decor_bottom:after {
+.decor_bottom::after {
   position: absolute;
-  content: '';
-  background-repeat: no-repeat;
-  background-image: 
-    url('../../../../../src/assets/decor/past-lesson-decor-molecule.png');
-  background-size: 234px 278px;
-  background-position: 65% 52%;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  background-image: 
+    url('../../../../../src/assets/decor/past-lesson-decor-molecule.png');
+  background-repeat: no-repeat;
+  background-position: 65% 52%;
+  background-size: 234px 278px;
+  content: '';
 }
 
 .br {
@@ -91,8 +92,6 @@
 }
 
 @media (width < 1440px) {
-  
-
   .gallery {
     margin-block-start: -60px;
     padding-block: 80px 60px;
@@ -104,9 +103,10 @@
     width: 20%;
     height: 24%;
   }
-  .decor_top:after {
-    background-size: 110px 130px;
+
+  .decor_top::after {
     background-position: 100% 50%;
+    background-size: 110px 130px;
   }
 
   .decor_bottom {
@@ -115,10 +115,11 @@
     width: 21%;
     height: 26%;
   }
-  .decor_bottom:after {
-    background-size: 204px 248px;
-    background-position: 77% 58%;
+
+  .decor_bottom::after {
     top: -28px;
+    background-position: 77% 58%;
+    background-size: 204px 248px;
   }
 }
 
@@ -141,7 +142,8 @@
     width: 36%;
     height: 20%;
   }
-  .decor_top:after {
+
+  .decor_top::after {
     background-size: 90px 70px;
   }
 
@@ -152,11 +154,11 @@
     height: 26%;
   }
 
-  .decor_bottom:after {
-    background-size: 134px 136px;
-    background-position: -20px 2%;
+  .decor_bottom::after {
     background-image: 
       url('../../../../../src/assets/decor/past-lesson-decor-molecule-mob.png');
+    background-position: -20px 2%;
+    background-size: 134px 136px;
     
   }
 }

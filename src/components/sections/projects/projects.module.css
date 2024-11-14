@@ -9,60 +9,60 @@
   position: absolute;
   top: 3%;
   left: 50%;
-  transform: translateX(-50%);
   width: 96%;
   height: 32%;
+  transform: translateX(-50%);
 }
 
-.decor:after {
+.decor::after {
   position: absolute;
-  content: '';
-  background-repeat: no-repeat;
-  background-image: 
-    url('../../../../src/assets/decor/projects-decor-top-left.png'),
-    url('../../../../src/assets/decor/projects-decor-top-right.svg');
-  background-size: 445px 455px, 265px 315px;
-  background-position: -4% 50%, 96% 250%;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  background-image: 
+    url('../../../../src/assets/decor/projects-decor-top-left.png'),
+    url('../../../../src/assets/decor/projects-decor-top-right.svg');
+  background-repeat: no-repeat;
+  background-position: -4% 50%, 96% 250%;
+  background-size: 445px 455px, 265px 315px;
+  content: '';
 }
 
 .projects_title {
-  font: var(--h2-primary);
-  color: var(--dark-blue);
-  text-align: center;
   margin-block-end: 24px;
+  color: var(--dark-blue);
+  font: var(--h2-primary);
+  text-align: center;
 }
 
 .projects_title_decor {
-  font-style: italic;
   position: relative;
+  font-style: italic;
 }
 
 .projects_title_decor::after {
-  content: "";
   position: absolute;
+  bottom: -21%;
   left: 0;
+  left: -4%;
+  width: 113%;
+  height: 30px;
   background-image: url('../../../../src/assets/decor/projects-decor-title.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  width: 113%;
-  height: 30px;
-  bottom: -21%;
-  left: -4%;
+  content: "";
 }
 
 .projects_description {
-  font: var(--p-medium);
-  color: var(--dark-blue);
-  opacity: 60%;
   max-width: 482px;
-  text-align: center;
-  margin-inline: auto;
   margin-block-end: 72px;
+  color: var(--dark-blue);
+  font: var(--p-medium);
+  text-align: center;
+  opacity: 0.6;
+  margin-inline: auto;
 }
 
 
@@ -71,13 +71,15 @@
     padding-block: 40px;
     max-width: 100vw;
   }
-  .decor:after {
+
+  .decor::after {
     background-image: 
       url('../../../../src/assets/decor/projects-decor-top-left-tab.png'),
       url('../../../../src/assets/decor/projects-decor-top-right.svg');
-    background-size: 203px 319px, 195px 280px;
     background-position: 0% 21%, 112% 250%;
+    background-size: 203px 319px, 195px 280px;
   }
+
   .decor {
     width: 100%;
   }
@@ -85,20 +87,22 @@
 
 @media (width < 768px) {
   .decor {
-    height: 89%;
     top: 1%;
+    height: 89%;
   }
-  .decor:after {
+
+  .decor::after {
     background-image: 
       url('../../../../src/assets/decor/projects-decor-top-left-mob.png'),
       url('../../../../src/assets/decor/projects-decor-top-right.svg');
-    background-size: 97px 140px, 135px 170px;
     background-position: -1% -4%, 112% 99%;
+    background-size: 97px 140px, 135px 170px;
   }
   
   .projects_title_decor::after {
     height: 17px;
   }
+
   .projects_description {
     padding-inline: 16px;
     margin-block-end: 40px;

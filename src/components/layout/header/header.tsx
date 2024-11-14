@@ -19,7 +19,7 @@ export const Header = () => {
   useEffect(() => {
     window.addEventListener('resize', () => setIsMenuOpen(false));
     return () => window.removeEventListener('resize', () => setIsMenuOpen(false))
-  }, [])
+  }, [setIsMenuOpen])
 
   return (
     <header className={cn(styles.wrapper)}>

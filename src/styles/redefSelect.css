@@ -1,16 +1,16 @@
 .react-select-container .react-select__control {
-  padding: 13px 20px;
   width: 100%;
-  border-radius: 16px;
+  padding: 13px 20px;
   background-color: var(--light-gray);
   border: 1px solid var(--light-gray);
+  border-radius: 16px;
   cursor: pointer;
 }
 
 .react-select-container:has(.react-select__menu) .react-select__indicators {
-  transform: rotate(180deg);
   background-color: var(--green);
-  opacity: 100%;
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 
@@ -19,15 +19,15 @@
 }
 
 .react-select-container .react-select__control:focus {
-  outline: none;
   border: none;
+  outline: none;
 }
 
 .react-select-container .react-select__control--is-focused {
-  outline: none;
-  border-color: #00263C4D;
-  box-shadow: none;
   background-color: #EDEFF1;
+  border-color: #00263C4D;
+  outline: none;
+  box-shadow: none;
 }
 
 .react-select-container .react-select__placeholder {
@@ -35,30 +35,30 @@
 }
 
 .react-select-container .react-select__menu {
+  margin: 0;
+  background-color: #EDEFF1;
   border-radius: 16px;
   box-shadow: none;
-  background-color: #EDEFF1;
-  margin: 0;
 }
 
 
 .cells .react-select__menu {
+  position: absolute;
   display: block;
   height: 210px;
-  overflow: scroll;
-  position: absolute;
   max-height: none;
+  overflow: scroll;
 }
 
 .cells .react-select__menu-list {
-  box-sizing: content-box;
   position: absolute;
   inset: 0;
-  column-count: 3;
-  column-rule: 1px solid #00313C33;
-  column-gap: 24px;
-  column-fill: balance;
+  box-sizing: content-box;
   max-height: none;
+  column-count: 3;
+  column-fill: balance;
+  column-gap: 24px;
+  column-rule: 1px solid #00313C33;
 }
 
 .react-select-container .react-select__value-container {
@@ -66,22 +66,26 @@
 }
 
 .react-select-container .react-select__indicators {
-  border-radius: 24px;
-  opacity: 30%;
   background-color: var(--dark-blue);
+  border-radius: 24px;
+  opacity: 0.3;
 }
+
 .react-select-container:hover .react-select__indicators {
   background-color: var(--green);
-  opacity: 100%;
+  opacity: 1;
 }
+
 .react-select-container .react-select__indicator {
   padding: 3px;
 }
+
 .react-select-container .react-select__indicators svg {
   width: 30px;
   height: 30px;
   fill: white;
 }
+
 .react-select__indicator-separator {
   display: none;
 }
@@ -91,9 +95,9 @@
 }
 
 .react-select-container .react-select__option {
+  color: #00313C;
   background-color: transparent;
   cursor: pointer;
-  color: #00313C;
 }
 
 .react-select-container .react-select__option:hover {
@@ -103,13 +107,14 @@
 .error .react-select__placeholder {
   color: var(--pink);
 }
+
 .error .react-select__control {
   border-color: var(--pink);
 }
 
 .error .react-select__indicators {
   background-color: var(--pink);
-  opacity: 100%;
+  opacity: 1;
 }
 
 .error:hover .react-select__indicators,
@@ -119,33 +124,33 @@
 
 @media (width < 1440px) {
   .cells .react-select__menu {
+    position: absolute;
     display: block;
+    box-sizing: content-box;
+    height: 310px;
+    margin: 0;
+    overflow: scroll;
+    background-color: #EDEFF1;
     border-radius: 16px;
     box-shadow: none;
-    background-color: #EDEFF1;
-    margin: 0;
-    height: 310px;
-    overflow: scroll;
-    position: absolute;
-    box-sizing: content-box;
   }
 
   .cells .react-select__menu-list {
-    display: block;
-    box-sizing: content-box;
     position: absolute;
     inset: 0;
-    column-count: 2;
-    column-rule: 1px solid #00313C33;
-    column-gap: 24px;
-    column-fill: balance;
+    display: block;
+    box-sizing: content-box;
     word-break: break-word;
+    column-count: 2;
+    column-fill: balance;
+    column-gap: 24px;
+    column-rule: 1px solid #00313C33;
   }
 }
 
 @media (width < 768px) {
   .cells .react-select__menu-list {
-    column-count: auto;
     overflow: scroll;
+    column-count: auto;
   }
 }

@@ -21,17 +21,17 @@
   display: block;
   width: 24px;
   height: 24px;
+  margin-inline-end: 12px;
   border: 2px solid var(--cyan);
   border-radius: 4px;
-  margin-inline-end: 12px;
 }
 
 .input:checked + .custom_checkbox {
-  background-image: url('../../../../src/assets/decor/agree.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: var(--cyan);
+  background-image: url('../../../../src/assets/decor/agree.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .input:focus-visible + .custom_checkbox {

@@ -1,23 +1,23 @@
 .label_wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  position: relative;
 }
 
 .label {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .input {
-  appearance: none;
-  padding: 21.5px 20px;
-  border-radius: 16px;
-  background-color: var(--light-gray);
-  color: var(--dark-blue);
   width: 100%;
+  padding: 21.5px 20px;
+  color: var(--dark-blue);
+  background-color: var(--light-gray);
   border: 1px solid transparent;
+  border-radius: 16px;
   transition-duration: .3s;
+  appearance: none;
 }
 
 .input:hover {
@@ -25,19 +25,21 @@
 }
 
 .input:focus {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
   background-color: #EDEFF1;
+  border: 1px solid var(--transparent-blue-primary);
+  outline: none;
 }
+
 .input:focus-visible {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
   background-color: #EDEFF1;
+  border: 1px solid var(--transparent-blue-primary);
+  outline: none;
 }
+
 .input:active {
-  outline: none;
-  border: 1px solid var(--transparent-blue-primary);
   background-color: #EDEFF1;
+  border: 1px solid var(--transparent-blue-primary);
+  outline: none;
 }
 
 .input::placeholder {
@@ -45,21 +47,24 @@
 }
 
 .error {
-  border-color: var(--pink);
   color: var(--pink);
+  border-color: var(--pink);
   opacity: 1;
 }
+
 .error:active {
-  border-color: var(--pink);
   color: var(--pink);
+  border-color: var(--pink);
 }
+
 .error:focus {
-  border-color: var(--pink);
   color: var(--pink);
+  border-color: var(--pink);
 }
+
 .error:focus-visible {
-  border-color: var(--pink);
   color: var(--pink);
+  border-color: var(--pink);
 }
 
 .error::placeholder {

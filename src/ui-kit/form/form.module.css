@@ -3,30 +3,30 @@
 }
 
 .form_title {
-  font: var(--h4-primary);
   margin-block-end: 12px;
+  font: var(--h4-primary);
 }
 
 .form_description {
-  font: var(--p-medium);
   margin-block-end: 24px;
-  opacity: 60%;
+  font: var(--p-medium);
+  opacity: 0.6;
 }
 
 .form {
   display: grid;
-  grid-row-gap: 24px;
-  font: var(--p-medium-500);
-  color: var(--dark-blue);
   grid-template-columns: repeat(2, auto);
+  grid-row-gap: 24px;
+  color: var(--dark-blue);
+  font: var(--p-medium-500);
 }
 
 .fieldset {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  border: none;
-  column-gap: 8px;
   grid-column: 1 / -1;
+  column-gap: 8px;
+  border: none;
 }
 
 .fieldset__contacts {
@@ -35,34 +35,34 @@
 
 .fieldset__agreements {
   grid-template-columns: repeat(2, auto);
+  grid-column: 1 / 2;
   justify-content: flex-start;
   column-gap: 32px;
-  grid-column: 1 / 2;
 }
 
 
 .fieldset_caption {
-  justify-self: flex-start;
   grid-column: 1 / -1;
+  justify-self: flex-start;
   width: max-content;
   margin-block-end: 12px;
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .label_wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  position: relative;
 }
 
 .label {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .error {
-  border-color: var(--pink);
   color: var(--pink);
+  border-color: var(--pink);
   opacity: 1;
 }
 
@@ -75,13 +75,13 @@
 
 .submit_btn {
   grid-column: 2 / -1;
-  border-radius: 12px;
-  color: var(--white, #ffffff);
-  background-color: var(--cyan);
-  padding: 16px 30px;
-  font: var(--button-secondary);
-  width: max-content;
   justify-self: flex-end;
+  width: max-content;
+  padding: 16px 30px;
+  color: var(--white, #ffffff);
+  font: var(--button-secondary);
+  background-color: var(--cyan);
+  border-radius: 12px;
 }
 
 .submit_btn:hover {
@@ -113,15 +113,15 @@
 
   .fieldset__agreements {
     grid-template-columns: auto;
+    grid-column: 1 / -1;
     justify-content: flex-start;
     row-gap: 24px;
-    grid-column: 1 / -1;
     margin-block-end: 8px;
   }
 
   .submit_btn {
-    width: 100%;
     grid-column: 1 / -1;
+    width: 100%;
     padding-block: 16px;
   }
 }
@@ -131,12 +131,15 @@
   .form {
     column-gap: 32px;
   }
+
   .fieldset:has(legend) {
     row-gap: 8px;
   }
+
   .fieldset {
     row-gap: 32px;
   }
+
   .checkbox_link {
     grid-column: 2 / -1;
   }

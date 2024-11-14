@@ -1,24 +1,25 @@
 .action_btn {
+  align-items: center;
+  padding: 13px 28px;
+  color: var(--white, #FFFFFF);
   font: var(--button-small);
   white-space: nowrap;
-  color: var(--white, #FFFFFF);
-  padding: 13px 28px;
   background-color: var(--pink, #F15663);
   border-radius: 12px;
-  align-items: center;
 }
 
 .with_arrow {
   display: flex;
+  font: var(--button-primary);
   column-gap: 12px;
   padding-block: 20px;
-  font: var(--button-primary);
 }
 
 @media (width < 768px) {
   .with_arrow {
     padding-inline: 22px;
   }
+
   .action_btn {
     justify-content: center;
     width: 100%;

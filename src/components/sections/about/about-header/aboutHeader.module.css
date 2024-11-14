@@ -9,8 +9,8 @@
 }
 
 .about_header_text {
-  font: var(--h4-primary);
   color: var(--dark-blue);
+  font: var(--h4-primary);
   letter-spacing: -0.05em;
 }
 
@@ -23,23 +23,28 @@
   .br_768 {
     display: block;
   }
+
   .about_header {
     padding-block: 76px 72px;
   }
+
   .about_header_text {
     width: 691px;
     margin-inline: auto;
     line-height: 44px;
   }
 }
+
 @media (width < 768px) {
   .about_header {
     padding-block: 40px 32px;
   }
+
   .about_header_text {
     width: auto;
     line-height: 26px;
   }
+
   .br_none {
     display: none;
   }

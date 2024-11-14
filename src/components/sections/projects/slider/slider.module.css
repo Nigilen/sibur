@@ -9,28 +9,28 @@
 }
 
 .slider_list .slider_item {
-  padding-block-start: 11px;
   display: flex;
   flex-direction: column;
-  text-align: center;
   height: auto;
+  padding-block-start: 11px;
+  text-align: center;
 }
 
 .slider_control {
   position: absolute;
-  width: max-content;
   z-index: 1;
+  width: max-content;
 }
 
 .slider_control__left {
-  left: -80px;
   top: 223px;
+  left: -80px;
   transform: translateY(-50%);
 }
 
 .slider_control__right {
-  right: -80px;
   top: 223px;
+  right: -80px;
   transform: translateY(-50%);
 }
 
@@ -39,37 +39,37 @@
 }
 
 .project_img {
+  display: flex;
+  margin-block-end: 24px;
   border-radius: 32px;
   box-shadow: -12px -12px 0 0 var(--bg-light-blue-secondary);
-  margin-block-end: 24px;
-  display: flex;
   margin-inline: auto;
 }
 
 .project_heading {
-  font: var(--h5-primary);
-  color: var(--dark-blue);
   margin-block-end: 1rem;
+  color: var(--dark-blue);
+  font: var(--h5-primary);
 }
 
 .project_description {
-  font: var(--p-medium);
-  color: var(--dark-blue);
-  margin-block-end: 24px;
-  opacity: 60%;
   max-width: 386px;
+  margin-block-end: 24px;
+  color: var(--dark-blue);
+  font: var(--p-medium);
+  opacity: 0.6;
   margin-inline: auto;
 }
 
 .project_link {
   display: inline-block;
-  font: var(--button-small);
+  align-self: center;
   padding: 10px 24px;
+  color: var(--white);
+  font: var(--button-small);
   background-color: var(--cyan);
   border-radius: 12px;
-  color: var(--white);
   margin-block: auto 0;
-  align-self: center;
 }
 
 .project_link:hover {
@@ -85,23 +85,26 @@
     width: 55px;
     height: 55px;
   }
+
   .slider_control__left {
+    top: 273px;
     left: -35px;
-    top: 273px;
-  }
-  .slider_control__right {
-    right: -35px;
-    top: 273px;
   }
 
-  .decor:after {
+  .slider_control__right {
+    top: 273px;
+    right: -35px;
+  }
+
+  .decor::after {
     background-image: 
       url('/decor-projects-top-left-tab.png'),
       url('/decor-projects-top-right.svg');
-    background-size: 203px 319px, 195px 280px;
     background-position: 0% 21%, 112% 250%;
+    background-size: 203px 319px, 195px 280px;
     
   }
+
   .decor {
     width: 100%;
   }
@@ -116,14 +119,17 @@
     width: 41px;
     height: 41px;
   }
+
   .slider_control__left {
+    top: 100px;
     left: 0;
-    top: 100px;
   }
+
   .slider_control__right {
-    right: 0;
     top: 100px;
+    right: 0;
   }
+
   .project_img {
     width: 196px;
     height: 196px;
