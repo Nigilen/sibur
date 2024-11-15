@@ -8,7 +8,7 @@ import playBtn from '@/src/assets/decor/play-btn.svg';
 
 interface Props {
   video: string;
-  preloader: StaticImageData;
+  preloader?: StaticImageData;
   classNames?: string;
 };
 
@@ -23,7 +23,7 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
         data: {}
       }), '*')
     }
-  }, [isPlay]);
+  }, [isPlay === true]);
 
   const handlePlay = () => {
     setIsPlay(!isPlay);
@@ -32,7 +32,7 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
   return (
     <div className={cn(styles.video, classNames)}>
       {!isPlay &&
-        <div className={styles.preloader} style={{backgroundImage: `url(${preloader.src})`}}>
+        <div className={styles.preloader} style={preloader && {backgroundImage: `url(${preloader?.src})`}}>
           <button
             className={styles.play}
             onClick={handlePlay}

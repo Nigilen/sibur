@@ -3,6 +3,7 @@
 }
 
 .lesson_video div {
+  background-image: url('../../../../src/assets/images/lesson-video-preloader.png');
   background-size: cover;
 }
 
@@ -114,7 +115,9 @@
   }
 
   .lesson_video div {
-    background-position: center;
+    background-image: url('../../../../src/assets/images/lesson-video-preloader-tab.png');
+    background-position: left;
+    background-size: cover;
   }
 
   .lesson_description {

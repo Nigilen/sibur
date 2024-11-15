@@ -2,7 +2,7 @@ import { Video } from '@/src/ui-kit/video/video';
 import { FC } from 'react';
 import { Gallery } from './gallery/gallery';
 import styles from './past-lesson.module.css';
-import videoPreloader from '@/src/assets/images/lesson-video-preloader.png'
+// import videoPreloader from '@/src/assets/images/lesson-video-preloader.png'
 import { TSliders } from './types';
 
 
@@ -21,7 +21,7 @@ export const PastLesson: FC<TSliders> = ({ dataSlider }) => {
         <div className={styles.video_decor_quote_bottom}></div>
         <Video 
           video='https://rutube.ru/play/embed/fb146facdbc8c244c8fb67efc5221c4e/' 
-          preloader={videoPreloader} 
+          // preloader={videoPreloader} 
           classNames={styles.lesson_video}
         />
         
