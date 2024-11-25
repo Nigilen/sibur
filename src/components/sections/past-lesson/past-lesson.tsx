@@ -19,8 +19,9 @@ export const PastLesson: FC<TSliders> = ({ dataSlider }) => {
         <div className={styles.video_decor_star}></div>
         <div className={styles.video_decor_quote_top}></div>
         <div className={styles.video_decor_quote_bottom}></div>
+        
         <Video 
-          video='https://rutube.ru/play/embed/fb146facdbc8c244c8fb67efc5221c4e/' 
+          video='https://rutube.ru/play/embed/fb146facdbc8c244c8fb67efc5221c4e' 
           // preloader={videoPreloader} 
           classNames={styles.lesson_video}
         />

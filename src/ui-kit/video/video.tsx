@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import styles from './video.module.css';
 import Image, { StaticImageData } from 'next/image';
 import cn from 'classnames';
@@ -16,15 +16,46 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
   const [isPlay, setIsPlay] = useState(false);
   const ref = useRef<HTMLIFrameElement | null>(null);
 
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.contentWindow!.postMessage(JSON.stringify({
-        type: 'player:play',
-        data: {}
-      }), '*')
-    }
-  }, [isPlay === true]);
-
+  // useEffect(() => {
+  //   if (ref.current) {
+  //     ref.current.onload = () => {
+  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
+  //         {
+  //           type: 'player:play',
+  //           data: {}
+  //         }
+  //       ), '*');	
+  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
+  //         {
+  //           type: 'player:mute'
+  //         }
+  //       ), '*');	
+  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
+  //         {
+  //           type: 'player:unMute'
+  //         }
+  //       ), '*');	
+  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
+  //         {
+  //           type: 'player:setVolume',
+  //           data: {
+  //             volume: 0.20
+  //           }
+  //         }
+  //       ), '*');	
+  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
+  //         {
+  //           type: 'player:setCurrentTime',
+  //           data: {
+  //               time: 0
+  //           }
+  //         }
+  //       ), '*');	
+        
+  //     };
+  //   }
+  // }, [isPlay]);
+  
   const handlePlay = () => {
     setIsPlay(!isPlay);
   };
