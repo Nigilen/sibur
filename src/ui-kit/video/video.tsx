@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import styles from './video.module.css';
 import Image, { StaticImageData } from 'next/image';
 import cn from 'classnames';
@@ -16,52 +16,40 @@ export const Video: FC<Props> = ({ video, preloader, classNames }) => {
   const [isPlay, setIsPlay] = useState(false);
   const ref = useRef<HTMLIFrameElement | null>(null);
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     ref.current.onload = () => {
-  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
-  //         {
-  //           type: 'player:play',
-  //           data: {}
-  //         }
-  //       ), '*');	
-  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
-  //         {
-  //           type: 'player:mute'
-  //         }
-  //       ), '*');	
-  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
-  //         {
-  //           type: 'player:unMute'
-  //         }
-  //       ), '*');	
-  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
-  //         {
-  //           type: 'player:setVolume',
-  //           data: {
-  //             volume: 0.20
-  //           }
-  //         }
-  //       ), '*');	
-  //       ref.current?.contentWindow!.postMessage(JSON.stringify(
-  //         {
-  //           type: 'player:setCurrentTime',
-  //           data: {
-  //               time: 0
-  //           }
-  //         }
-  //       ), '*');	
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.onload = () => {
+        ref.current?.contentWindow!.postMessage(JSON.stringify(
+          {
+            type: 'player:play',
+            data: {}
+          }
+        ), '*');
+        ref.current?.contentWindow!.postMessage(JSON.stringify(
+          {
+            type: 'player:setCurrentTime',
+            data: {
+                time: 0
+            }
+          }
+        ), '*');	
         
-  //     };
-  //   }
-  // }, [isPlay]);
+      };
+    }
+  }, [isPlay]);
   
   const handlePlay = () => {
     setIsPlay(!isPlay);
+
+    ref.current?.contentWindow!.postMessage(JSON.stringify(
+      {
+        type: 'player:unMute'
+      }
+    ), '*');	
   };
 
   return (
-    <div className={cn(styles.video, classNames)}>
+    <div className={cn(styles.video, classNames)} key={video}>
       {!isPlay &&
         <div className={styles.preloader} style={preloader && {backgroundImage: `url(${preloader?.src})`}}>
           <button
